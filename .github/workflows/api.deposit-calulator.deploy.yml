@@ -3,8 +3,8 @@ name: Deposit calculator API
 env:
   appId: deposit-calculator
   working-directory: deposit-calculator
-  dockerRegistry: docker.pkg.github.com
-  dockerRepository: Axway-API-Management-Plus/axway-api-management-automated
+  dockerRegistry: ghcr.io
+  dockerRepository: cwiechmann/axway-api-management-automated
 
 on:
   push:
