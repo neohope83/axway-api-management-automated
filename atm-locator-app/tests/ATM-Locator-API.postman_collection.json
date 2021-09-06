@@ -33,7 +33,7 @@
 				"header": [
 					{
 						"key": "KeyId",
-						"value": "98620265-a960-4549-acd1-fc5f0520f235",
+						"value": "{{validAPIKey}}",
 						"type": "text"
 					}
 				],
@@ -77,7 +77,7 @@
 				"header": [
 					{
 						"key": "KeyId",
-						"value": "98620265-a960-4549-acd1-fc5f0520f23",
+						"value": "Invalid-API-Key",
 						"type": "text"
 					}
 				],
