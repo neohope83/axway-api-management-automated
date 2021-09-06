@@ -6,5 +6,9 @@
   "organization" : "Plexus Health",
   "apiDefinition" : "ATM-Locator.json",
   "summary" : "This API gives you a full CRUDL interface (Create, Read, Update, Delete, List) for ATM locations, using an in memory database.",
-  "image" : "atm-locator-icon.png"
+  "image" : "atm-locator-icon.png",
+  "clientOrganizations" : [ "Plexus Health" ],
+  "applications" : [ {
+    "name" : "Test-App"
+  } ]
 }
