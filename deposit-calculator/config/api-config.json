@@ -1,0 +1,44 @@
+{
+  "name" : "Fixed Deposit Calculator",
+  "path" : "/api/fixeddeposit/",
+  "state" : "published",
+  "version" : "3.7",
+  "organization" : "Plexus Health",
+  "apiDefinition" : "../deposit-calculator-app/endpoints/fixedDepositCalculator.json",
+  "summary" : "This API calculates the total interest earned from a fixed deposit, along with a breakdown for the number of years the deposit is running. Parameters: amount, number of years the fixed deposit will run",
+  "backendBasepath" : "http://deposit-calculator:8080/api/fixeddeposit",
+  "image" : "api-image.png",
+  "securityProfiles" : [ {
+    "name" : "_default",
+    "isDefault" : true,
+    "devices" : [ {
+      "name" : "API Key",
+      "type" : "apiKey",
+      "order" : 1,
+      "properties" : {
+        "apiKeyFieldName" : "KeyId",
+        "takeFrom" : "HEADER",
+        "removeCredentialsOnSuccess" : "true"
+      }
+    } ]
+  } ],
+  "tags" : {
+    "Industry" : [ "Healthcare" ],
+    "Type" : [ "Demo_Amplify_PlexusHealth" ],
+    "Category" : [ "Catalog" ]
+  },
+  "clientOrganizations" : [ "Plexus Health" ],
+  "applications" : [ {
+    "name" : "Plexus Suite - Appointment Management",
+    "enabled" : true,
+    "state" : "approved"
+  }, {
+    "name" : "Plexus Health Center",
+    "enabled" : true,
+    "state" : "approved"
+  }, {
+    "name" : "Plexus Suite - Patient Monitoring",
+    "enabled" : true,
+    "state" : "approved"
+  } ]
+}
