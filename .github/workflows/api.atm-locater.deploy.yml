@@ -15,7 +15,8 @@ defaults:
     working-directory: atm-locator-app
 
 jobs:
-  API-Deployment:
+  deploy-api:
+    name: API-Deployment
     runs-on: ubuntu-latest
     steps:
       - name: Debug
