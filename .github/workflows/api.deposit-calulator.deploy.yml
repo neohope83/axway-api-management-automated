@@ -1,7 +1,7 @@
 name: Deposit calculator API
 
 env:
-  appId: deposit-calculator
+  appId: deposit-calculator-app
   working-directory: deposit-calculator
   dockerRegistry: ghcr.io
   dockerRepository: cwiechmann/axway-api-management-automated
