@@ -24,5 +24,9 @@
   "clientOrganizations" : [ "Plexus Health" ],
   "applications" : [ {
     "name" : "Test-App"
-  } ]
+  },
+  {
+    "name" : "Plexus Suite - Patient Monitoring"
+  }
+   ]
 }
