@@ -21,7 +21,7 @@
 							"});\r",
 							"\r",
 							"pm.test(\"Validate proper response time\", function(){\r",
-							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
 							"});"
 						],
 						"type": "text/javascript"
