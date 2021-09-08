@@ -1,10 +1,13 @@
 {
-  "name" : "ATM-Locator API",
-  "path" : "/api/atm/locator",
+  "name" : "Fixed Deposit Calculator",
+  "path" : "/api/fixeddeposit/",
   "state" : "published",
-  "version" : "2.0",
-  "organization" : "Axway",
-  "apiDefinition" : "New ATM-Locator API.json",
+  "version" : "3.7",
+  "organization" : "API Development",
+  "apiDefinition" : "../deposit-calculator-app/endpoints/fixedDepositCalculator.json",
+  "summary" : "This API calculates the total interest earned from a fixed deposit, along with a breakdown for the number of years the deposit is running. Parameters: amount, number of years the fixed deposit will run",
+  "backendBasepath" : "http://deposit-calculator:8080/api/fixeddeposit",
+  "image" : "api-image.png",
   "securityProfiles" : [ {
     "name" : "_default",
     "isDefault" : true,
@@ -23,10 +26,10 @@
     "securityLevel" : "public",
     "publicAPI" : "true"
   },
-  "clientOrganizations" : [ "Partners", "FastCars" ],
   "tags" : {
     "Category" : [ "Consumer" ]
   },
+  "clientOrganizations" : [ "ALL" ],
   "applications" : [ {
     "name" : "Plexus Suite - Appointment Management"
   }, {
