@@ -9,17 +9,8 @@
     "securityLevel" : "public",
     "publicAPI" : "true"
   },
-  "caCerts" : [ {
-    "certFile" : "backend.yoisho.dob.jp.crt",
-    "inbound" : "false",
-    "outbound" : "true"
-  }, {
-    "certFile" : "R3.crt",
-    "inbound" : "false",
-    "outbound" : "true"
-  }, {
-    "certFile" : "ISRGRootX1.crt",
-    "inbound" : "false",
-    "outbound" : "true"
-  } ]
+  "clientOrganizations" : [ "Partners", "FastCars" ],
+  "tags" : {
+    "Category" : [ "Consumer" ]
+  }
 }
