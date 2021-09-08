@@ -16,7 +16,7 @@
     {
       "id": "user-3",
       "name": "markus",
-      "roles": ["role-1", "role-6", "role-7"]
+      "roles": ["role-2"]
     },
     {
       "id": "user-4",
