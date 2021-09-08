@@ -36,7 +36,8 @@
     "publicAPI" : "true"
   },
   "tags" : {
-    "Category" : [ "Consumer" ]
+    "Category" : [ "Consumer" ],
+    "Portal" : [ "Partner" ]
   },
   "clientOrganizations" : [ "ALL" ],
   "applications" : [ {
@@ -45,7 +46,9 @@
     "name" : "Plexus Health Center"
   }, {
     "name" : "Plexus Suite - Patient Monitoring"
+  }, {
+    "name" : "Plexus Suite - Patient Monitoring"
   },{
-    "name" : "Test-App"
+    "name" : "Test-App" 
   }  ]
 }
