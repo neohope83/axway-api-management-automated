@@ -1,0 +1,25 @@
+{
+  "name" : "ATM-Locator API",
+  "path" : "/api/atm/locator",
+  "state" : "unpublished",
+  "version" : "2.0",
+  "organization" : "Axway",
+  "apiDefinition" : "New ATM-Locator API.json",
+  "customProperties" : {
+    "securityLevel" : "public",
+    "publicAPI" : "true"
+  },
+  "caCerts" : [ {
+    "certFile" : "backend.yoisho.dob.jp.crt",
+    "inbound" : "false",
+    "outbound" : "true"
+  }, {
+    "certFile" : "R3.crt",
+    "inbound" : "false",
+    "outbound" : "true"
+  }, {
+    "certFile" : "ISRGRootX1.crt",
+    "inbound" : "false",
+    "outbound" : "true"
+  } ]
+}
