@@ -22,6 +22,15 @@
       }
     } ]
   } ],
+  "authenticationProfiles" : [ {
+    "name" : "_default",
+    "isDefault" : true,
+    "parameters" : {
+      "username" : "uHge39G0SpFbMh5HWuDZ5+no0ZTFAmhv",
+      "password" : ""
+    },
+    "type" : "http_basic"
+  } ],
   "customProperties" : {
     "securityLevel" : "public",
     "publicAPI" : "true"
