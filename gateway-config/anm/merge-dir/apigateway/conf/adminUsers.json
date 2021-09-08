@@ -11,7 +11,7 @@
     {
       "id": "user-2",
       "name": "susan",
-      "roles": ["role-2"]
+      "roles": ["role-8"]
     },
     {
       "id": "user-3",
@@ -21,7 +21,7 @@
     {
       "id": "user-4",
       "name": "chris",
-      "roles": ["role-2"]
+      "roles": ["role-8"]
     },
     {
       "id": "user-5",
@@ -78,7 +78,13 @@
       "id": "role-7",
       "name": "Policy Developer",
       "displayName": "Policy Developer"
+    },
+    {
+      "id": "role-8",
+      "name": "Monitoring",
+      "displayName": "Monitoring"
     }
+    
   ],
   "uniqueIdCounters": {
     "Role": 8,
