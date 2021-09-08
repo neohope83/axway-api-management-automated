@@ -102,7 +102,7 @@
       "roles" : {
         "API Server Administrator" : [ "emc", "mgmt", "mgmt_modify", "dashboard", "dashboard_modify", "deploy", "config", "monitoring", "events", "traffic_monitor", "settings", "settings_modify", "logs", "adminusers", "adminusers_modify", "adminusers_passwordpolicy_modify", "adminusers_advisorybanner_modify","adminusers_reset", "domain_audit", "domain_audit_modify", "discovery", "ama", "ama_modify", "group_force_unlock", "fips_read", "fips_modify" ],
         "API Server Operator" : [ "emc", "mgmt", "dashboard", "monitoring", "events", "traffic_monitor", "settings", "logs", "adminusers", "adminusers_reset", "ama", "fips_read" ],
-        "Monitoring" : [ "emc", "mgmt", "traffic_monitor" ],
+        "Monitoring" : [ "emc", "mgmt", "dashboard", "dashboard_modify", "traffic_monitor" ],
         "KPS Administrator" : [ "mgmt", "kps" ],
     
         "Policy Developer" : [ "mgmt", "deploy", "config", "adminusers_reset", "group_lock", "group_unlock" ],
