@@ -10,12 +10,12 @@
     },
     {
       "id": "user-2",
-      "name": "adamzareba",
+      "name": "susan",
       "roles": ["role-1", "role-6", "role-7"]
     },
     {
       "id": "user-3",
-      "name": "ChristianPacifici",
+      "name": "markus",
       "roles": ["role-1", "role-6", "role-7"]
     },
     {
