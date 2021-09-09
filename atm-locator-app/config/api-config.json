@@ -1,0 +1,13 @@
+{
+  "name" : "ATM Locator API",
+  "path" : "/api/atm/locator",
+  "state" : "unpublished",
+  "version" : "2.0",
+  "organization" : "Axway",
+  "apiDefinition" : "New ATM Locator API.json",
+  "image": "atm-locator-icon.png",
+  "customProperties" : {
+    "securityLevel" : "public",
+    "publicAPI" : "true"
+  }
+}
