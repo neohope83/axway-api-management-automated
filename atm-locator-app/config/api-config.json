@@ -25,6 +25,9 @@
     "securityLevel" : "public",
     "publicAPI" : "true"
   },
+  "tags" : {
+    "Portal" : [ "Partners" ]
+  },
   "applications" : [ {
     "name" : "Plexus Suite - Appointment Management"
   }, {
