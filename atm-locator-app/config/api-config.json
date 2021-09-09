@@ -20,6 +20,7 @@
       }
     } ]
   } ],
+  "clientOrganizations" : [ "Plexus Health", "Axway", "FastCars", "Partners" ],
   "customProperties" : {
     "securityLevel" : "public",
     "publicAPI" : "true"
