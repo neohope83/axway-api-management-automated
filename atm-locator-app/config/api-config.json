@@ -1,0 +1,37 @@
+{
+  "name" : "ATM Locator API",
+  "path" : "/api/atm/locator",
+  "state" : "published",
+  "version" : "2.0",
+  "organization" : "Axway",
+  "apiDefinition" : "New ATM Locator API.json",
+  "image": "atm-locator-icon.png",
+  "securityProfiles" : [ {
+    "name" : "_default",
+    "isDefault" : true,
+    "devices" : [ {
+      "name" : "API Key",
+      "type" : "apiKey",
+      "order" : 1,
+      "properties" : {
+        "apiKeyFieldName" : "KeyId",
+        "takeFrom" : "HEADER",
+        "removeCredentialsOnSuccess" : "true"
+      }
+    } ]
+  } ],
+  "clientOrganizations" : [ "Plexus Health", "Axway", "FastCars", "Partners" ],
+  "customProperties" : {
+    "securityLevel" : "public",
+    "publicAPI" : "true"
+  },
+  "applications" : [ {
+    "name" : "Plexus Suite - Appointment Management"
+  }, {
+    "name" : "Plexus Health Center"
+  }, {
+    "name" : "Plexus Suite - Patient Monitoring"
+    }, {
+    "name" : "Test-App"
+  } ]
+}
