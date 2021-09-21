@@ -32,7 +32,7 @@
     "type" : "http_basic"
   } ],
   "customProperties" : {
-    "securityLevel" : "public",
+    "securityLevel" : "private",
     "publicAPI" : "true"
   },
   "tags" : {
