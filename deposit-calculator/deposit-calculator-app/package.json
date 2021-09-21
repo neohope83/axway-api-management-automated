@@ -17,8 +17,6 @@
 	"repository": {},
 	"private": true,
 	"dependencies": {
-		"@axway-api-builder-ext/api-builder-plugin-dc-postgres": "file:../../../api-builder-extras/api-builder-plugin-dc-postgres/axway-api-builder-ext-api-builder-plugin-dc-postgres-2.0.0.tgz",
-		"@axway-api-builder-ext/api-builder-plugin-fn-elasticsearch": "^1.0.23",
 		"@axway/api-builder-plugin-fn-base64": "^4.0.0",
 		"@axway/api-builder-plugin-fn-javascript": "^3.0.0",
 		"@axway/api-builder-plugin-fn-json": "^4.0.0",
