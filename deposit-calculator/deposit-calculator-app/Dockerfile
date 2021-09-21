@@ -21,6 +21,9 @@ USER axway-user
 COPY --chown=axway-user:axway-group . /app
 
 # Install service dependencies relevant for production builds skipping all development dependencies.
+RUN npm --version
+
+# Install service dependencies relevant for production builds skipping all development dependencies.
 RUN npm install --production --no-optional
 
 # check every 5s to ensure this service is healthy
