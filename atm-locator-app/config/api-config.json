@@ -4,7 +4,7 @@
   "state": "published",
   "version": "2.0",
   "organization": "Axway",
-  "apiDefinition": "https://backend.yoisho.dob.jp/banking/v2/swagger",
+  "apiDefinition": "atm-locator-spec.json",
   "image": "atm-locator-icon.png",
   "securityProfiles": [
     {
