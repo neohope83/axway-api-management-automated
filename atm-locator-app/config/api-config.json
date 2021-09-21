@@ -1,40 +1,62 @@
 {
-  "name" : "ATM Locator API",
-  "path" : "/api/atm/locator",
-  "state" : "published",
-  "version" : "2.0",
-  "organization" : "Axway",
-  "apiDefinition" : "New ATM Locator API.json",
+  "name": "ATM Locator API",
+  "path": "/api/atm/locator",
+  "state": "published",
+  "version": "2.0",
+  "organization": "Axway",
+  "apiDefinition": "https://backend.yoisho.dob.jp/banking/v2/swagger",
   "image": "atm-locator-icon.png",
-  "securityProfiles" : [ {
-    "name" : "_default",
-    "isDefault" : true,
-    "devices" : [ {
-      "name" : "API Key",
-      "type" : "apiKey",
-      "order" : 1,
-      "properties" : {
-        "apiKeyFieldName" : "KeyId",
-        "takeFrom" : "HEADER",
-        "removeCredentialsOnSuccess" : "true"
+  "securityProfiles": [
+    {
+      "name": "_default",
+      "isDefault": true,
+      "devices": [
+        {
+          "name": "API Key",
+          "type": "apiKey",
+          "order": 1,
+          "properties": {
+            "apiKeyFieldName": "KeyId",
+            "takeFrom": "HEADER",
+            "removeCredentialsOnSuccess": "true"
+          }
+        }
+      ]
+    }
+  ],
+  "clientOrganizations": ["Plexus Health", "Axway", "FastCars", "Partners"],
+  "customProperties": {
+    "securityLevel": "public",
+    "publicAPI": "true"
+  },
+  "tags": {
+    "Portal": ["Partners"]
+  },
+  "applicationQuota": {
+    "restrictions": [
+      {
+        "method": "*",
+        "type": "throttle",
+        "config": {
+          "period": "minute",
+          "messages": 5,
+          "per": 1
+        }
       }
-    } ]
-  } ],
-  "clientOrganizations" : [ "Plexus Health", "Axway", "FastCars", "Partners" ],
-  "customProperties" : {
-    "securityLevel" : "public",
-    "publicAPI" : "true"
+    ]
   },
-  "tags" : {
-    "Portal" : [ "Partners" ]
-  },
-  "applications" : [ {
-    "name" : "Plexus Suite - Appointment Management"
-  }, {
-    "name" : "Plexus Health Center"
-  }, {
-    "name" : "Plexus Suite - Patient Monitoring"
-    }, {
-    "name" : "Test-App"
-  } ]
+  "applications": [
+    {
+      "name": "Plexus Suite - Appointment Management"
+    },
+    {
+      "name": "Plexus Health Center"
+    },
+    {
+      "name": "Plexus Suite - Patient Monitoring"
+    },
+    {
+      "name": "Test-App"
+    }
+  ]
 }
