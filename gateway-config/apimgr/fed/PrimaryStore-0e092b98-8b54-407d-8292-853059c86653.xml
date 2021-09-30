@@ -9668,6 +9668,15 @@
 	<fval name="name"><value>Add Secure Headers</value></fval>
 	<fval name="successNode"><value contentType="reference">-3625916960911293957</value></fval>
 </entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CircuitContainer" entityPK="-5681815786397094944" parentPK="-8178558854608386531">
+	<fval name="name"><value>Fault Handler</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FilterCircuit" entityPK="-2102336968958091114" parentPK="-5681815786397094944">
+	<fval name="category"><value contentType="reference">-9055427791123919885</value></fval>
+	<fval name="description"><value></value></fval>
+	<fval name="logMask"><value>3</value></fval>
+	<fval name="name"><value>Security failure</value></fval>
+</entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="PortalCallbackGroup" entityPK="7280066841751526261" parentPK="0">
 	<fval name="name"><value>Portal Alerts</value></fval>
 </entity>
@@ -17809,7 +17818,7 @@
 	<fval name="description"><value></value></fval>
 	<fval name="logMask"><value>3</value></fval>
 	<fval name="name"><value>Default Fault Handler</value></fval>
-	<fval name="start"><value contentType="reference">870086415356919674</value></fval>
+	<fval name="start"><value contentType="reference">5502547708867806883</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="GenericFaultFilter" entityPK="-4471228951282610254" parentPK="4670829083546709520">
 	<fval name="abortProcessingOnLogError"><value>0</value></fval>
@@ -17818,6 +17827,7 @@
 	<fval name="faultString"><value>${circuit.failure.reason}</value></fval>
 	<fval name="fault_body"><value>${content.body}</value></fval>
 	<fval name="fault_headers"><value>${http.headers}</value></fval>
+	<fval name="filterCircuit"><value contentType="reference">-1</value></fval>
 	<fval name="httpResponseStatus"><value>500</value></fval>
 	<fval name="logFailure"><value>Filter failed</value></fval>
 	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
@@ -17833,21 +17843,76 @@
 	<fval name="styleResponse"><value>0</value></fval>
 	<fval name="userStylesheet"><value contentType="reference">-1</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="TraceFilter" entityPK="870086415356919674" parentPK="4670829083546709520">
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="GenericFaultFilter" entityPK="-8290191241719497940" parentPK="4670829083546709520">
 	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="applyResponseRules"><value>1</value></fval>
 	<fval name="category"><value contentType="reference">-7048163970157787713</value></fval>
-	<fval name="doIndent"><value>0</value></fval>
-	<fval name="logFailure"><value>Failed to trace the message properties</value></fval>
-	<fval name="logFatal"><value>Error while tracing the message properties. Error: ${circuit.exception}</value></fval>
+	<fval name="faultString"><value>${circuit.failure.reason}</value></fval>
+	<fval name="fault_body"><value>{&quot;message&quot;:&quot;Access denied&quot;}</value></fval>
+	<fval name="fault_headers"><value>${http.headers}</value></fval>
+	<fval name="filterCircuit"><value contentType="reference">-1</value></fval>
+	<fval name="httpResponseStatus"><value>403</value></fval>
+	<fval name="logFailure"><value>Filter failed</value></fval>
+	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
 	<fval name="logMask"><value>2</value></fval>
 	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Traced the message properties</value></fval>
-	<fval name="name"><value>Trace Filter</value></fval>
-	<fval name="successNode"><value contentType="reference">-4471228951282610254</value></fval>
-	<fval name="traceAttributes"><value>1</value></fval>
-	<fval name="traceBody"><value>0</value></fval>
-	<fval name="traceLevel"><value>3</value></fval>
-	<fval name="traceMsg"><value></value></fval>
+	<fval name="logSuccess"><value>Filter passed</value></fval>
+	<fval name="name"><value>Security error</value></fval>
+	<fval name="responseHandling"><value>ResponseContent</value></fval>
+	<fval name="showAttributes"><value>0</value></fval>
+	<fval name="showDetailedReason"><value>0</value></fval>
+	<fval name="showPath"><value>0</value></fval>
+	<fval name="showStack"><value>0</value></fval>
+	<fval name="styleResponse"><value>0</value></fval>
+	<fval name="userStylesheet"><value contentType="reference">-1</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SetAttributeFilter" entityPK="5502547708867806883" parentPK="4670829083546709520">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="attributeValue"><value>${api.custom.properties.get(&quot;publicAPI&quot;)}</value></fval>
+	<fval name="category"><value contentType="reference">-7048163970157787713</value></fval>
+	<fval name="logFailure"><value>Failed to set the attribute value</value></fval>
+	<fval name="logFatal"><value>Error while setting the attribute value. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>6</value></fval>
+	<fval name="logMaskType"><value>FILTER</value></fval>
+	<fval name="logSuccess"><value>API is public: ${api.publicAPI}</value></fval>
+	<fval name="messageAttribute"><value>api.publicAPI</value></fval>
+	<fval name="name"><value>Get Public-API config</value></fval>
+	<fval name="successNode"><value contentType="reference">-6939703577742412072</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CompareAttributeFilter" entityPK="-6939703577742412072" parentPK="4670829083546709520">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-7048163970157787713</value></fval>
+	<fval name="failureNode"><value contentType="reference">-8290191241719497940</value></fval>
+	<fval name="logFailure"><value>API is private</value></fval>
+	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
+	<fval name="logMask"><value>6</value></fval>
+	<fval name="logMaskType"><value>FILTER</value></fval>
+	<fval name="logSuccess"><value>API is public</value></fval>
+	<fval name="matchingRule"><value>MATCH_ALL</value></fval>
+	<fval name="name"><value>Is public API?</value></fval>
+	<fval name="negateOpOnNull"><value>0</value></fval>
+	<fval name="successNode"><value contentType="reference">5488429037771742448</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AttributeCompare" entityPK="2536394132355612705" parentPK="-6939703577742412072">
+	<fval name="attrName"><value>api.publicAPI</value></fval>
+	<fval name="expression"><value>true</value></fval>
+	<fval name="matchType"><value>IS</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="JSONErrorFilter" entityPK="5488429037771742448" parentPK="4670829083546709520">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-7048163970157787713</value></fval>
+	<fval name="faultString"><value>${circuit.failure.reason}</value></fval>
+	<fval name="httpResponseStatus"><value>500</value></fval>
+	<fval name="logFailure"><value>Filter failed</value></fval>
+	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Filter passed</value></fval>
+	<fval name="name"><value>JSON Error</value></fval>
+	<fval name="showAttributes"><value>0</value></fval>
+	<fval name="showDetailedReason"><value>0</value></fval>
+	<fval name="showPath"><value>0</value></fval>
+	<fval name="showStack"><value>0</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FilterCircuit" entityPK="-6365117218196646493" parentPK="7964055022621880141">
 	<fval name="category"><value contentType="reference">-9055427791123919885</value></fval>
