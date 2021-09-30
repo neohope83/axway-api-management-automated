@@ -17828,7 +17828,7 @@
 	<fval name="fault_body"><value>${content.body}</value></fval>
 	<fval name="fault_headers"><value>${http.headers}</value></fval>
 	<fval name="filterCircuit"><value contentType="reference">-1</value></fval>
-	<fval name="httpResponseStatus"><value>500</value></fval>
+	<fval name="httpResponseStatus"><value>${http.response.status}</value></fval>
 	<fval name="logFailure"><value>Filter failed</value></fval>
 	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
 	<fval name="logMask"><value>2</value></fval>
@@ -17837,30 +17837,7 @@
 	<fval name="name"><value>Generic Error</value></fval>
 	<fval name="responseHandling"><value></value></fval>
 	<fval name="showAttributes"><value>0</value></fval>
-	<fval name="showDetailedReason"><value>0</value></fval>
-	<fval name="showPath"><value>0</value></fval>
-	<fval name="showStack"><value>0</value></fval>
-	<fval name="styleResponse"><value>0</value></fval>
-	<fval name="userStylesheet"><value contentType="reference">-1</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="GenericFaultFilter" entityPK="-8290191241719497940" parentPK="4670829083546709520">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="applyResponseRules"><value>1</value></fval>
-	<fval name="category"><value contentType="reference">-7048163970157787713</value></fval>
-	<fval name="faultString"><value>${circuit.failure.reason}</value></fval>
-	<fval name="fault_body"><value>{&quot;message&quot;:&quot;Access denied&quot;}</value></fval>
-	<fval name="fault_headers"><value>${http.headers}</value></fval>
-	<fval name="filterCircuit"><value contentType="reference">-1</value></fval>
-	<fval name="httpResponseStatus"><value>403</value></fval>
-	<fval name="logFailure"><value>Filter failed</value></fval>
-	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Filter passed</value></fval>
-	<fval name="name"><value>Security error</value></fval>
-	<fval name="responseHandling"><value>ResponseContent</value></fval>
-	<fval name="showAttributes"><value>0</value></fval>
-	<fval name="showDetailedReason"><value>0</value></fval>
+	<fval name="showDetailedReason"><value>1</value></fval>
 	<fval name="showPath"><value>0</value></fval>
 	<fval name="showStack"><value>0</value></fval>
 	<fval name="styleResponse"><value>0</value></fval>
@@ -17882,7 +17859,7 @@
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CompareAttributeFilter" entityPK="-6939703577742412072" parentPK="4670829083546709520">
 	<fval name="abortProcessingOnLogError"><value>0</value></fval>
 	<fval name="category"><value contentType="reference">-7048163970157787713</value></fval>
-	<fval name="failureNode"><value contentType="reference">-8290191241719497940</value></fval>
+	<fval name="failureNode"><value contentType="reference">-4471228951282610254</value></fval>
 	<fval name="logFailure"><value>API is private</value></fval>
 	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
 	<fval name="logMask"><value>6</value></fval>
@@ -17902,7 +17879,7 @@
 	<fval name="abortProcessingOnLogError"><value>0</value></fval>
 	<fval name="category"><value contentType="reference">-7048163970157787713</value></fval>
 	<fval name="faultString"><value>${circuit.failure.reason}</value></fval>
-	<fval name="httpResponseStatus"><value>500</value></fval>
+	<fval name="httpResponseStatus"><value>${http.response.status}</value></fval>
 	<fval name="logFailure"><value>Filter failed</value></fval>
 	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
 	<fval name="logMask"><value>2</value></fval>
