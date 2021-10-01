@@ -5,7 +5,7 @@
   "version" : "1.0",
   "organization" : "Axway",
   "apiDefinition" : "Fruitshop.json",
-  "summary" : "An example fruit shop API",
+  "summary" : "An example fruit shop API - to demo",
   "image" : "api-image.jpg",
   "securityProfiles" : [ {
     "name" : "_default",
