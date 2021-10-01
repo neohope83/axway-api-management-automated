@@ -1,0 +1,42 @@
+{
+  "name" : "Fruit Shop",
+  "path" : "/shop",
+  "state" : "unpublished",
+  "version" : "1.0",
+  "organization" : "Axway",
+  "apiDefinition" : "Fruitshop.json",
+  "summary" : "An example fruit shop API",
+  "image" : "api-image.jpg",
+  "securityProfiles" : [ {
+    "name" : "_default",
+    "isDefault" : true,
+    "devices" : [ {
+      "name" : "API Key",
+      "type" : "apiKey",
+      "order" : 1,
+      "properties" : {
+        "apiKeyFieldName" : "KeyId",
+        "takeFrom" : "HEADER",
+        "removeCredentialsOnSuccess" : "true"
+      }
+    } ]
+  } ],
+  "customProperties" : {
+    "securityLevel" : "public",
+    "validateRequest" : "false",
+    "publicAPI" : "true"
+  },
+  "tags" : {
+    "Industry" : [ "Food", "Fruits" ],
+    "Category" : [ "Catalog" ],
+    "Type": [ "Internal"]
+  },
+  "clientOrganizations" : [ "ALL" ],
+  "applications" : [ {
+    "name" : "Plexus Suite - Appointment Management"
+  }, {
+    "name" : "Plexus Health Center"
+  }, {
+    "name" : "Plexus Suite - Patient Monitoring"
+  } ]
+}

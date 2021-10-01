@@ -7966,11 +7966,11 @@
 	<fval name="consumedProperties"></fval>
 	<fval name="engineName"><value>groovy</value></fval>
 	<fval name="generatedProperties"></fval>
-	<fval name="logFailure"><value>Failed script filter</value></fval>
+	<fval name="logFailure"><value>Schema validation of request failed</value></fval>
 	<fval name="logFatal"><value>Error while attempt to run script filter. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Passed script filter</value></fval>
+	<fval name="logMask"><value>6</value></fval>
+	<fval name="logMaskType"><value>FILTER</value></fval>
+	<fval name="logSuccess"><value>Schema validation of request succeeded</value></fval>
 	<fval name="name"><value>Validate request</value></fval>
 	<fval name="requiredProperties"></fval>
 	<fval name="script"><value>import com.axway.apim.openapi.validator.OpenAPIValidator;&#xD;&#xA;import com.vordel.trace.Trace&#xD;&#xA;&#xD;&#xA;def invoke(msg)&#xD;&#xA;{&#xD;&#xA;    // Get the ID of the API currently processed&#xD;&#xA;    def apiId = msg.get(&quot;api.id&quot;);&#xD;&#xA;    // Get/Create an OpenAPIValidator instance based on the API-ID&#xD;&#xA;    def validator = OpenAPIValidator.getInstance(apiId, &quot;apiadmin&quot;, &quot;axway123&quot;);&#xD;&#xA;    // Get required parameters for the validation&#xD;&#xA;    def payload = bodyAsString(msg.get(&apos;content.body&apos;));&#xD;&#xA;    def path = msg.get(&quot;api.method.path&quot;);&#xD;&#xA;    def verb = msg.get(&quot;http.request.verb&quot;);&#xD;&#xA;    def queryParams = msg.get(&quot;params.query&quot;);&#xD;&#xA;    def headers = msg.get(&quot;http.headers&quot;);&#xD;&#xA;    try {&#xD;&#xA;        // Call the validator itself&#xD;&#xA;        def rc = validator.isValidRequest(payload, verb, path, queryParams, headers);&#xD;&#xA;        Trace.info(&apos;rc: &apos; + rc);&#xD;&#xA;        return rc;&#xD;&#xA;    } catch (Exception e) {&#xD;&#xA;        Trace.error(&apos;Error validating request&apos;, e);&#xD;&#xA;        return false;&#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;def bodyAsString(body) {&#xD;&#xA;    if (body == null) {&#xD;&#xA;        return null&#xD;&#xA;     }&#xD;&#xA;     try {&#xD;&#xA;         return body.getInputStream(0).text&#xD;&#xA;     } catch (IOException e) {&#xD;&#xA;         Trace.error(&apos;Error while converting &apos; + body.getClass().getCanonicalName() + &apos; to java.lang.String.&apos;, e)&#xD;&#xA;         return null&#xD;&#xA;     }&#xD;&#xA;}</value></fval>
@@ -9732,15 +9732,6 @@
 	<fval name="logSuccess"><value>Success in calling policy shortcut</value></fval>
 	<fval name="name"><value>Add Secure Headers</value></fval>
 	<fval name="successNode"><value contentType="reference">-3625916960911293957</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CircuitContainer" entityPK="-5681815786397094944" parentPK="-8178558854608386531">
-	<fval name="name"><value>Fault Handler</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FilterCircuit" entityPK="-2102336968958091114" parentPK="-5681815786397094944">
-	<fval name="category"><value contentType="reference">-9055427791123919885</value></fval>
-	<fval name="description"><value></value></fval>
-	<fval name="logMask"><value>3</value></fval>
-	<fval name="name"><value>Security failure</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="PortalCallbackGroup" entityPK="7280066841751526261" parentPK="0">
 	<fval name="name"><value>Portal Alerts</value></fval>
@@ -17051,11 +17042,11 @@
 	<fval name="category"><value contentType="reference">-7048163970157787713</value></fval>
 	<fval name="circuitPK"><value contentType="reference">
 <key type='CircuitContainer'><id field='name' value='RBI-Demo'/><key type='FilterCircuit'><id field='name' value='Validate Public-API'/></key></key>	</value></fval>
-	<fval name="logFailure"><value>Failed in calling policy shortcut</value></fval>
+	<fval name="logFailure"><value>Public-API validation failed</value></fval>
 	<fval name="logFatal"><value>Error in calling policy shortcut circuit. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Success in calling policy shortcut</value></fval>
+	<fval name="logMask"><value>6</value></fval>
+	<fval name="logMaskType"><value>FILTER</value></fval>
+	<fval name="logSuccess"><value>Public-API validation succeeded</value></fval>
 	<fval name="name"><value>Call &apos;Validate Public-API&apos;</value></fval>
 	<fval name="successNode"><value contentType="reference">-1317765961908637392</value></fval>
 </entity>
@@ -17077,11 +17068,11 @@
 	<fval name="category"><value contentType="reference">-7048163970157787713</value></fval>
 	<fval name="circuitPK"><value contentType="reference">
 <key type='CircuitContainer'><id field='name' value='Policy Library'/><key type='FilterCircuit'><id field='name' value='OpenAPI Validation'/></key></key>	</value></fval>
-	<fval name="logFailure"><value>Failed in calling policy shortcut</value></fval>
+	<fval name="logFailure"><value>Schema validation failed</value></fval>
 	<fval name="logFatal"><value>Error in calling policy shortcut circuit. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Success in calling policy shortcut</value></fval>
+	<fval name="logMask"><value>6</value></fval>
+	<fval name="logMaskType"><value>FILTER</value></fval>
+	<fval name="logSuccess"><value>Schema validation succeeded</value></fval>
 	<fval name="name"><value>Call &apos;OpenAPI Validation&apos;</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FilterCircuit" entityPK="7155546483725181385" parentPK="7426929024831470452">
