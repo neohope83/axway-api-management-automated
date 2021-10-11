@@ -3,7 +3,7 @@
   "path" : "/shop",
   "state" : "unpublished",
   "version" : "1.0",
-  "organization" : "Axway",
+  "organization" : "API Development",
   "apiDefinition" : "Fruitshop.json",
   "summary" : "An example fruit shop API - to demo",
   "image" : "api-image.jpg",
