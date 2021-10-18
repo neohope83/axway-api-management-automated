@@ -39,8 +39,7 @@
     "_default" : {
       "routeType" : "policy",
       "requestPolicy" : "Request Policy 2",
-      "responsePolicy" : "Response Policy 1",
-      "authenticationProfile" : "_default"
+      "responsePolicy" : "Response Policy 1"
     }
   },
   "customProperties" : {
