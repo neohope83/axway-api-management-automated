@@ -75,7 +75,7 @@
       "method" : "*",
       "type" : "throttle",
       "config" : {
-        "messages" : "6000",
+        "messages" : "5",
         "period" : "hour",
         "per" : "1"
       }

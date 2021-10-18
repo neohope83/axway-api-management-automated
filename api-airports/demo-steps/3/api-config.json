@@ -1,7 +1,7 @@
 {
   "name" : "Airports API",
   "path" : "/api/v1/airports",
-  "state" : "unpublished",
+  "state" : "published",
   "version" : "1.0.0",
   "organization" : "API Development",
   "apiDefinition": "../airports-app/endpoints/airportsApi.json",
@@ -75,7 +75,7 @@
       "method" : "*",
       "type" : "throttle",
       "config" : {
-        "messages" : "6000",
+        "messages" : "5",
         "period" : "hour",
         "per" : "1"
       }
