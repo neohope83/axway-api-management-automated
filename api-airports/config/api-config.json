@@ -48,19 +48,6 @@
     "publicAPI" : "false",
     "project": "Any sample project"
   },
-  "caCerts" : [ {
-    "certFile" : "certificates/ngrok.io.crt",
-    "inbound" : "false",
-    "outbound" : "true"
-  }, {
-    "certFile" : "certificates/R3.crt",
-    "inbound" : "false",
-    "outbound" : "true"
-  }, {
-    "certFile" : "certificates/DSTRootCAX3.crt",
-    "inbound" : "false",
-    "outbound" : "true"
-  } ],
   "authenticationProfiles" : [ {
     "name" : "_default",
     "isDefault" : true,
