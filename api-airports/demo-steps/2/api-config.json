@@ -80,12 +80,5 @@
         "per" : "1"
       }
     } ]
-  },
-  "clientOrganizations" : [ "ALL" ],
-  "applications" : [ {
-    "name" : "Airports test app private"
-  },
-  {
-    "name" : "Airports test app public"
-  } ]
+  }
 }
