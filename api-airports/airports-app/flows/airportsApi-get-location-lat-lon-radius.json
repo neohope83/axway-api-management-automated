@@ -1,0 +1,195 @@
+{
+	"schemaVersion": "4",
+	"info": {
+		"name": "get-location-lat-lon-radius"
+	},
+	"parameter": {
+		"properties": {
+			"params": {
+				"type": "object",
+				"description": "The parameters from the endpoint."
+			},
+			"request": {
+				"type": "object",
+				"description": "The HTTP request."
+			},
+			"config": {
+				"type": "object",
+				"description": "The service's configuration"
+			},
+			"env": {
+				"type": "object",
+				"description": "The host OS environment"
+			}
+		},
+		"additionalProperties": false,
+		"required": [
+			"params",
+			"request",
+			"config",
+			"env"
+		]
+	},
+	"start": "mustache.1",
+	"nodes": {
+		"http.setresponse.1": {
+			"type": "nodehandler://axway-flow/http",
+			"method": "setresponse",
+			"name": "Set HTTP Response",
+			"parameters": [
+				{
+					"name": "status",
+					"value": "200",
+					"type": "number",
+					"metaName": "Status",
+					"metaDescription": "The HTTP status code"
+				},
+				{
+					"name": "body",
+					"type": "jsonpath",
+					"value": "$.json"
+				}
+			],
+			"outputs": {
+				"next": {
+					"context": "$.response",
+					"metaName": "Next"
+				}
+			},
+			"metaMethod": "Set HTTP Response"
+		},
+		"mustache.1": {
+			"type": "nodehandler://@axway/api-builder-plugin-fn-mustache/mustache",
+			"name": "Set SOAP-Message",
+			"method": "format",
+			"parameters": [
+				{
+					"name": "data",
+					"type": "jsonpath",
+					"value": "$.params",
+					"metaName": "Data",
+					"metaDescription": "The value to assign to the \"data\" variable in the template."
+				},
+				{
+					"name": "template",
+					"type": "string",
+					"value": "\"<soapenv:Envelope xmlns:soapenv=\\\"http://schemas.xmlsoap.org/soap/envelope/\\\" xmlns:v1=\\\"http://v1.airports.cache.conducivetech.com/\\\">\\n   <soapenv:Header/>\\n   <soapenv:Body>\\n      <v1:radius_airports>\\n         <longitude>{{data.lon}}</longitude>\\n         <latitude>{{data.lat}}</latitude>\\n         <radiusMiles>{{data.radius}}</radiusMiles>\\n      </v1:radius_airports>\\n   </soapenv:Body>\\n</soapenv:Envelope>\"",
+					"metaName": "Template",
+					"metaDescription": "The Mustache template. e.g. `Hi {{data.user}}`."
+				}
+			],
+			"outputs": {
+				"next": {
+					"context": "$.soapMessage",
+					"routes": [
+						"rest.1"
+					],
+					"metaName": "Next"
+				},
+				"error": {
+					"context": "$.error",
+					"routes": [],
+					"metaName": "Error"
+				}
+			},
+			"metaMethod": "Format string"
+		},
+		"rest.1": {
+			"type": "nodehandler://@axway/api-builder-plugin-fn-restclient/rest",
+			"name": "Call SOAP-Service",
+			"method": "post",
+			"parameters": [
+				{
+					"name": "body",
+					"type": "jsonpath",
+					"value": "$.soapMessage",
+					"metaName": "Body",
+					"metaDescription": "The content to send."
+				},
+				{
+					"name": "url",
+					"type": "string",
+					"value": "\"http://ITEM-AX31720:8280/\"",
+					"metaName": "URL",
+					"metaDescription": "The target URL."
+				},
+				{
+					"name": "headers",
+					"type": "object",
+					"value": "{\"Content-Type\": \"text/xml;charset=UTF-8\"}",
+					"metaName": "Headers",
+					"metaDescription": "The HTTP headers to set."
+				}
+			],
+			"outputs": {
+				"2xx": {
+					"routes": [
+						"xml-node.1"
+					],
+					"context": "$.soapResponse",
+					"metaName": "2XX"
+				},
+				"3xx": {
+					"routes": [],
+					"context": "$.response",
+					"metaName": "3XX"
+				},
+				"4xx": {
+					"routes": [],
+					"context": "$.response",
+					"metaName": "4XX"
+				},
+				"5xx": {
+					"routes": [],
+					"context": "$.response",
+					"metaName": "5XX"
+				},
+				"error": {
+					"routes": [],
+					"context": "$.error",
+					"metaName": "Error"
+				}
+			},
+			"metaMethod": "POST"
+		},
+		"xml-node.1": {
+			"type": "nodehandler://@axway-api-builder-ext/api-builder-plugin-fn-xml-node/xml-node",
+			"name": "XML to JSON",
+			"method": "xml2json",
+			"parameters": [
+				{
+					"name": "removeAllNamespaces",
+					"type": "boolean",
+					"value": "true",
+					"metaName": "Remove all namespaces",
+					"metaDescription": "This will remove all namespaces from the JSON-message. Overrides Remove Specific Namespaces."
+				},
+				{
+					"name": "xmlData",
+					"type": "jsonpath",
+					"value": "$.soapResponse.body"
+				},
+				{
+					"name": "selectPath",
+					"type": "string",
+					"value": "\"$.Envelope.Body\""
+				}
+			],
+			"outputs": {
+				"next": {
+					"context": "$.json",
+					"routes": [
+						"http.setresponse.1"
+					],
+					"metaName": "Next"
+				},
+				"error": {
+					"context": "$.error",
+					"routes": [],
+					"metaName": "Error"
+				}
+			},
+			"metaMethod": "XML to JSON"
+		}
+	}
+}

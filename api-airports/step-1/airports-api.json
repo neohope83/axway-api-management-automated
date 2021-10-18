@@ -1,0 +1,67 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Airports API",
+    "version": "1.0",
+    "description": "Another Test! Sample API around airport services.  \n__Lorem ipsum__ dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+  },
+  "host": "localhost:3000",
+  "schemes": [
+    "http"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "paths": {
+    "/location/{lat}/{lon}/{radius}": {
+      "parameters": [
+        {
+          "type": "string",
+          "name": "lat",
+          "in": "path",
+          "required": true,
+          "description": ""
+        },
+        {
+          "type": "string",
+          "name": "lon",
+          "in": "path",
+          "required": true
+        },
+        {
+          "type": "string",
+          "name": "radius",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "get": {
+        "x-flow": "airports-api-get-location-lat-lon-radius",
+        "summary": "Get close by airports",
+        "operationId": "get-location-lat-lon-radius",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "example-1": {},
+              "example-2": {}
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "description": "Get a list of airports at a certain location"
+      }
+    }
+  },
+  "definitions": {},
+  "basePath": "/airports"
+}
