@@ -37,9 +37,10 @@
   } ],
   "outboundProfiles" : {
     "_default" : {
-      "routeType" : "policy",
+      "routeType" : "proxy",
       "requestPolicy" : "Request Policy 2",
-      "responsePolicy" : "Response Policy 1"
+      "responsePolicy" : "Response Policy 1",
+      "authenticationProfile" : "_default"
     }
   },
   "customProperties" : {
