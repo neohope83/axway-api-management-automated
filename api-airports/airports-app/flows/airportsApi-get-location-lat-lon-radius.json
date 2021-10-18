@@ -47,7 +47,9 @@
 				{
 					"name": "body",
 					"type": "jsonpath",
-					"value": "$.json"
+					"value": "$.json",
+					"metaName": "Body",
+					"metaDescription": "The response payload"
 				}
 			],
 			"outputs": {
@@ -130,22 +132,30 @@
 					"metaName": "2XX"
 				},
 				"3xx": {
-					"routes": [],
+					"routes": [
+						"http.1"
+					],
 					"context": "$.response",
 					"metaName": "3XX"
 				},
 				"4xx": {
-					"routes": [],
+					"routes": [
+						"http.1"
+					],
 					"context": "$.response",
 					"metaName": "4XX"
 				},
 				"5xx": {
-					"routes": [],
+					"routes": [
+						"http.1"
+					],
 					"context": "$.response",
 					"metaName": "5XX"
 				},
 				"error": {
-					"routes": [],
+					"routes": [
+						"http.1"
+					],
 					"context": "$.error",
 					"metaName": "Error"
 				}
@@ -167,12 +177,16 @@
 				{
 					"name": "xmlData",
 					"type": "jsonpath",
-					"value": "$.soapResponse.body"
+					"value": "$.soapResponse.body",
+					"metaName": "XML Input data",
+					"metaDescription": "XML Data. For instance: $.soapResponse.body"
 				},
 				{
 					"name": "selectPath",
 					"type": "string",
-					"value": "\"$.Envelope.Body\""
+					"value": "\"$.Envelope.Body\"",
+					"metaName": "Select object with path",
+					"metaDescription": "Select the object within the returned structure using this path. Example: $[\"soap:Envelope\"][\"soap:Body\"]. If you remove namespaces, remember to also remove them here."
 				}
 			],
 			"outputs": {
@@ -190,6 +204,29 @@
 				}
 			},
 			"metaMethod": "XML to JSON"
+		},
+		"http.1": {
+			"type": "nodehandler://axway-flow/http",
+			"name": "Error-Response",
+			"method": "setresponse",
+			"parameters": [
+				{
+					"name": "status",
+					"type": "number",
+					"value": "500"
+				},
+				{
+					"name": "body",
+					"type": "object",
+					"value": "{\"error\": \"Unexpected error\"}"
+				}
+			],
+			"outputs": {
+				"next": {
+					"context": "$.response",
+					"routes": []
+				}
+			}
 		}
 	}
 }

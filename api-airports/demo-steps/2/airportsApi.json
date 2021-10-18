@@ -39,7 +39,6 @@
         }
       ],
       "get": {
-        "x-flow": "airports-api-get-location-lat-lon-radius",
         "summary": "Get close by airports",
         "operationId": "get-location-lat-lon-radius",
         "responses": {
@@ -58,7 +57,33 @@
             }
           }
         },
-        "description": "Get a list of airports at a certain location"
+        "description": "Get a list of airports at a certain location",
+        "x-flow": "airportsApi-get-location-lat-lon-radius"
+      }
+    },
+    "/code/{iata-code}": {
+      "parameters": [
+        {
+          "type": "string",
+          "name": "iata-code",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "Airport for IATA-Code",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "operationId": "get-code-iata-code",
+        "description": "Get airport based on the IATA-Code"
       }
     }
   },
