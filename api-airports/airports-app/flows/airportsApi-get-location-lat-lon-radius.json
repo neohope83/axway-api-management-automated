@@ -47,9 +47,7 @@
 				{
 					"name": "body",
 					"type": "jsonpath",
-					"value": "$.json",
-					"metaName": "Body",
-					"metaDescription": "The response payload"
+					"value": "$.response"
 				}
 			],
 			"outputs": {
@@ -62,22 +60,18 @@
 		},
 		"mustache.1": {
 			"type": "nodehandler://@axway/api-builder-plugin-fn-mustache/mustache",
-			"name": "Set SOAP-Message",
+			"name": "Create SOAP-Message",
 			"method": "format",
 			"parameters": [
 				{
 					"name": "data",
 					"type": "jsonpath",
-					"value": "$.params",
-					"metaName": "Data",
-					"metaDescription": "The value to assign to the \"data\" variable in the template."
+					"value": "$.params"
 				},
 				{
 					"name": "template",
 					"type": "string",
-					"value": "\"<soapenv:Envelope xmlns:soapenv=\\\"http://schemas.xmlsoap.org/soap/envelope/\\\" xmlns:v1=\\\"http://v1.airports.cache.conducivetech.com/\\\">\\n   <soapenv:Header/>\\n   <soapenv:Body>\\n      <v1:radius_airports>\\n         <longitude>{{data.lon}}</longitude>\\n         <latitude>{{data.lat}}</latitude>\\n         <radiusMiles>{{data.radius}}</radiusMiles>\\n      </v1:radius_airports>\\n   </soapenv:Body>\\n</soapenv:Envelope>\"",
-					"metaName": "Template",
-					"metaDescription": "The Mustache template. e.g. `Hi {{data.user}}`."
+					"value": "\"<soapenv:Envelope xmlns:soapenv=\\\"http://schemas.xmlsoap.org/soap/envelope/\\\" xmlns:v1=\\\"http://v1.airports.cache.conducivetech.com/\\\">\\n   <soapenv:Header/>\\n   <soapenv:Body>\\n      <v1:radius_airports>\\n         <longitude>{{data.lon}}</longitude>\\n         <latitude>{{data.lat}}</latitude>\\n         <radiusMiles>{{data.radius}}</radiusMiles>\\n      </v1:radius_airports>\\n   </soapenv:Body>\\n</soapenv:Envelope>\""
 				}
 			],
 			"outputs": {
@@ -85,42 +79,33 @@
 					"context": "$.soapMessage",
 					"routes": [
 						"rest.1"
-					],
-					"metaName": "Next"
+					]
 				},
 				"error": {
 					"context": "$.error",
-					"routes": [],
-					"metaName": "Error"
+					"routes": []
 				}
-			},
-			"metaMethod": "Format string"
+			}
 		},
 		"rest.1": {
 			"type": "nodehandler://@axway/api-builder-plugin-fn-restclient/rest",
-			"name": "Call SOAP-Service",
+			"name": "Send SOAP-Request",
 			"method": "post",
 			"parameters": [
 				{
-					"name": "body",
-					"type": "jsonpath",
-					"value": "$.soapMessage",
-					"metaName": "Body",
-					"metaDescription": "The content to send."
-				},
-				{
 					"name": "url",
 					"type": "string",
-					"value": "\"http://ITEM-AX31720:8280/\"",
-					"metaName": "URL",
-					"metaDescription": "The target URL."
+					"value": "\"http://ITEM-AX31720:8280/\""
 				},
 				{
 					"name": "headers",
 					"type": "object",
-					"value": "{\"Content-Type\": \"text/xml;charset=UTF-8\"}",
-					"metaName": "Headers",
-					"metaDescription": "The HTTP headers to set."
+					"value": "{\"Content-Type\": \"text/xml;charset=UTF-8\"}"
+				},
+				{
+					"name": "body",
+					"type": "jsonpath",
+					"value": "$.soapMessage.body"
 				}
 			],
 			"outputs": {
@@ -128,39 +113,25 @@
 					"routes": [
 						"xml-node.1"
 					],
-					"context": "$.soapResponse",
-					"metaName": "2XX"
+					"context": "$.soapResponse"
 				},
 				"3xx": {
-					"routes": [
-						"http.1"
-					],
-					"context": "$.response",
-					"metaName": "3XX"
+					"routes": [],
+					"context": "$.response"
 				},
 				"4xx": {
-					"routes": [
-						"http.1"
-					],
-					"context": "$.response",
-					"metaName": "4XX"
+					"routes": [],
+					"context": "$.response"
 				},
 				"5xx": {
-					"routes": [
-						"http.1"
-					],
-					"context": "$.response",
-					"metaName": "5XX"
+					"routes": [],
+					"context": "$.response"
 				},
 				"error": {
-					"routes": [
-						"http.1"
-					],
-					"context": "$.error",
-					"metaName": "Error"
+					"routes": [],
+					"context": "$.error"
 				}
-			},
-			"metaMethod": "POST"
+			}
 		},
 		"xml-node.1": {
 			"type": "nodehandler://@axway-api-builder-ext/api-builder-plugin-fn-xml-node/xml-node",
@@ -168,62 +139,25 @@
 			"method": "xml2json",
 			"parameters": [
 				{
-					"name": "removeAllNamespaces",
-					"type": "boolean",
-					"value": "true",
-					"metaName": "Remove all namespaces",
-					"metaDescription": "This will remove all namespaces from the JSON-message. Overrides Remove Specific Namespaces."
-				},
-				{
 					"name": "xmlData",
 					"type": "jsonpath",
-					"value": "$.soapResponse.body",
-					"metaName": "XML Input data",
-					"metaDescription": "XML Data. For instance: $.soapResponse.body"
+					"value": "$.soapResponse"
 				},
 				{
-					"name": "selectPath",
-					"type": "string",
-					"value": "\"$.Envelope.Body\"",
-					"metaName": "Select object with path",
-					"metaDescription": "Select the object within the returned structure using this path. Example: $[\"soap:Envelope\"][\"soap:Body\"]. If you remove namespaces, remember to also remove them here."
-				}
-			],
-			"outputs": {
-				"next": {
-					"context": "$.json",
-					"routes": [
-						"http.setresponse.1"
-					],
-					"metaName": "Next"
-				},
-				"error": {
-					"context": "$.error",
-					"routes": [],
-					"metaName": "Error"
-				}
-			},
-			"metaMethod": "XML to JSON"
-		},
-		"http.1": {
-			"type": "nodehandler://axway-flow/http",
-			"name": "Error-Response",
-			"method": "setresponse",
-			"parameters": [
-				{
-					"name": "status",
-					"type": "number",
-					"value": "500"
-				},
-				{
-					"name": "body",
-					"type": "object",
-					"value": "{\"error\": \"Unexpected error\"}"
+					"name": "removeAllNamespaces",
+					"type": "boolean",
+					"value": "true"
 				}
 			],
 			"outputs": {
 				"next": {
 					"context": "$.response",
+					"routes": [
+						"http.setresponse.1"
+					]
+				},
+				"error": {
+					"context": "$.error",
 					"routes": []
 				}
 			}
