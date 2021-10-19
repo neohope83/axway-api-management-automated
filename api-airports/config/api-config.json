@@ -12,26 +12,13 @@
     "name" : "_default",
     "isDefault" : true,
     "devices" : [ {
-      "name" : "OAuth",
-      "type" : "oauth",
+      "name" : "API Key",
+      "type" : "apiKey",
       "order" : 1,
       "properties" : {
-        "tokenStore" : "OAuth Access Token Store",
-        "accessTokenLocation" : "HEADER",
-        "authorizationHeaderPrefix" : "Bearer",
-        "accessTokenLocationQueryString" : "",
-        "scopesMustMatch" : "All",
-        "scopes" : "resource.WRITE, resource.READ",
-        "removeCredentialsOnSuccess" : "true",
-        "implicitGrantEnabled" : "true",
-        "implicitGrantLoginEndpointUrl" : "https://oauth.axway-amplify-central.com/api/oauth/authorize",
-        "implicitGrantLoginTokenName" : "access_token",
-        "authCodeGrantTypeEnabled" : "true",
-        "authCodeGrantTypeRequestEndpointUrl" : "https://oauth.axway-amplify-central.com/api/oauth/authorize",
-        "authCodeGrantTypeRequestClientIdName" : "client_id",
-        "authCodeGrantTypeRequestSecretName" : "client_secret",
-        "authCodeGrantTypeTokenEndpointUrl" : "https://oauth.axway-amplify-central.com/api/oauth/token",
-        "authCodeGrantTypeTokenEndpointTokenName" : "access_code"
+        "apiKeyFieldName" : "KeyId",
+        "takeFrom" : "HEADER",
+        "removeCredentialsOnSuccess" : "true"
       }
     } ]
   } ],
@@ -43,6 +30,15 @@
       "authenticationProfile" : "_default"
     }
   },
+  "authenticationProfiles" : [ {
+    "name" : "_default",
+    "isDefault" : true,
+    "parameters" : {
+      "username" : "SR4U+fkGzutjaxT8G1L4C8gw0hAiIPb4",
+      "password" : ""
+    },
+    "type" : "http_basic"
+  } ],
   "customProperties" : {
     "securityLevel" : "public",
     "publicAPI" : "true",
@@ -60,32 +56,5 @@
     "certFile" : "certificates/isrg-root.crt",
     "inbound" : "false",
     "outbound" : "true"
-  } ],
-  "authenticationProfiles" : [ {
-    "name" : "_default",
-    "isDefault" : true,
-    "parameters" : {
-      "username" : "SR4U+fkGzutjaxT8G1L4C8gw0hAiIPb4",
-      "password" : ""
-    },
-    "type" : "http_basic"
-  } ],
-  "applicationQuota" : {
-    "restrictions" : [ {
-      "method" : "*",
-      "type" : "throttle",
-      "config" : {
-        "messages" : "5",
-        "period" : "hour",
-        "per" : "1"
-      }
-    } ]
-  },
-  "clientOrganizations" : [ "ALL" ],
-  "applications" : [ {
-    "name" : "Airports test app private"
-  },
-  {
-    "name" : "Airports test app public"
   } ]
 }
