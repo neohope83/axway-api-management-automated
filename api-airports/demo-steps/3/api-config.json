@@ -45,7 +45,7 @@
   },
   "customProperties" : {
     "securityLevel" : "public",
-    "publicAPI" : "false",
+    "publicAPI" : "true",
     "project": "Any sample project"
   },
   "caCerts" : [ {
