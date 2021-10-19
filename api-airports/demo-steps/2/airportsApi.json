@@ -61,11 +61,11 @@
         "x-flow": "airportsApi-get-location-lat-lon-radius"
       }
     },
-    "/code/{iata-code}": {
+    "/code/{iatacode}": {
       "parameters": [
         {
           "type": "string",
-          "name": "iata-code",
+          "name": "iatacode",
           "in": "path",
           "required": true
         }

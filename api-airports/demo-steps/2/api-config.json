@@ -1,7 +1,7 @@
 {
-  "name" : "Airports API - OAuth",
+  "name" : "Airports API - OAuth Published",
   "path" : "/api/v1/airports",
-  "state" : "unpublished",
+  "state" : "published",
   "version" : "1.0.0",
   "organization" : "API Development",
   "apiDefinition": "../airports-app/endpoints/airportsApi.json",
@@ -80,5 +80,12 @@
         "per" : "1"
       }
     } ]
-  }
+  },
+  "clientOrganizations" : [ "ALL" ],
+  "applications" : [ {
+    "name" : "Airports test app private"
+  },
+  {
+    "name" : "Airports test app public"
+  } ]
 }
