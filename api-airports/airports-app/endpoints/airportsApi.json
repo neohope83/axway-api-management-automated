@@ -60,6 +60,31 @@
         "description": "Get a list of airports at a certain location",
         "x-flow": "airportsApi-get-location-lat-lon-radius"
       }
+    },
+    "/code/{iatacode}": {
+      "parameters": [
+        {
+          "type": "string",
+          "name": "iatacode",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "Airport for IATA-Code",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "operationId": "get-code-iata-code",
+        "description": "Get airport based on the IATA-Code"
+      }
     }
   },
   "definitions": {},
