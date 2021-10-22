@@ -1431,6 +1431,15 @@
 	<fval name="smtpServer"><value>localhost</value></fval>
 	<fval name="username"><value></value></fval>
 </entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SMTPServer" entityPK="6349261376782223196" parentPK="-3713600546776814444">
+	<fval name="connectionType"><value>TLS/SSL</value></fval>
+	<fval name="mailDebugOn"><value>0</value></fval>
+	<fval name="name"><value>SMTP AWS EU-West</value></fval>
+	<fval name="password"><value>QkIyMTNENUg0Q3lXZDF3MHNOSzlGRmFVZk1nakVkODNFMEF2NGRvT2lHVS8=</value></fval>
+	<fval name="smtpPort"><value>25</value></fval>
+	<fval name="smtpServer"><value>email-smtp.eu-west-3.amazonaws.com</value></fval>
+	<fval name="username"><value>AKIAVAFE2RS2XOUJPO55</value></fval>
+</entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="GSSAcceptors" entityPK="7359183022473029104" parentPK="0">
 	<fval name="name"><value>GSS Acceptors</value></fval>
 </entity>
@@ -1592,6 +1601,9 @@
 	<fval name="overflowToDisk"><value>true</value></fval>
 	<fval name="timeToIdleSeconds"><value>0</value></fval>
 	<fval name="timeToLiveSeconds"><value>0</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ICAPServerGroup" entityPK="727414784605729434" parentPK="0">
+	<fval name="name"><value>ICAP Servers</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryGroup" entityPK="-8096698514098620640" parentPK="0">
 	<fval name="name"><value>Authentication Repositories</value></fval>
@@ -1770,9 +1782,6 @@
 		<value>FormAuthnFilter</value>
 	</fval>
 	<fval name="name"><value>Oracle Entitlements Server 10g Repositories</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ICAPServerGroup" entityPK="727414784605729434" parentPK="0">
-	<fval name="name"><value>ICAP Servers</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="GSSPrincipalNameOidGroup" entityPK="-9125085217631984267" parentPK="0">
 	<fval name="name"><value>GSS Principal Name OIDs</value></fval>
@@ -2003,11 +2012,11 @@
 	<fval name="url"><value>ldap://ldaphost.sample.com:389</value></fval>
 	<fval name="userName"><value>cn=Administrator,cn=users,DC=sample,DC=com</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="RadiusClients" entityPK="6204015979553204120" parentPK="0">
-	<fval name="name"><value>RADIUS Client Settings</value></fval>
-</entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="PassPortKeyStoreManager" entityPK="7476210797640886714" parentPK="0">
 	<fval name="name"><value>PassPort KeyStore Manager</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="RadiusClients" entityPK="6204015979553204120" parentPK="0">
+	<fval name="name"><value>RADIUS Client Settings</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="JMSServiceGroup" entityPK="-7491580007299011568" parentPK="0">
 	<fval name="name"><value>JMS Services</value></fval>
