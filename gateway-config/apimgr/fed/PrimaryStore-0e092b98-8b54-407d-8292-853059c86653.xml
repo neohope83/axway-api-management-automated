@@ -25387,7 +25387,7 @@
 	<fval name="description"><value></value></fval>
 	<fval name="logMask"><value>3</value></fval>
 	<fval name="name"><value>Send mail</value></fval>
-	<fval name="start"><value contentType="reference">-5498927738179846838</value></fval>
+	<fval name="start"><value contentType="reference">-1251148404871251590</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SmtpFilter" entityPK="-5498927738179846838" parentPK="4591099449981254516">
 	<fval name="abortProcessingOnLogError"><value>0</value></fval>
@@ -25405,5 +25405,18 @@
 <key type='SMTPServerGroup'><id field='name' value='SMTP Servers'/><key type='SMTPServer'><id field='name' value='SMTP AWS EU-West'/></key></key>	</value></fval>
 	<fval name="subject"><value>My email</value></fval>
 	<fval name="to"><value>c.wiechmann2012@gmx.de</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ChangeMessageFilter" entityPK="-1251148404871251590" parentPK="4591099449981254516">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="body"><value>HELLO WORLD</value></fval>
+	<fval name="category"><value contentType="reference">-7048163970157787713</value></fval>
+	<fval name="logFailure"><value>Failed in setting the message</value></fval>
+	<fval name="logFatal"><value>Error in setting the message. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Success in setting the message</value></fval>
+	<fval name="name"><value>Set Message</value></fval>
+	<fval name="outputContentType"><value>text/plain</value></fval>
+	<fval name="successNode"><value contentType="reference">-5498927738179846838</value></fval>
 </entity>
 </entityStoreData>
