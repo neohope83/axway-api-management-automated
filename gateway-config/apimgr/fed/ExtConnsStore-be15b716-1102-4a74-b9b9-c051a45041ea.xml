@@ -1437,7 +1437,7 @@
 	<fval name="name"><value>SMTP AWS EU-West</value></fval>
 	<fval name="password"><value>QkIyMTNENUg0Q3lXZDF3MHNOSzlGRmFVZk1nakVkODNFMEF2NGRvT2lHVS8=</value></fval>
 	<fval name="smtpPort"><value>25</value></fval>
-	<fval name="smtpServer"><value>email-smtp.eu-west-3.amazonaws.com</value></fval>
+	<fval name="smtpServer"><value>email-smtp.eu-west-1.amazonaws.com</value></fval>
 	<fval name="username"><value>AKIAVAFE2RS2XOUJPO55</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="GSSAcceptors" entityPK="7359183022473029104" parentPK="0">
