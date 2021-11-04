@@ -25500,6 +25500,70 @@
 	<fval name="name"><value>Handle OData routing</value></fval>
 	<fval name="requiredProperties"></fval>
 	<fval name="script"><value>importPackage(Packages.com.vordel.trace);&#xD;&#xA;&#xD;&#xA;function invoke(msg) &#xD;&#xA;{&#xD;&#xA;&#x9;var httpRequestUri = String(msg.get(&quot;http.request.uri&quot;));&#xD;&#xA;&#x9;var httpRequestPath = msg.get(&quot;http.request.path&quot;);&#xD;&#xA;&#x9;var httpMethodPath = msg.get(&quot;api.method.path&quot;);&#xD;&#xA;&#x9;var destinationURL = msg.get(&quot;destinationURL&quot;);&#xD;&#xA;&#xD;&#xA;&#x9;Trace.info(&quot;OData routing....&quot;);&#xD;&#xA;&#x9;Trace.debug(&quot;httpRequestUri:&#x9;&#x9;&quot; + httpRequestUri);&#xD;&#xA;&#x9;Trace.debug(&quot;httpMethodPath:&#x9;&quot; + httpMethodPath);&#xD;&#xA;&#x9;Trace.debug(&quot;destinationURL:   &#x9;&quot; + destinationURL);&#xD;&#xA;&#xD;&#xA;&#x9;// Remove the wildcard * at the end&#xD;&#xA;&#x9;httpMethodPath=httpMethodPath.substring(0, httpMethodPath.length() - 1);&#xD;&#xA;&#x9;// Perhaps improve this, as the wildcard may oocur more than once&#xD;&#xA;&#x9;destinationURL = destinationURL.replace(&quot;*&quot;, &quot;&quot;);&#xD;&#xA;&#xD;&#xA;&#x9;// Extract the query parameters given and put them in a variable&#xD;&#xA;&#x9;if(httpRequestUri.indexOf(&apos;?&apos;)!=-1) {&#xD;&#xA;&#x9;&#x9;var queryString = httpRequestUri.substring(httpRequestUri.indexOf(&apos;?&apos;)+1)&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;// Reduce the method path about the ({....}) part&#xD;&#xA;&#x9;if( httpMethodPath.indexOf(&quot;(&quot;)!=-1) {&#xD;&#xA;&#x9;&#x9;httpMethodPath = httpMethodPath.substring(0, httpMethodPath.indexOf(&quot;(&quot;));&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;// Extract the path from the incoming request, including the declared BE-Method&#xD;&#xA;&#x9;var queryPath = httpRequestPath.substring(httpRequestPath.indexOf(httpMethodPath));&#xD;&#xA;&#x9;// Remove the * from the Query-Path, if present (for instance, when using Try-IT)&#xD;&#xA;&#x9;queryPath = queryPath.replace(&quot;*&quot;, &quot;&quot;);&#xD;&#xA;     // And the Query-Path must be URI-Encoded&#xD;&#xA;&#x9;queryPath = encodeURI(queryPath);&#xD;&#xA;&#x9;// From the destinationURL we must remove everything after basePath&#xD;&#xA;&#x9;destinationURL = destinationURL.substring(0, destinationURL.indexOf(httpMethodPath));&#xD;&#xA;&#xD;&#xA;&#x9;Trace.debug(&quot;httpMethodPath:   &#x9;&quot; + httpMethodPath);&#xD;&#xA;&#x9;Trace.debug(&quot;queryPath:   &#x9;&quot; + queryPath);&#xD;&#xA;&#x9;Trace.debug(&quot;queryString:   &#x9;&quot; + queryString);&#xD;&#xA;&#x9;&#xD;&#xA;&#xD;&#xA;&#x9;//var requestUri = httpRequestUri.substring(httpRequestUri.indexOf(httpMethodPath)+httpMethodPath.length());&#xD;&#xA;&#x9;if(queryString!=null) {&#xD;&#xA;&#x9;&#x9;var destinationURL = destinationURL + queryPath + &quot;?&quot; + queryString;&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;var destinationURL = destinationURL + queryPath;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;Trace.debug(&quot;OData routing ...&quot;);&#xD;&#xA;&#x9;Trace.info(&quot;Generated destinationURL: &quot; + destinationURL);&#xD;&#xA;&#xD;&#xA;&#x9;msg.put(&quot;destinationURL&quot;, destinationURL);&#xD;&#xA;&#x9;return true;         &#xD;&#xA;}</value></fval>
-	<fval name="successNode"><value contentType="reference">-1</value></fval>
+	<fval name="successNode"><value contentType="reference">5116977043174151038</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ConnectToURLFilter" entityPK="5116977043174151038" parentPK="1122438066328439272">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="body"><value>${content.body}</value></fval>
+	<fval name="caCerts"></fval>
+	<fval name="category"><value contentType="reference">-7048163970157787713</value></fval>
+	<fval name="ciphers"><value>DEFAULT</value></fval>
+	<fval name="closePreviousConnection"><value>false</value></fval>
+	<fval name="connectionFailurePolicy"><value contentType="reference">-1</value></fval>
+	<fval name="forwardClientHostHeader"><value>0</value></fval>
+	<fval name="handleRedirects"><value>1</value></fval>
+	<fval name="loadResponseBody"><value>false</value></fval>
+	<fval name="logFailure"><value>Failed to route request to endpoint.</value></fval>
+	<fval name="logFatal"><value>Error occurred while routing request to endpoint. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Successfully routed request to endpoint</value></fval>
+	<fval name="method"><value>${http.request.verb}</value></fval>
+	<fval name="name"><value>Connect to URL</value></fval>
+	<fval name="performRetries"><value>0</value></fval>
+	<fval name="profileInUse"><value>false</value></fval>
+	<fval name="profileSelector"><value></value></fval>
+	<fval name="profileType"><value>reference</value></fval>
+	<fval name="protoHeaders"><value>${http.headers}</value></fval>
+	<fval name="proxyServer"><value contentType="reference">-1</value></fval>
+	<fval name="retryCount"><value>5</value></fval>
+	<fval name="retryHTTPRanges"><value contentType="reference">-1</value></fval>
+	<fval name="retryLatency"><value>500</value></fval>
+	<fval name="runPolicyOnConnectionFailure"><value>0</value></fval>
+	<fval name="saveTransactionOnFailure"><value>0</value></fval>
+	<fval name="sendProxyMode"><value>0</value></fval>
+	<fval name="sendReceivedContentHeaders"><value>0</value></fval>
+	<fval name="slaBreachAsFailure"><value>0</value></fval>
+	<fval name="sslUsers"><value contentType="reference">-1</value></fval>
+	<fval name="ssloptions">
+		<value>nosslv2</value>
+		<value>nosslv3</value>
+		<value>notlsv1</value>
+		<value>notlsv1_1</value>
+	</fval>
+	<fval name="stickyCookieDomain"><value></value></fval>
+	<fval name="stickyCookieExpiry"><value>600000</value></fval>
+	<fval name="stickyCookieName"><value>unnamed</value></fval>
+	<fval name="stickyCookiePath"><value></value></fval>
+	<fval name="stickyness"><value>0</value></fval>
+	<fval name="transparentProxy"><value>0</value></fval>
+	<fval name="url"><value>${destinationURL}</value></fval>
+	<fval name="useRootCerts"><value>0</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SaveToFileFilter" entityPK="8914333905000838499" parentPK="5116977043174151038">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-7048163970157787713</value></fval>
+	<fval name="directory"><value>${VINSTDIR}/message-archive</value></fval>
+	<fval name="fileName"><value>${id}.out</value></fval>
+	<fval name="includeHeaders"><value>0</value></fval>
+	<fval name="includeRequestLine"><value>0</value></fval>
+	<fval name="logFailure"><value>Filter failed</value></fval>
+	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Filter passed</value></fval>
+	<fval name="maxFileSize"><value>1000</value></fval>
+	<fval name="maxNumberFiles"><value>500</value></fval>
+	<fval name="name"><value>Persistence Details</value></fval>
 </entity>
 </entityStoreData>
