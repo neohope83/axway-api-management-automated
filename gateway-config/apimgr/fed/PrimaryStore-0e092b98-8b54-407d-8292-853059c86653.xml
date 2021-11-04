@@ -25521,6 +25521,7 @@
 	<fval name="method"><value>${http.request.verb}</value></fval>
 	<fval name="name"><value>Connect to URL</value></fval>
 	<fval name="performRetries"><value>0</value></fval>
+	<fval name="profile"><value contentType="reference">-1</value></fval>
 	<fval name="profileInUse"><value>false</value></fval>
 	<fval name="profileSelector"><value></value></fval>
 	<fval name="profileType"><value>reference</value></fval>
@@ -25536,7 +25537,6 @@
 	<fval name="slaBreachAsFailure"><value>0</value></fval>
 	<fval name="sslUsers"><value contentType="reference">-1</value></fval>
 	<fval name="ssloptions">
-		<value>nosslv2</value>
 		<value>nosslv3</value>
 		<value>notlsv1</value>
 		<value>notlsv1_1</value>
@@ -25548,7 +25548,7 @@
 	<fval name="stickyness"><value>0</value></fval>
 	<fval name="transparentProxy"><value>0</value></fval>
 	<fval name="url"><value>${destinationURL}</value></fval>
-	<fval name="useRootCerts"><value>0</value></fval>
+	<fval name="useRootCerts"><value>1</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SaveToFileFilter" entityPK="8914333905000838499" parentPK="5116977043174151038">
 	<fval name="abortProcessingOnLogError"><value>0</value></fval>
