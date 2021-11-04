@@ -17296,7 +17296,7 @@
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ChangeMessageFilter" entityPK="-1251148404871251590" parentPK="4591099449981254516">
 	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="body"><value>&lt;p&gt;&#xD;&#xA;  Hallo ${account_name}, &#xD;&#xA;&lt;/p&gt;&#xD;&#xA;&#xD;&#xA;&lt;p&gt;&#xD;&#xA;  für Sie wurde eine neue Datei: ${file_name} bereit gestellt. &lt;br&gt;&#xD;&#xA;  Sie können die Datei in ihrer &lt;a href=&quot;${url}&quot;&gt;Inbox&lt;/a&gt; abrufen.&lt;/p&gt;&#xD;&#xA;&#xD;&#xA;&lt;p&gt;&#xD;&#xA;  Mit freundlichen Grüßen&lt;br&gt;&#xD;&#xA;  Ihr Kanton Luzern&#xD;&#xA;  &lt;a href=&quot;https://www.lu.ch/&quot;&gt;https://www.lu.ch/&lt;/a&gt;&#xD;&#xA;&lt;/p&gt;</value></fval>
+	<fval name="body"><value>&lt;p&gt;&#xD;&#xA;  Hallo ${account_name}, &#xD;&#xA;&lt;/p&gt;&#xD;&#xA;&#xD;&#xA;&lt;p&gt;&#xD;&#xA;  für Sie wurde eine neue Datei: ${file_name} bereit gestellt. &lt;br&gt;&#xD;&#xA;  Sie können die Datei in Ihrer &lt;a href=&quot;${url}&quot;&gt;Inbox&lt;/a&gt; abrufen.&lt;/p&gt;&#xD;&#xA;&#xD;&#xA;&lt;p&gt;&#xD;&#xA;  Mit freundlichen Grüßen&lt;br&gt;&#xD;&#xA;  Ihr Kanton Luzern&#xD;&#xA;  &lt;a href=&quot;https://www.lu.ch/&quot;&gt;https://www.lu.ch/&lt;/a&gt;&#xD;&#xA;&lt;/p&gt;</value></fval>
 	<fval name="category"><value contentType="reference">-7048163970157787713</value></fval>
 	<fval name="logFailure"><value>Failed in setting the message</value></fval>
 	<fval name="logFatal"><value>Error in setting the message. Error: ${circuit.exception}</value></fval>
