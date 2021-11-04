@@ -17240,7 +17240,7 @@
 	<fval name="attachmentName"><value></value></fval>
 	<fval name="bodyLocation"><value>BODY_IN_TEXT</value></fval>
 	<fval name="category"><value contentType="reference">-7048163970157787713</value></fval>
-	<fval name="from"><value>Kanton Luzern &lt;cwiechmann@axway.com&gt;</value></fval>
+	<fval name="from"><value>cwiechmann@axway.com</value></fval>
 	<fval name="logFailure"><value>Failure while sending message via SMTP.</value></fval>
 	<fval name="logFatal"><value>Error while sending message via SMTP. Error: ${circuit.exception}</value></fval>
 	<fval name="logMask"><value>2</value></fval>
