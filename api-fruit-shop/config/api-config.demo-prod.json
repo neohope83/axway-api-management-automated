@@ -1,9 +1,0 @@
-{
-  "name" : "Fruit Shop on Prod",
-  "clientOrganizations" : [ "ALL" ],
-  "applications" : [ {
-    "name" : "Plexus Suite - Appointment Management"
-  }, {
-    "name" : "Plexus Health Center"
-  } ]
-}
