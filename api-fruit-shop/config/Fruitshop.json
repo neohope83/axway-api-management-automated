@@ -8,7 +8,7 @@
   "info": {
     "title": "Fruit Shop API",
     "version": "1.0.0",
-    "description": "This is a showcase for REST API design and serves as a public API for educational usage.",
+    "description": "This is a showcase for REST API design and serves as a public API for educational usage. And we changed this part.",
     "contact": {
       "name": "Thomas Bayer",
       "url": "http://predic8.de",
