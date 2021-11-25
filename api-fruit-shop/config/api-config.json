@@ -1,5 +1,5 @@
 {
-  "name" : "Fruit Shop Automated 2",
+  "name" : "Fruit Shop Automated",
   "path" : "/shop",
   "state" : "unpublished",
   "version" : "1.0",
@@ -24,7 +24,7 @@
   "customProperties" : {
     "securityLevel" : "public",
     "validateRequest" : "false",
-    "publicAPI" : "false",
+    "publicAPI" : "true",
     "project": "Digital fruits"
   },
   "tags" : {
