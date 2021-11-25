@@ -62,6 +62,6 @@ jobs:
         run: |
           mkdir  $HOME/.kube
           echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 -d > $HOME/.kube/config
-          kubectl set image -n apim deployment/anm anm=${{ env.dockerRegistry }}/${{ env.dockerRepository }}/${{ env.outImage }}-${{ env.IMAGE_TAG }}
+          kubectl set image -n apim deployment/axway-apim-anm axway-apim-anm=${{ env.dockerRegistry }}/${{ env.dockerRepository }}/${{ env.outImage }}-${{ env.IMAGE_TAG }}
       - name: Verify ANM deployment
-        run: kubectl -n apim rollout status deployment/anm
+        run: kubectl -n apim rollout status deployment/axway-apim-anm
