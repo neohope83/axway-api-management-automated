@@ -3,8 +3,8 @@ name: Deploy Admin-Node-Manager
 env:
   dockerRegistry: ghcr.io
   dockerRepository: cwiechmann/axway-api-management-automated
-  baseImage: "base:77-20210830-1"
-  outImage: "anm:77-20210830-1"
+  baseImage: "base:77-20211130-1"
+  outImage: "anm:77-20211130-1"
 
 on:
   push:

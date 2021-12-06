@@ -15,7 +15,7 @@
       "rtm resources" : { "path" : "/trm/*" },
       "scratch resources" : { "path" : "/scratch/*" },
       "settings resources" : { "path" : "/settings/*" },
-      "vordel resources" : { "path" : "/vordel/*" },
+      "vordel resources" : { "path" : "/vordel/*" }, 
       "sm resources" : { "path" : "/sm/*" },
       "css" : { "path" : "/css/*" },
       "site icon" : { "path" : "/favicon.ico" },
