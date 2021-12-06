@@ -24,7 +24,7 @@
   "customProperties" : {
     "securityLevel" : "public",
     "validateRequest" : "false",
-    "publicAPI" : "true",
+    "publicAPI" : "false",
     "project": "Digital fruits"
   },
   "tags" : {
