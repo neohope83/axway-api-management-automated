@@ -3,7 +3,7 @@
 # name-value pair of env.MyCustomSetting=MyCustomValue.
 # When the server starts up, every occurrence of env.MyCustomSetting is expanded to the value of MyCustomValue.
 # For example, by default the port in the server configuration is set to ${env.PORT.TRAFFIC}, specifying a name-value
-# pair of env.PORT.TRAFFIC=8080 results in the server opening up port 8080 at start up.
+# pair of env.PORT.TRAFFIC=8080 results in the server opening up port 8080 at start up. 
 
 # the default port which the Node Manager listens on for HTTP traffic
 env.PORT.TRAFFIC=8090
