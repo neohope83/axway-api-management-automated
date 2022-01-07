@@ -2,7 +2,7 @@
   "name" : "EMR-DiagnosticInfo",
   "path" : "/api/emr/diagnostic",
   "state" : "published",
-  "version" : "3.7",
+  "version" : "3.7.0",
   "organization" : "Plexus Health",
   "apiDefinition" : "EMR-DiagnosticInfo.json",
   "summary" : "Processes submitted patient diagnostics data",
