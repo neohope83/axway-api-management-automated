@@ -4,7 +4,7 @@ env:
   appId: api-emr-diagnostic
   working-directory: api-emr-diagnostic
   dockerRegistry: docker.pkg.github.com
-  dockerRepository: Axway-API-Management-Plus/axway-api-management-automated
+  dockerRepository: axway-api-management-plus/axway-api-management-automated
 
 on:
   push:
