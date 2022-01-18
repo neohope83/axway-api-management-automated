@@ -40,17 +40,53 @@
 				{
 					"name": "status",
 					"value": "200",
-					"type": "number"
+					"type": "number",
+					"metaName": "Status",
+					"metaDescription": "The HTTP status code"
 				},
 				{
 					"name": "body",
-					"value": "{\n    \"lat\": \"ex in adipisicing dolor eiusmod\",\n    \"lon\": \"exercitation eu aliquip dolor\",\n    \"location\": \"nisi exercitation sed Ut in\"\n}",
-					"type": "object"
+					"type": "object",
+					"value": "{\n    \"lat\": \"545\",\n    \"lon\": \"5445\",\n    \"location\": \"Berlin\"\n}",
+					"metaName": "Body",
+					"metaDescription": "The response payload"
 				}
 			],
 			"outputs": {
 				"next": {
-					"context": "$.response"
+					"context": "$.response",
+					"metaName": "Next",
+					"routes": [
+						"condition.1"
+					]
+				}
+			},
+			"metaMethod": "Set HTTP Response"
+		},
+		"condition.1": {
+			"type": "nodehandler://axway-flow/condition",
+			"name": "Equals",
+			"method": "equals",
+			"parameters": [
+				{
+					"name": "source",
+					"type": "jsonpath",
+					"value": "$.request.body.dsdsa"
+				},
+				{
+					"name": "value",
+					"type": "string",
+					"value": "\"3123\""
+				}
+			],
+			"outputs": {
+				"true": {
+					"routes": [],
+					"context": "$.result.customer.validation"
+				},
+				"false": {
+					"routes": [],
+					"context": "$.equals"
 				}
 			}
 		}

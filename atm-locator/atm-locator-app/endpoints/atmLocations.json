@@ -191,6 +191,16 @@
         "operationId": "LIST-atm-locations",
         "description": "Get all ATMs",
         "x-flow": "atmLocations-LIST-atm-locations"
+      },
+      "delete": {
+        "summary": "",
+        "operationId": "delete-atm",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "description": "Delete something"
       }
     }
   },
