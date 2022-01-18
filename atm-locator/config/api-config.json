@@ -1,5 +1,5 @@
 {
-  "name": "ATM Locator API",
+  "name": "ATM Locator API-Test",
   "path": "/api/atm/locator",
   "state": "published",
   "version": "2.0",
