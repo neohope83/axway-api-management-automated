@@ -25,7 +25,8 @@
 		"@axway/api-builder-plugin-fn-logger": "^1.0.2",
 		"@axway/api-builder-plugin-fn-mustache": "^1.0.11",
 		"@axway/api-builder-plugin-fn-restclient": "^2.0.26",
-		"@axway/api-builder-plugin-fn-swagger": "^3.0.8"
+		"@axway/api-builder-plugin-fn-swagger": "^3.0.8",
+		"elastic-apm-node": "^3.27.0"
 	},
 	"devDependencies": {
 		"@axway/api-builder-admin": "^1.48.3",
