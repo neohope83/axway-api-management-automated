@@ -6,6 +6,7 @@
   "organization": "Axway",
   "apiDefinition": "atm-locator-spec.json",
   "image": "atm-locator-icon.png",
+  "backendBasepath" : "http://atm-locator-app:8080/api/banking/v2",
   "securityProfiles": [
     {
       "name": "_default",
