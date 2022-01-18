@@ -25,6 +25,15 @@
       ]
     }
   ],
+  "authenticationProfiles" : [ {
+    "name" : "_default",
+    "isDefault" : true,
+    "parameters" : {
+      "username" : "SoJZ+VvN5eJO9gPwFflSaDvPK2yGMtqj",
+      "password" : ""
+    },
+    "type" : "http_basic"
+  } ],
   "clientOrganizations": ["Plexus Health", "Axway", "FastCars", "Partners"],
   "customProperties": {
     "securityLevel": "public",
