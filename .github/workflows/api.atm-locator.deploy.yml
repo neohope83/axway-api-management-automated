@@ -40,7 +40,7 @@ jobs:
       - name: Create image tag
         run: echo "IMAGE_TAG=$(echo $GITHUB_SHA | head -c7)" >> $GITHUB_ENV
       - name: Build container image
-        if: "!contains(github.event.head_commit.message, 'skip builder')"
+        if: "!contains(github.event.head_commit.message, 'skip app')"
         uses: docker/build-push-action@v2
         with:
           context: ./${{ env.working-directory }}/${{ env.appId }}
@@ -64,14 +64,14 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-1
       - name: Deploy to Kubernetes
-        if: "!contains(github.event.head_commit.message, 'skip builder')"
+        if: "!contains(github.event.head_commit.message, 'skip app')"
         run: |
           mkdir  $HOME/.kube
           echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 -d > $HOME/.kube/config
           kubectl apply -n apim -f config/app-deployment.yaml
         timeout-minutes: 2
       - name: Verify deployment
-        if: "!contains(github.event.head_commit.message, 'skip builder')"
+        if: "!contains(github.event.head_commit.message, 'skip app')"
         run: kubectl -n apim rollout status deployment/${{ env.appId }}
         timeout-minutes: 2
 
