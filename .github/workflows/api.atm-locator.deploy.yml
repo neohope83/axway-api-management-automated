@@ -3,8 +3,8 @@ name: Deploy ATM-Locator
 env:
   appId: atm-locator-app
   working-directory: atm-locator
-  dockerRegistry: docker.pkg.github.com
-  dockerRepository: axway-api-management-plus/axway-api-management-automated
+  dockerRegistry: ghcr.io
+  dockerRepository: cwiechmann/axway-api-management-automated
 
 on:
   push:
