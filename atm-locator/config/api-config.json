@@ -2,7 +2,7 @@
   "name": "ATM Locator API",
   "path": "/api/atm/locator",
   "state": "published",
-  "version": "2.0",
+  "version": "1.0",
   "organization": "Axway",
   "apiDefinition": "../atm-locator-app/endpoints/atmLocations.json",
   "image": "atm-locator-icon.png",

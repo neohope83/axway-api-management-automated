@@ -30,57 +30,6 @@
 			],
 			"request": {
 				"method": "GET",
-				"header": [
-					{
-						"key": "KeyId",
-						"value": "{{validAPIKey}}",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "https://{{host}}/api/atm/locator/atm",
-					"protocol": "https",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"api",
-						"atm",
-						"locator",
-						"atm"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Invalid API-Key List ATMs",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Invalid API-Key - Status code must be 401\", function () {\r",
-							"    pm.response.to.have.status(401);\r",
-							"});\r",
-							"\r",
-							"pm.test(\"No body should have been returned\", function () {\r",
-							"    pm.response.to.not.be.withBody;\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "KeyId",
-						"value": "Invalid-API-Key",
-						"type": "text"
-					}
-				],
 				"url": {
 					"raw": "https://{{host}}/api/atm/locator/atm",
 					"protocol": "https",
