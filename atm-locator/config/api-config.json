@@ -7,6 +7,24 @@
   "apiDefinition": "../atm-locator-app/endpoints/atmLocations.json",
   "image": "atm-locator-icon.png",
   "backendBasepath" : "http://atm-locator-app:8080/api/banking/v2",
+  "securityProfiles": [
+    {
+      "name": "_default",
+      "isDefault": true,
+      "devices": [
+        {
+          "name": "API Key",
+          "type": "apiKey",
+          "order": 1,
+          "properties": {
+            "apiKeyFieldName": "KeyId",
+            "takeFrom": "HEADER",
+            "removeCredentialsOnSuccess": "true"
+          }
+        }
+      ]
+    }
+  ],
   "authenticationProfiles" : [ {
     "name" : "_default",
     "isDefault" : true,
