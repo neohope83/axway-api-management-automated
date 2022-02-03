@@ -30,6 +30,13 @@
 			],
 			"request": {
 				"method": "GET",
+				"header": [
+					{
+						"key": "KeyId",
+						"value": "{{validAPIKey}}",
+						"type": "text"
+					}
+				],				
 				"url": {
 					"raw": "https://{{host}}/api/atm/locator/atm",
 					"protocol": "https",
