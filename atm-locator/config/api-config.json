@@ -14,6 +14,24 @@
     "ORIGINAL",
     "api-info.md" 
   ],
+  "securityProfiles": [
+    {
+      "name": "_default",
+      "isDefault": true,
+      "devices": [
+        {
+          "name": "API Key",
+          "type": "apiKey",
+          "order": 1,
+          "properties": {
+            "apiKeyFieldName": "KeyId",
+            "takeFrom": "HEADER",
+            "removeCredentialsOnSuccess": "true"
+          }
+        }
+      ]
+    }
+  ],
   "authenticationProfiles" : [ {
     "name" : "_default",
     "isDefault" : true,
