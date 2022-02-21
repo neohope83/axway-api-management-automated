@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+   <edmx:DataServices m:DataServiceVersion="2.0">
+      <Schema Namespace="Y6A1_API_LIST_LOANS_SRV" xml:lang="de" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+         <EntityType Name="Loan" sap:content-version="1">
+            <Key>
+               <PropertyRef Name="BusinessObjectIdentifier"/>
+            </Key>
+            <Property Name="ContractStatus" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Status-Bez." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="BusinessObjectIdentifier" Type="Edm.String" Nullable="false" MaxLength="34" sap:unicode="false" sap:label="GeschÃ¤ftsobjekt-ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="CbCustomerId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="CoBa Kundennr" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="DisbursementStatus" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Bez. AusprÃ¤gung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="NaturalPersonId" Type="Edm.String" Nullable="false" MaxLength="16" sap:unicode="false" sap:label="NPKENN" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="SapLoanId" Type="Edm.String" Nullable="false" MaxLength="13" sap:unicode="false" sap:label="Vertragsnummer" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="FileNumber" Type="Edm.String" Nullable="false" MaxLength="32" sap:unicode="false" sap:label="Aktenzeichen" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="ContractIban" Type="Edm.String" Nullable="false" MaxLength="34" sap:unicode="false" sap:label="IBAN" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="CbAccountId" Type="Edm.String" Nullable="false" MaxLength="13" sap:unicode="false" sap:label="Alternat. Nr 1" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="ProductType" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Status-Bez." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="LoanType" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Kurzbezeichnung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="LoanClass" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Kurzbezeichnung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="Currency" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Vertr.WÃ¤hrung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+            <Property Name="SalesPromotionCode" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Bezeichung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="RepaymentType" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Kurzbeschreibung" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="CustomerAgreementId" Type="Edm.String" Nullable="false" MaxLength="16" sap:unicode="false" sap:label="Kd Vereinb Kenn." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="TarifInsuranceBorrower" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Tarif/Gruppe" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="TarifInsuranceOther" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Tarif/Gruppe" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="InstallmentPeriod" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Rhyth Monat" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="IbanInstallment" Type="Edm.String" Nullable="false" MaxLength="34" sap:unicode="false" sap:label="IBAN" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="InterestRateType" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Kennzeichen Zinsart" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="ProductVariant" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Bez. Produktvariante" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="SpecialRepaymentType" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="SoTi Art" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="CommitmentCapital" Type="Edm.Decimal" Nullable="false" Precision="14" Scale="3" sap:unicode="false" sap:label="Zusagekapital" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="DisbursmentRate" Type="Edm.Decimal" Nullable="false" Precision="10" Scale="7" sap:unicode="false" sap:label="Ein/AusZahlkurs" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="AmountOverdue" Type="Edm.Decimal" Nullable="false" Precision="14" Scale="3" sap:unicode="false" sap:label="Betrag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="ResidualCapital" Type="Edm.Decimal" Nullable="false" Precision="14" Scale="3" sap:unicode="false" sap:label="Restkap.Sollst." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="AmountInstallment" Type="Edm.Decimal" Nullable="false" Precision="14" Scale="3" sap:unicode="false" sap:label="Betrag in BW" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="NominalInterestRate" Type="Edm.Decimal" Nullable="false" Precision="10" Scale="7" sap:unicode="false" sap:label="Prozentsatz" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="CommitmentInterestRate" Type="Edm.Decimal" Nullable="false" Precision="10" Scale="7" sap:unicode="false" sap:label="Prozentsatz" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="InterestMargin" Type="Edm.Decimal" Nullable="false" Precision="9" Scale="5" sap:unicode="false" sap:label="Darlehens-All-I" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="AmountMaxSpecialRepayment" Type="Edm.Decimal" Nullable="false" Precision="14" Scale="3" sap:unicode="false" sap:label="max. Sondertilg." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="AmountRemainSpecialRepay" Type="Edm.Decimal" Nullable="false" Precision="14" Scale="3" sap:unicode="false" sap:label="rest. Sondertilg." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="AmountMaxSpecialRepayNext" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:label="Max-Betrag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="DateSpecialRepayNext" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="SoTi FÃ¤lligkeit" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="AsOfDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="aktuelles Datum" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="DateOfCommitment" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Zusagedatum" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="DateTermEnd" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Laufzeitende" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="DateFixedUntil" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Fest bis" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="DateNextInstallment" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="FÃ¤lligkeit" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="FixingDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Zinsfeststellg" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="DateCommitmentInterest" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Pos. gÃ¼ltig ab" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="DateInstallmentBreakFrom" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Ratenzahlpause von" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            <Property Name="DateInstallmentBreakTo" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Ratenzahlpause bis" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+         </EntityType>
+         <EntityContainer Name="Y6A1_API_LIST_LOANS_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+            <EntitySet Name="LoanSet" EntityType="Y6A1_API_LIST_LOANS_SRV.Loan" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+         </EntityContainer>
+         <atom:link rel="self" href="https://cagie2cs1t.intranet.commerzbank.com:8443/comm/y6a1_api_list_loans_srv/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+         <atom:link rel="latest-version" href="https://cagie2cs1t.intranet.commerzbank.com:8443/comm/y6a1_api_list_loans_srv/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+      </Schema>
+   </edmx:DataServices>
+</edmx:Edmx>

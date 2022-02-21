@@ -1,0 +1,510 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "OData Service",
+    "description" : "The OData Service from metadataLoanList.xml",
+    "version" : "1.0"
+  },
+  "servers" : [ {
+    "url" : "http://localhost:8180/integration/order/"
+  } ],
+  "paths" : {
+    "/LoanSet*" : {
+      "get" : {
+        "tags" : [ "LoanSet" ],
+        "summary" : "Get LoanSet",
+        "description" : "Returns the entity: LoanSet. For more information using the query parameters please see: <a target=\"_blank\" href=\"https://www.odata.org/documentation/odata-version-2-0/uri-conventions/\">URI Conventions (OData Version 2.0)</a><br />The entity: LoanSet supports <b>no</b> navigational properties.",
+        "operationId" : "getLoanSet",
+        "parameters" : [ {
+          "name" : "$expand",
+          "in" : "query",
+          "description" : "The syntax of a $expand query option is a comma-separated list of Navigation Properties. Additionally each Navigation Property can be followed by a forward slash and another Navigation Property to enable identifying a multi-level relationship.",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "$select",
+          "in" : "query",
+          "description" : "The value of a $select System Query Option is a comma-separated list of selection clauses. Each selection clause may be a Property name, Navigation Property name, or the \"*\" character.",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "ContractStatus"
+        }, {
+          "name" : "$filter",
+          "in" : "query",
+          "description" : "Filter items by property values. See <a target=\"_blank\" href=\"https://www.odata.org/documentation/odata-version-2-0/uri-conventions/\">4.5. Filter System Query Option ($filter)</a> for more information.",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "$orderby",
+          "in" : "query",
+          "description" : "Order items by property values. See <a target=\"_blank\" href=\"https://www.odata.org/documentation/odata-version-2-0/uri-conventions/\">4.2. Orderby System Query Option ($orderby)</a> for more information.",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "ContractStatus"
+        }, {
+          "name" : "$top",
+          "in" : "query",
+          "description" : "Show only the first n items",
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32",
+            "default" : 10
+          }
+        }, {
+          "name" : "$skip",
+          "in" : "query",
+          "description" : "Skip the first n items",
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        }, {
+          "name" : "$inlinecount",
+          "in" : "query",
+          "description" : "Include count of items",
+          "schema" : {
+            "type" : "string",
+            "enum" : [ "allpages", "none" ]
+          }
+        }, {
+          "name" : "$format",
+          "in" : "query",
+          "description" : "Response format if supported by the backend service.",
+          "schema" : {
+            "type" : "string",
+            "enum" : [ "atom", "xml", "json" ]
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "EntitySet LoanSet",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Loan"
+                  }
+                }
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected error",
+            "content" : {
+              "application/json" : { }
+            }
+          }
+        }
+      }
+    },
+    "/LoanSet({Id})*" : {
+      "get" : {
+        "tags" : [ "LoanSet" ],
+        "summary" : "Get LoanSet on Id",
+        "description" : "Returns the entity: LoanSet. For more information using the query parameters please see: <a target=\"_blank\" href=\"https://www.odata.org/documentation/odata-version-2-0/uri-conventions/\">URI Conventions (OData Version 2.0)</a><br />The entity: LoanSet supports <b>no</b> navigational properties.",
+        "operationId" : "getLoanSetId",
+        "parameters" : [ {
+          "name" : "$expand",
+          "in" : "query",
+          "description" : "The syntax of a $expand query option is a comma-separated list of Navigation Properties. Additionally each Navigation Property can be followed by a forward slash and another Navigation Property to enable identifying a multi-level relationship.",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "$select",
+          "in" : "query",
+          "description" : "The value of a $select System Query Option is a comma-separated list of selection clauses. Each selection clause may be a Property name, Navigation Property name, or the \"*\" character.",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "ContractStatus"
+        }, {
+          "name" : "$format",
+          "in" : "query",
+          "description" : "Response format if supported by the backend service.",
+          "schema" : {
+            "type" : "string",
+            "enum" : [ "atom", "xml", "json" ]
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "EntitySet LoanSet",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Loan"
+                }
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected error",
+            "content" : {
+              "application/json" : { }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "LoanSet" ],
+        "summary" : "Create a new entity LoanSet",
+        "description" : "Create a new entity in EntitySet: LoanSet",
+        "operationId" : "createLoanSet",
+        "requestBody" : {
+          "description" : "The entity to create",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Loan"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "201" : {
+            "description" : "EntitySet LoanSet",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected error",
+            "content" : {
+              "application/json" : { }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "LoanSet" ],
+        "summary" : "Delete LoanSet",
+        "description" : "Delete entity in EntitySet LoanSet",
+        "operationId" : "deleteLoanSet",
+        "responses" : {
+          "204" : {
+            "description" : "EntitySet LoanSet successfully deleted",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected error",
+            "content" : {
+              "application/json" : { }
+            }
+          }
+        }
+      },
+      "patch" : {
+        "tags" : [ "LoanSet" ],
+        "summary" : "Update entity LoanSet",
+        "description" : "Update an existing entity in EntitySet: LoanSet",
+        "operationId" : "updateLoanSet",
+        "requestBody" : {
+          "description" : "The entity to update",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Loan"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "EntitySet LoanSet",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected error",
+            "content" : {
+              "application/json" : { }
+            }
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "Id",
+        "in" : "path",
+        "description" : "Id supports: BusinessObjectIdentifier",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      } ]
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Loan" : {
+        "type" : "object",
+        "properties" : {
+          "ContractStatus" : {
+            "title" : "Status-Bez.",
+            "maxLength" : 30,
+            "type" : "string",
+            "nullable" : false
+          },
+          "BusinessObjectIdentifier" : {
+            "title" : "GeschÃ¤ftsobjekt-ID",
+            "maxLength" : 34,
+            "type" : "string",
+            "nullable" : false
+          },
+          "CbCustomerId" : {
+            "title" : "CoBa Kundennr",
+            "maxLength" : 10,
+            "type" : "string",
+            "nullable" : false
+          },
+          "DisbursementStatus" : {
+            "title" : "Bez. AusprÃ¤gung",
+            "maxLength" : 50,
+            "type" : "string",
+            "nullable" : false
+          },
+          "NaturalPersonId" : {
+            "title" : "NPKENN",
+            "maxLength" : 16,
+            "type" : "string",
+            "nullable" : false
+          },
+          "SapLoanId" : {
+            "title" : "Vertragsnummer",
+            "maxLength" : 13,
+            "type" : "string",
+            "nullable" : false
+          },
+          "FileNumber" : {
+            "title" : "Aktenzeichen",
+            "maxLength" : 32,
+            "type" : "string",
+            "nullable" : false
+          },
+          "ContractIban" : {
+            "title" : "IBAN",
+            "maxLength" : 34,
+            "type" : "string",
+            "nullable" : false
+          },
+          "CbAccountId" : {
+            "title" : "Alternat. Nr 1",
+            "maxLength" : 13,
+            "type" : "string",
+            "nullable" : false
+          },
+          "ProductType" : {
+            "title" : "Status-Bez.",
+            "maxLength" : 30,
+            "type" : "string",
+            "nullable" : false
+          },
+          "LoanType" : {
+            "title" : "Kurzbezeichnung",
+            "maxLength" : 15,
+            "type" : "string",
+            "nullable" : false
+          },
+          "LoanClass" : {
+            "title" : "Kurzbezeichnung",
+            "maxLength" : 15,
+            "type" : "string",
+            "nullable" : false
+          },
+          "Currency" : {
+            "title" : "Vertr.WÃ¤hrung",
+            "maxLength" : 5,
+            "type" : "string",
+            "nullable" : false
+          },
+          "SalesPromotionCode" : {
+            "title" : "Bezeichung",
+            "maxLength" : 50,
+            "type" : "string",
+            "nullable" : false
+          },
+          "RepaymentType" : {
+            "title" : "Kurzbeschreibung",
+            "maxLength" : 60,
+            "type" : "string",
+            "nullable" : false
+          },
+          "CustomerAgreementId" : {
+            "title" : "Kd Vereinb Kenn.",
+            "maxLength" : 16,
+            "type" : "string",
+            "nullable" : false
+          },
+          "TarifInsuranceBorrower" : {
+            "title" : "Tarif/Gruppe",
+            "maxLength" : 15,
+            "type" : "string",
+            "nullable" : false
+          },
+          "TarifInsuranceOther" : {
+            "title" : "Tarif/Gruppe",
+            "maxLength" : 15,
+            "type" : "string",
+            "nullable" : false
+          },
+          "InstallmentPeriod" : {
+            "title" : "Rhyth Monat",
+            "maxLength" : 3,
+            "type" : "string",
+            "nullable" : false
+          },
+          "IbanInstallment" : {
+            "title" : "IBAN",
+            "maxLength" : 34,
+            "type" : "string",
+            "nullable" : false
+          },
+          "InterestRateType" : {
+            "title" : "Kennzeichen Zinsart",
+            "maxLength" : 1,
+            "type" : "string",
+            "nullable" : false
+          },
+          "ProductVariant" : {
+            "title" : "Bez. Produktvariante",
+            "maxLength" : 30,
+            "type" : "string",
+            "nullable" : false
+          },
+          "SpecialRepaymentType" : {
+            "title" : "SoTi Art",
+            "maxLength" : 30,
+            "type" : "string",
+            "nullable" : false
+          },
+          "CommitmentCapital" : {
+            "title" : "Zusagekapital",
+            "type" : "integer",
+            "format" : "int32",
+            "nullable" : false
+          },
+          "DisbursmentRate" : {
+            "title" : "Ein/AusZahlkurs",
+            "type" : "integer",
+            "format" : "int32",
+            "nullable" : false
+          },
+          "AmountOverdue" : {
+            "title" : "Betrag",
+            "type" : "integer",
+            "format" : "int32",
+            "nullable" : false
+          },
+          "ResidualCapital" : {
+            "title" : "Restkap.Sollst.",
+            "type" : "integer",
+            "format" : "int32",
+            "nullable" : false
+          },
+          "AmountInstallment" : {
+            "title" : "Betrag in BW",
+            "type" : "integer",
+            "format" : "int32",
+            "nullable" : false
+          },
+          "NominalInterestRate" : {
+            "title" : "Prozentsatz",
+            "type" : "integer",
+            "format" : "int32",
+            "nullable" : false
+          },
+          "CommitmentInterestRate" : {
+            "title" : "Prozentsatz",
+            "type" : "integer",
+            "format" : "int32",
+            "nullable" : false
+          },
+          "InterestMargin" : {
+            "title" : "Darlehens-All-I",
+            "type" : "integer",
+            "format" : "int32",
+            "nullable" : false
+          },
+          "AmountMaxSpecialRepayment" : {
+            "title" : "max. Sondertilg.",
+            "type" : "integer",
+            "format" : "int32",
+            "nullable" : false
+          },
+          "AmountRemainSpecialRepay" : {
+            "title" : "rest. Sondertilg.",
+            "type" : "integer",
+            "format" : "int32",
+            "nullable" : false
+          },
+          "AmountMaxSpecialRepayNext" : {
+            "title" : "Max-Betrag",
+            "type" : "integer",
+            "format" : "int32",
+            "nullable" : false
+          },
+          "DateSpecialRepayNext" : {
+            "title" : "SoTi FÃ¤lligkeit",
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "AsOfDate" : {
+            "title" : "aktuelles Datum",
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "DateOfCommitment" : {
+            "title" : "Zusagedatum",
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "DateTermEnd" : {
+            "title" : "Laufzeitende",
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "DateFixedUntil" : {
+            "title" : "Fest bis",
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "DateNextInstallment" : {
+            "title" : "FÃ¤lligkeit",
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "FixingDate" : {
+            "title" : "Zinsfeststellg",
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "DateCommitmentInterest" : {
+            "title" : "Pos. gÃ¼ltig ab",
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "DateInstallmentBreakFrom" : {
+            "title" : "Ratenzahlpause von",
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "DateInstallmentBreakTo" : {
+            "title" : "Ratenzahlpause bis",
+            "type" : "string",
+            "format" : "date-time"
+          }
+        }
+      }
+    }
+  }
+}

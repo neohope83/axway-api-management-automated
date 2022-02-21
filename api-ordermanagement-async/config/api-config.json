@@ -1,0 +1,12 @@
+{
+  "name": "SAP Loan",
+  "path": "/api/v1/orders",
+  "state": "unpublished",
+  "version": "1.0.0",
+  "organization": "API Development",
+  "image": "warenkorb.png",
+  "apiSpecification": {
+    "resource": "metadataLoanList.xml"
+  },
+  "backendBasepath" : "http://localhost:8180/integration/order"
+}

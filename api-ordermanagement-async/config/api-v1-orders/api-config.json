@@ -1,0 +1,13 @@
+{
+  "name" : "Order Management",
+  "path" : "/api/v1/orders",
+  "state" : "unpublished",
+  "version" : "1.0.0",
+  "organization" : "API Development",
+  "apiSpecification" : {
+    "resource" : "Order Management.json"
+  },
+  "backendBasepath" : "http://localhost:8180/integration/order/",
+  "image" : "api-image.jpg",
+  "clientOrganizations" : [ "API Development" ]
+}

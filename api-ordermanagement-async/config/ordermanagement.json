@@ -1,0 +1,397 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "ordermanagement2",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/order": {
+      "parameters": [],
+      "post": {
+        "summary": "Create new order",
+        "operationId": "create-order",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/MessageReceived"
+          }
+        },
+        "description": "Creates a new order. We are processing your order creation request internally and let you know, once it's confirmed and updates occur. You need to provide us a way to callback otherwise you need to poll to get further updates.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              },
+              "examples": {
+                "example-1": {
+                  "value": {
+                    "id": 0,
+                    "orderNumber": "string",
+                    "orderDate": "1997-10-31",
+                    "createDate": "2019-08-24",
+                    "recipient": {
+                      "companyName": "string",
+                      "address": {
+                        "zipCode": 0,
+                        "street": "string",
+                        "city": "string",
+                        "contact": {
+                          "firstName": "string",
+                          "lastName": "string",
+                          "phone": "string",
+                          "email": "string"
+                        }
+                      },
+                      "contacts": [
+                        {
+                          "firstName": "string",
+                          "lastName": "string",
+                          "phone": "string",
+                          "email": "string"
+                        }
+                      ]
+                    },
+                    "buyer": {
+                      "companyName": "string",
+                      "address": {
+                        "zipCode": 0,
+                        "street": "string",
+                        "city": "string",
+                        "contact": {
+                          "firstName": "string",
+                          "lastName": "string",
+                          "phone": "string",
+                          "email": "string"
+                        }
+                      },
+                      "contacts": [
+                        {
+                          "firstName": "string",
+                          "lastName": "string",
+                          "phone": "string",
+                          "email": "string"
+                        }
+                      ]
+                    },
+                    "orderItems": [
+                      {
+                        "position": 0,
+                        "quantity": 0,
+                        "qtyUnit": "string",
+                        "product": {
+                          "productNo": "string",
+                          "productName": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "description": "The order entity"
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "callbackURL",
+            "description": "If you provide a callback URL we notify you for updates"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "callbackEmail",
+            "description": "You may also provide us an email. We send you notifications"
+          }
+        ],
+        "tags": [
+          "order"
+        ]
+      }
+    },
+    "/order/{orderId}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "orderId",
+          "in": "path",
+          "required": true,
+          "description": "The order ID you have received"
+        }
+      ],
+      "put": {
+        "summary": "Change order",
+        "operationId": "change-order",
+        "description": "You can update an order once you have received the final orderId.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              },
+              "examples": {
+                "example-1": {
+                  "value": {
+                    "id": 0,
+                    "orderNumber": "string",
+                    "orderDate": "1997-10-31",
+                    "createDate": "2019-08-24",
+                    "recipient": {
+                      "companyName": "string",
+                      "address": {
+                        "zipCode": 0,
+                        "street": "string",
+                        "city": "string",
+                        "contact": {
+                          "firstName": "string",
+                          "lastName": "string",
+                          "phone": "string",
+                          "email": "string"
+                        }
+                      },
+                      "contacts": [
+                        {
+                          "firstName": "string",
+                          "lastName": "string",
+                          "phone": "string",
+                          "email": "string"
+                        }
+                      ]
+                    },
+                    "buyer": {
+                      "companyName": "string",
+                      "address": {
+                        "zipCode": 0,
+                        "street": "string",
+                        "city": "string",
+                        "contact": {
+                          "firstName": "string",
+                          "lastName": "string",
+                          "phone": "string",
+                          "email": "string"
+                        }
+                      },
+                      "contacts": [
+                        {
+                          "firstName": "string",
+                          "lastName": "string",
+                          "phone": "string",
+                          "email": "string"
+                        }
+                      ]
+                    },
+                    "orderItems": [
+                      {
+                        "position": 0,
+                        "quantity": 0,
+                        "qtyUnit": "string",
+                        "product": {
+                          "productNo": "string",
+                          "productName": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "description": "The changed order"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/MessageReceived"
+          }
+        },
+        "tags": [
+          "order"
+        ]
+      },
+      "delete": {
+        "summary": "Cancel order",
+        "operationId": "cancel-order",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/MessageReceived"
+          }
+        },
+        "tags": [
+          "order"
+        ],
+        "description": "You may cancel the order as long the delivery has not yet started."
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Order": {
+        "title": "Order",
+        "type": "object",
+        "description": "",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Unique identifier for the given user."
+          },
+          "orderNumber": {
+            "type": "string"
+          },
+          "orderDate": {
+            "type": "string",
+            "format": "date",
+            "example": "1997-10-31"
+          },
+          "createDate": {
+            "type": "string",
+            "format": "date",
+            "description": "The date that the user was created."
+          },
+          "recipient": {
+            "$ref": "#/components/schemas/Company"
+          },
+          "buyer": {
+            "$ref": "#/components/schemas/Company"
+          },
+          "orderItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LineItem"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "orderNumber",
+          "recipient",
+          "buyer"
+        ],
+        "x-examples": {}
+      },
+      "Company": {
+        "title": "Company",
+        "type": "object",
+        "properties": {
+          "companyName": {
+            "type": "string"
+          },
+          "address": {
+            "$ref": "#/components/schemas/Address"
+          },
+          "contacts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Contact"
+            }
+          }
+        }
+      },
+      "Address": {
+        "title": "Address",
+        "type": "object",
+        "properties": {
+          "zipCode": {
+            "type": "number"
+          },
+          "street": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "contact": {
+            "$ref": "#/components/schemas/Contact"
+          }
+        },
+        "description": "Address used in an order"
+      },
+      "Contact": {
+        "title": "Contact",
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
+        }
+      },
+      "LineItem": {
+        "title": "LineItem",
+        "type": "object",
+        "properties": {
+          "position": {
+            "type": "number"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "qtyUnit": {
+            "type": "string"
+          },
+          "product": {
+            "$ref": "#/components/schemas/Product"
+          }
+        }
+      },
+      "Product": {
+        "title": "Product",
+        "type": "object",
+        "properties": {
+          "productNo": {
+            "type": "string"
+          },
+          "productName": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "responses": {
+      "MessageReceived": {
+        "description": "We have received your message and it's currently in processing state.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "message": {
+                  "type": "string"
+                }
+              }
+            },
+            "examples": {
+              "example-1": {
+                "value": {
+                  "id": "36123871628312",
+                  "message": "We have received your order and keep you posted"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
