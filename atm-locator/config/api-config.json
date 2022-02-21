@@ -7,6 +7,13 @@
   "apiDefinition": "../atm-locator-app/endpoints/atmLocations.json",
   "image": "atm-locator-icon.png",
   "backendBasepath" : "http://atm-locator-app:8080/api/banking/v2",
+  "summary": "List of ATM locations for Yoisho Banking Corporation",
+  "descriptionType": "markdownLocal",
+  "markdownLocal": [ 
+    "../../lib/generic-infos.md", 
+    "ORIGINAL",
+    "api-info.md" 
+  ],
   "authenticationProfiles" : [ {
     "name" : "_default",
     "isDefault" : true,
