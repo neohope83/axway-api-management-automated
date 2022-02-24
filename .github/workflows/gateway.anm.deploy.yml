@@ -12,6 +12,11 @@ on:
       - main
     paths:
       - gateway-config/anm/**
+  pull_request:
+    branches:
+      - main
+    paths:
+      - gateway-config/anm/**
   release:
     types:
       - published

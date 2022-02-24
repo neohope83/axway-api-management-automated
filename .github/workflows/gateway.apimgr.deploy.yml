@@ -12,6 +12,11 @@ on:
       - main
     paths:
       - gateway-config/apimgr/**
+  pull_request:
+    branches:
+      - main
+    paths:
+      - gateway-config/apimgr/**
   release:
     types:
       - published
