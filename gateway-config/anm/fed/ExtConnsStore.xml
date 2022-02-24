@@ -183,9 +183,9 @@
         <field cardinality="1" default="0" name="includeContentLengthRequest" type="boolean"/>
         <field cardinality="1" default="0" name="includeContentLengthResponse" type="boolean"/>
         <field cardinality="1" default="300000" name="addressCacheTime" type="integer"/>
-        <field default="32" name="sessionCacheSize" type="integer"/>    
+        <field default="32" name="sessionCacheSize" type="integer"/>
         <field cardinality="1" default="1" name="verifyServerHostname" type="boolean"/>
-        <field cardinality="1" default="0" name="offerTlsServerName" type="boolean"/>
+        <field cardinality="1" default="1" name="offerTlsServerName" type="boolean"/>
 
         <!--
             The list of content-encodings that we will receive or send
@@ -1355,109 +1355,10 @@
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Root" entityPK="0">
 	<fval name="name"><value>System Components</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="XkmsConfigGroup" entityPK="4157122289267895253" parentPK="0">
-	<fval name="name"><value>XKMS Servers</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CassandraSettings" entityPK="-6684456233170110208" parentPK="0">
-	<fval name="keySpace"><value>x${DOMAINID}_${GROUPID}</value></fval>
-	<fval name="name"><value>Cassandra Settings</value></fval>
-	<fval name="password"><value></value></fval>
-	<fval name="replication"><value>1</value></fval>
-	<fval name="replicationStrategy"><value>org.apache.cassandra.locator.SimpleStrategy</value></fval>
-	<fval name="sslProtocolOptionsMask"><value>1</value></fval>
-	<fval name="throttlingKeySpace"><value>t${DOMAINID}_${GROUPID}</value></fval>
-	<fval name="throttlingReadConsistencyLevel"><value>ONE</value></fval>
-	<fval name="throttlingReplication"><value>1</value></fval>
-	<fval name="throttlingReplicationStrategy"><value>org.apache.cassandra.locator.SimpleStrategy</value></fval>
-	<fval name="throttlingWriteConsistencyLevel"><value>ONE</value></fval>
-	<fval name="useSSL"><value>false</value></fval>
-	<fval name="username"><value></value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="RadiusClients" entityPK="-7729504381006084038" parentPK="0">
-	<fval name="name"><value>RADIUS Client Settings</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="GSSPrincipalNameOidGroup" entityPK="1144079416004077552" parentPK="0">
-	<fval name="name"><value>GSS Principal Name OIDs</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="GSSPrincipalNameOid" entityPK="5445507239746886490" parentPK="1144079416004077552">
-	<fval name="name"><value>NT_EXPORT_NAME</value></fval>
-	<fval name="oid"><value>1.3.6.1.5.6.4</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="GSSPrincipalNameOid" entityPK="3468227697868172990" parentPK="1144079416004077552">
-	<fval name="name"><value>KERBEROS_V5_PRINCIPAL_NAME</value></fval>
-	<fval name="oid"><value>1.2.840.113554.1.2.2.1</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="GSSPrincipalNameOid" entityPK="-4051132561159353832" parentPK="1144079416004077552">
-	<fval name="name"><value>NT_USER_NAME</value></fval>
-	<fval name="oid"><value>1.2.840.113554.1.2.1.1</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="GSSPrincipalNameOid" entityPK="-2942355122522815402" parentPK="1144079416004077552">
-	<fval name="name"><value>NT_HOSTBASED_SERVICE</value></fval>
-	<fval name="oid"><value>1.3.6.1.5.6.2</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="NetService" entityPK="2125154229043255296" parentPK="0">
-	<fval name="name"><value>Service</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="TivoliSettingsGroup" entityPK="-1568838780817594945" parentPK="0">
-	<fval name="name"><value>Tivoli Settings</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ESConfiguration" entityPK="-6675433291000558337" parentPK="0">
-	<fval name="name"><value>Entity Store Configuration</value></fval>
-	<fval name="passphraseTest"><value>aHR0cDsvL3d3dy52b3JkZWwuY29t</value></fval>
-	<fval name="productKey"><value>VordelNodeManager</value></fval>
-	<fval name="typerepoVersion"><value>1.38.12</value></fval>
-	<fval name="version"><value>7.7.0</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="PassPortKeyStoreManager" entityPK="-3578077932320546566" parentPK="0">
-	<fval name="name"><value>PassPort KeyStore Manager</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="GSSMechanismOidGroup" entityPK="-3275457103094011530" parentPK="0">
-	<fval name="name"><value>GSS Mechanism OIDs</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="GSSMechanismOid" entityPK="-8781022494554243713" parentPK="-3275457103094011530">
-	<fval name="name"><value>KERBEROS_V5_MECHANISM</value></fval>
-	<fval name="oid"><value>1.2.840.113554.1.2.2</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="GSSMechanismOid" entityPK="3758675534581410130" parentPK="-3275457103094011530">
-	<fval name="name"><value>SPNEGO_MECHANISM</value></fval>
-	<fval name="oid"><value>1.3.6.1.5.5.2</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ConnectionSetGroup" entityPK="-2492136321947177662" parentPK="0">
-	<fval name="name"><value>Connection Sets</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ConnectionSetClearTrustGroup" entityPK="-1029876209020519176" parentPK="-2492136321947177662">
-	<fval name="name"><value>RSA ClearTrust Connection Sets</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CacheManager" entityPK="2833564315091326908" parentPK="0">
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CacheManager" entityPK="-7611150149790753947" parentPK="0">
 	<fval name="name"><value>Cache Manager</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Cache" entityPK="-1227708581120068595" parentPK="2833564315091326908">
-	<fval name="diskExpiryThreadIntervalSeconds"><value>120</value></fval>
-	<fval name="diskPersistent"><value>false</value></fval>
-	<fval name="diskSpoolBufferSizeMB"><value>30</value></fval>
-	<fval name="eternal"><value>false</value></fval>
-	<fval name="maxElementsInMemory"><value>1000</value></fval>
-	<fval name="maxElementsOnDisk"><value>1000</value></fval>
-	<fval name="memoryStoreEvictionPolicy"><value>LRU</value></fval>
-	<fval name="name"><value>HTTP Sessions</value></fval>
-	<fval name="overflowToDisk"><value>true</value></fval>
-	<fval name="timeToIdleSeconds"><value>${env.WEBMANAGER.SESSION.IDLE.TIMEOUT}</value></fval>
-	<fval name="timeToLiveSeconds"><value>0</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Cache" entityPK="4297350425588934502" parentPK="2833564315091326908">
-	<fval name="diskExpiryThreadIntervalSeconds"><value>120</value></fval>
-	<fval name="diskPersistent"><value>false</value></fval>
-	<fval name="diskSpoolBufferSizeMB"><value>30</value></fval>
-	<fval name="eternal"><value>true</value></fval>
-	<fval name="maxElementsInMemory"><value>1000</value></fval>
-	<fval name="maxElementsOnDisk"><value>1000</value></fval>
-	<fval name="memoryStoreEvictionPolicy"><value>LRU</value></fval>
-	<fval name="name"><value>Local maximum messages</value></fval>
-	<fval name="overflowToDisk"><value>true</value></fval>
-	<fval name="timeToIdleSeconds"><value>0</value></fval>
-	<fval name="timeToLiveSeconds"><value>0</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Cache" entityPK="-2784308270464791295" parentPK="2833564315091326908">
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Cache" entityPK="8411283918368256901" parentPK="-7611150149790753947">
 	<fval name="diskExpiryThreadIntervalSeconds"><value>120</value></fval>
 	<fval name="diskPersistent"><value>false</value></fval>
 	<fval name="diskSpoolBufferSizeMB"><value>30</value></fval>
@@ -1470,16 +1371,210 @@
 	<fval name="timeToIdleSeconds"><value>0</value></fval>
 	<fval name="timeToLiveSeconds"><value>0</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="GSSAcceptors" entityPK="-6597421699425545931" parentPK="0">
-	<fval name="name"><value>GSS Acceptors</value></fval>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Cache" entityPK="7093834901622734358" parentPK="-7611150149790753947">
+	<fval name="diskExpiryThreadIntervalSeconds"><value>120</value></fval>
+	<fval name="diskPersistent"><value>false</value></fval>
+	<fval name="diskSpoolBufferSizeMB"><value>30</value></fval>
+	<fval name="eternal"><value>true</value></fval>
+	<fval name="maxElementsInMemory"><value>1000</value></fval>
+	<fval name="maxElementsOnDisk"><value>1000</value></fval>
+	<fval name="memoryStoreEvictionPolicy"><value>LRU</value></fval>
+	<fval name="name"><value>Local maximum messages</value></fval>
+	<fval name="overflowToDisk"><value>true</value></fval>
+	<fval name="timeToIdleSeconds"><value>0</value></fval>
+	<fval name="timeToLiveSeconds"><value>0</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SMTPServerGroup" entityPK="7750825793016818875" parentPK="0">
-	<fval name="name"><value>SMTP Servers</value></fval>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Cache" entityPK="-6552486816264030187" parentPK="-7611150149790753947">
+	<fval name="diskExpiryThreadIntervalSeconds"><value>120</value></fval>
+	<fval name="diskPersistent"><value>false</value></fval>
+	<fval name="diskSpoolBufferSizeMB"><value>30</value></fval>
+	<fval name="eternal"><value>false</value></fval>
+	<fval name="maxElementsInMemory"><value>1000</value></fval>
+	<fval name="maxElementsOnDisk"><value>1000</value></fval>
+	<fval name="memoryStoreEvictionPolicy"><value>LRU</value></fval>
+	<fval name="name"><value>HTTP Sessions</value></fval>
+	<fval name="overflowToDisk"><value>true</value></fval>
+	<fval name="timeToIdleSeconds"><value>${env.WEBMANAGER.SESSION.IDLE.TIMEOUT}</value></fval>
+	<fval name="timeToLiveSeconds"><value>0</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="JMSServiceGroup" entityPK="555984633075737033" parentPK="0">
-	<fval name="name"><value>JMS Services</value></fval>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ProxyServerGroup" entityPK="-8503520272219341732" parentPK="0">
+	<fval name="name"><value>Proxy Servers</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SunAccessManagerSettings" entityPK="2428594156908712780" parentPK="0">
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AlertManager" entityPK="2023542148961283426" parentPK="0">
+	<fval name="name"><value>Default Alert Configuration</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="GSSPrincipals" entityPK="-7560618780489345040" parentPK="0">
+	<fval name="name"><value>GSS Principals</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="NetService" entityPK="5554730167446267281" parentPK="0">
+	<fval name="name"><value>Service</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryGroup" entityPK="-1799588950677993315" parentPK="0">
+	<fval name="name"><value>Authentication Repositories</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryAdminUserGroup" entityPK="6956129539593705388" parentPK="-1799588950677993315">
+	<fval name="allowedFilter">
+		<value>HttpBasicFilter</value>
+		<value>FormAuthnFilter</value>
+	</fval>
+	<fval name="name"><value>Admin User Repositories</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryAdminUser" entityPK="1664143739275454260" parentPK="6956129539593705388">
+	<fval name="name"><value>Admin User Store Authentication Bridge</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryLdapGroup" entityPK="3366196161587769049" parentPK="-1799588950677993315">
+	<fval name="allowedFilter">
+		<value>HttpBasicFilter</value>
+		<value>WsBasicFilter</value>
+		<value>WsUsernameFilter</value>
+		<value>AttributeAuthnFilter</value>
+		<value>FormAuthnFilter</value>
+	</fval>
+	<fval name="name"><value>LDAP Repositories</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryLdap" entityPK="-8341612586109439089" parentPK="3366196161587769049">
+	<fval name="allowBlankPasswords"><value>0</value></fval>
+	<fval name="authZAttribFormat"><value>X509DName</value></fval>
+	<fval name="authzAttribute"><value>distinguishedName</value></fval>
+	<fval name="ldapDir"><value contentType="reference">
+<key type='LdapDirectoryGroup'><id field='name' value='LDAP Directories'/><key type='LdapDirectory'><id field='name' value='Sample Active Directory Connection'/></key></key>	</value></fval>
+	<fval name="loginAttrib"><value>distinguishedName</value></fval>
+	<fval name="name"><value>Sample Active Directory Repository</value></fval>
+	<fval name="searchAttrib"><value>cn</value></fval>
+	<fval name="searchBase"><value>CN=Users,DC=sample,DC=com</value></fval>
+	<fval name="searchClass"><value>User</value></fval>
+	<fval name="useSearchAttrInBase"><value>0</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryTivoliGroup" entityPK="-2473431291753894427" parentPK="-1799588950677993315">
+	<fval name="allowedFilter">
+		<value>HttpBasicFilter</value>
+		<value>HttpDigestFilter</value>
+		<value>WsBasicFilter</value>
+		<value>WsDigestFilter</value>
+		<value>WsUsernameFilter</value>
+		<value>AttributeAuthnFilter</value>
+		<value>FormAuthnFilter</value>
+	</fval>
+	<fval name="name"><value>Tivoli Repositories</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryPassPortGroup" entityPK="5462767280224922488" parentPK="-1799588950677993315">
+	<fval name="allowedFilter">
+		<value>HttpBasicFilter</value>
+		<value>WsBasicFilter</value>
+		<value>WsUsernameFilter</value>
+		<value>AttributeAuthnFilter</value>
+		<value>FormAuthnFilter</value>
+	</fval>
+	<fval name="name"><value>Axway PassPort Repositories</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryLocalGroup" entityPK="3143941279156148671" parentPK="-1799588950677993315">
+	<fval name="allowedFilter">
+		<value>HttpBasicFilter</value>
+		<value>HttpDigestFilter</value>
+		<value>WsBasicFilter</value>
+		<value>WsDigestFilter</value>
+		<value>WsUsernameFilter</value>
+		<value>AttributeAuthnFilter</value>
+		<value>FormAuthnFilter</value>
+	</fval>
+	<fval name="name"><value>Local Repositories</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryLocal" entityPK="-6758904465954085810" parentPK="3143941279156148671">
+	<fval name="authZAttribFormat"><value>Username</value></fval>
+	<fval name="name"><value>Local User Store</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositorySiteMinderGroup" entityPK="-1682334326330289290" parentPK="-1799588950677993315">
+	<fval name="allowedFilter">
+		<value>HttpBasicFilter</value>
+		<value>WsBasicFilter</value>
+		<value>AttributeAuthnFilter</value>
+		<value>FormAuthnFilter</value>
+	</fval>
+	<fval name="name"><value>SiteMinder Repositories</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryClearTrustGroup" entityPK="4650197587152579360" parentPK="-1799588950677993315">
+	<fval name="allowedFilter">
+		<value>HttpBasicFilter</value>
+		<value>WsBasicFilter</value>
+		<value>AttributeAuthnFilter</value>
+		<value>FormAuthnFilter</value>
+	</fval>
+	<fval name="name"><value>RSA Access Manager Repositories</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryRadiusGroup" entityPK="-2640945777730343733" parentPK="-1799588950677993315">
+	<fval name="allowedFilter">
+		<value>HttpBasicFilter</value>
+		<value>HttpDigestFilter</value>
+		<value>WsBasicFilter</value>
+		<value>WsDigestFilter</value>
+		<value>WsUsernameFilter</value>
+		<value>AttributeAuthnFilter</value>
+		<value>FormAuthnFilter</value>
+	</fval>
+	<fval name="name"><value>RADIUS Client</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryOracleEntitlementsServerGroup" entityPK="8263401543370898881" parentPK="-1799588950677993315">
+	<fval name="allowedFilter">
+		<value>HttpBasicFilter</value>
+		<value>WsBasicFilter</value>
+		<value>AttributeAuthnFilter</value>
+		<value>FormAuthnFilter</value>
+	</fval>
+	<fval name="name"><value>Oracle Entitlements Server 10g Repositories</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryGetAccessGroup" entityPK="8678098471305803640" parentPK="-1799588950677993315">
+	<fval name="allowedFilter">
+		<value>HttpBasicFilter</value>
+		<value>WsBasicFilter</value>
+		<value>AttributeAuthnFilter</value>
+		<value>FormAuthnFilter</value>
+	</fval>
+	<fval name="name"><value>Entrust GetAccess Repositories</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryDbGroup" entityPK="2814383157799460251" parentPK="-1799588950677993315">
+	<fval name="allowedFilter">
+		<value>HttpBasicFilter</value>
+		<value>HttpDigestFilter</value>
+		<value>WsBasicFilter</value>
+		<value>WsDigestFilter</value>
+		<value>WsUsernameFilter</value>
+		<value>AttributeAuthnFilter</value>
+		<value>FormAuthnFilter</value>
+	</fval>
+	<fval name="name"><value>Database Repositories</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositorySunAccessManagerGroup" entityPK="6234422537595762351" parentPK="-1799588950677993315">
+	<fval name="allowedFilter">
+		<value>HttpBasicFilter</value>
+		<value>WsBasicFilter</value>
+		<value>AttributeAuthnFilter</value>
+		<value>FormAuthnFilter</value>
+	</fval>
+	<fval name="name"><value>Sun Access Manager Repositories</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryOracleAccessManagerGroup" entityPK="-2731640107584423407" parentPK="-1799588950677993315">
+	<fval name="allowedFilter">
+		<value>HttpBasicFilter</value>
+		<value>WsBasicFilter</value>
+		<value>AttributeAuthnFilter</value>
+		<value>FormAuthnFilter</value>
+	</fval>
+	<fval name="name"><value>Oracle Access Manager Repositories</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryKPSGroup" entityPK="8887659520112064508" parentPK="-1799588950677993315">
+	<fval name="allowedFilter">
+		<value>HttpBasicFilter</value>
+		<value>WsBasicFilter</value>
+		<value>WsUsernameFilter</value>
+		<value>AttributeAuthnFilter</value>
+		<value>FormAuthnFilter</value>
+	</fval>
+	<fval name="name"><value>KPS Repositories</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="GSSInitiators" entityPK="-554204873985523591" parentPK="0">
+	<fval name="name"><value>GSS Initiators</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SunAccessManagerSettings" entityPK="1194330731525229935" parentPK="0">
 	<fval name="com.iplanet.am.naming.url"><value>http://access-manager:8080/amserver/namingservice</value></fval>
 	<fval name="com.iplanet.services.debug.directory"><value>suntrace</value></fval>
 	<fval name="com.iplanet.services.debug.level"><value>message</value></fval>
@@ -1490,19 +1585,143 @@
 	<fval name="com.sun.identity.sm.cacheTime"><value>1</value></fval>
 	<fval name="name"><value>Sun Access Manager Settings</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ICAPServerGroup" entityPK="-2807989441477613054" parentPK="0">
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SiteMinderConnectionSet" entityPK="8788126282104890949" parentPK="0">
+	<fval name="name"><value>SiteMinder Connections</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ESConfiguration" entityPK="-7918392096584103612" parentPK="0">
+	<fval name="name"><value>Entity Store Configuration</value></fval>
+	<fval name="passphraseTest"><value>aHR0cDsvL3d3dy52b3JkZWwuY29t</value></fval>
+	<fval name="productKey"><value>VordelNodeManager</value></fval>
+	<fval name="typerepoVersion"><value>1.38.15</value></fval>
+	<fval name="version"><value>7.7.0</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="GSSPrincipalNameOidGroup" entityPK="2897405210059742260" parentPK="0">
+	<fval name="name"><value>GSS Principal Name OIDs</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="GSSPrincipalNameOid" entityPK="-1464599791395903574" parentPK="2897405210059742260">
+	<fval name="name"><value>KERBEROS_V5_PRINCIPAL_NAME</value></fval>
+	<fval name="oid"><value>1.2.840.113554.1.2.2.1</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="GSSPrincipalNameOid" entityPK="1816659868220287666" parentPK="2897405210059742260">
+	<fval name="name"><value>NT_EXPORT_NAME</value></fval>
+	<fval name="oid"><value>1.3.6.1.5.6.4</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="GSSPrincipalNameOid" entityPK="-7784733158995412309" parentPK="2897405210059742260">
+	<fval name="name"><value>NT_USER_NAME</value></fval>
+	<fval name="oid"><value>1.2.840.113554.1.2.1.1</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="GSSPrincipalNameOid" entityPK="-4124877005823791078" parentPK="2897405210059742260">
+	<fval name="name"><value>NT_HOSTBASED_SERVICE</value></fval>
+	<fval name="oid"><value>1.3.6.1.5.6.2</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="PassPortKeyStoreManager" entityPK="-6854530865624413456" parentPK="0">
+	<fval name="name"><value>PassPort KeyStore Manager</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="UrlSetGroup" entityPK="-6437114870489170081" parentPK="0">
+	<fval name="name"><value>URL Sets</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="UrlSetGetAccessGroup" entityPK="6636118874806571335" parentPK="-6437114870489170081">
+	<fval name="name"><value>Entrust GetAccess URL Sets</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="UrlSetXkmsGroup" entityPK="-3397059752642891203" parentPK="-6437114870489170081">
+	<fval name="name"><value>XKMS URL Sets</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="UrlSetOcspGroup" entityPK="1613035038266362720" parentPK="-6437114870489170081">
+	<fval name="name"><value>OCSP URL Sets</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="UrlSetSamlPdpGroup" entityPK="-2253605423323715724" parentPK="-6437114870489170081">
+	<fval name="name"><value>SAML PDP URL Sets</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="RadiusClients" entityPK="7131781096712947649" parentPK="0">
+	<fval name="name"><value>RADIUS Client Settings</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ConnectionSetGroup" entityPK="7871535643322897684" parentPK="0">
+	<fval name="name"><value>Connection Sets</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ConnectionSetClearTrustGroup" entityPK="7812993690016110507" parentPK="7871535643322897684">
+	<fval name="name"><value>RSA ClearTrust Connection Sets</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="GSSMechanismOidGroup" entityPK="-5297620275628697887" parentPK="0">
+	<fval name="name"><value>GSS Mechanism OIDs</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="GSSMechanismOid" entityPK="3870210506380737827" parentPK="-5297620275628697887">
+	<fval name="name"><value>SPNEGO_MECHANISM</value></fval>
+	<fval name="oid"><value>1.3.6.1.5.5.2</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="GSSMechanismOid" entityPK="8594477918309272949" parentPK="-5297620275628697887">
+	<fval name="name"><value>KERBEROS_V5_MECHANISM</value></fval>
+	<fval name="oid"><value>1.2.840.113554.1.2.2</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="TivoliSettingsGroup" entityPK="-5922506191600403731" parentPK="0">
+	<fval name="name"><value>Tivoli Settings</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthProfilesGroup" entityPK="-4757186828701793306" parentPK="0">
+	<fval name="name"><value>Auth Profiles</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ApiKeySignerGroup" entityPK="9069917749460690421" parentPK="-4757186828701793306">
+	<fval name="name"><value>API Key Signers</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ApiKeyGroup" entityPK="5757403273547832784" parentPK="-4757186828701793306">
+	<fval name="name"><value>API Keys</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="KerberosGroup" entityPK="7014423255231982538" parentPK="-4757186828701793306">
+	<fval name="name"><value>Kerberos</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SAMLGroup" entityPK="3257011744168698411" parentPK="-4757186828701793306">
+	<fval name="name"><value>SAML</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="BasicAuthGroup" entityPK="-4361834085998273133" parentPK="-4757186828701793306">
+	<fval name="name"><value>HTTP Basic</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="OAuthGroup" entityPK="-6985107853863460477" parentPK="-4757186828701793306">
+	<fval name="name"><value>OAuth2</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ICAPServerGroup" entityPK="-1900116381651442800" parentPK="0">
 	<fval name="name"><value>ICAP Servers</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="RendezvousDaemonGroup" entityPK="1157551572681136147" parentPK="0">
-	<fval name="name"><value>Rendezvous Daemon Connections</value></fval>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="JMSServiceGroup" entityPK="4475567337315995414" parentPK="0">
+	<fval name="name"><value>JMS Services</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ProxyServerGroup" entityPK="4560175395501027211" parentPK="0">
-	<fval name="name"><value>Proxy Servers</value></fval>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SyslogServerGroup" entityPK="4827517758056862664" parentPK="0">
+	<fval name="name"><value>Syslog Servers</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="LdapDirectoryGroup" entityPK="3724649432457464941" parentPK="0">
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="PassPortClientCache" entityPK="-2430896690564897004" parentPK="0">
+	<fval name="name"><value>PassPort Client Cache</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AWSSettings" entityPK="-4378985091199186019" parentPK="0">
+	<fval name="name"><value>Amazon Web Services Settings</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AWSClientConfiguration" entityPK="3713370334080395027" parentPK="-4378985091199186019">
+	<fval name="connectionTimeout"><value>50000</value></fval>
+	<fval name="maxConnections"><value>50</value></fval>
+	<fval name="maxErrorRetry"><value>3</value></fval>
+	<fval name="name"><value>Default AWS Client Configuration</value></fval>
+	<fval name="protocol"><value>HTTPS</value></fval>
+	<fval name="socketTimeout"><value>50000</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SMTPServerGroup" entityPK="-2212771308211350082" parentPK="0">
+	<fval name="name"><value>SMTP Servers</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="OESSecurityRuntimeLoadableModule" entityPK="2297794434079027124" parentPK="0">
+	<fval name="enabled"><value>false</value></fval>
+	<fval name="name"><value>OES SSM Settings</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="OAuth2StoresGroup" entityPK="-1183611670865288613" parentPK="0">
+	<fval name="name"><value>OAuth2 Stores</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AccessTokenStoreGroup" entityPK="6597647018040215706" parentPK="-1183611670865288613">
+	<fval name="name"><value>Access Token Stores</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthzCodeStoreGroup" entityPK="7470658417214868020" parentPK="-1183611670865288613">
+	<fval name="name"><value>Authorization Code Stores</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ClientAccessTokenStoreGroup" entityPK="-3479449527519186097" parentPK="-1183611670865288613">
+	<fval name="name"><value>Client Access Token Stores</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="LdapDirectoryGroup" entityPK="-7355370266424488385" parentPK="0">
 	<fval name="name"><value>LDAP Directories</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="LdapDirectory" entityPK="8380432622674509353" parentPK="3724649432457464941">
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="LdapDirectory" entityPK="-3577670940968401758" parentPK="-7355370266424488385">
 	<fval name="authRealm"><value></value></fval>
 	<fval name="authType"><value>SIMPLE</value></fval>
 	<fval name="cacheSize"><value>8</value></fval>
@@ -1513,52 +1732,10 @@
 	<fval name="url"><value>ldap://ldaphost.sample.com:389</value></fval>
 	<fval name="userName"><value>cn=Administrator,cn=users,DC=sample,DC=com</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AWSSettings" entityPK="3343053737391809458" parentPK="0">
-	<fval name="name"><value>Amazon Web Services Settings</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AWSClientConfiguration" entityPK="-7356272466238918979" parentPK="3343053737391809458">
-	<fval name="connectionTimeout"><value>50000</value></fval>
-	<fval name="maxConnections"><value>50</value></fval>
-	<fval name="maxErrorRetry"><value>3</value></fval>
-	<fval name="name"><value>Default AWS Client Configuration</value></fval>
-	<fval name="protocol"><value>HTTPS</value></fval>
-	<fval name="socketTimeout"><value>50000</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="GSSPrincipals" entityPK="-5888469181577066035" parentPK="0">
-	<fval name="name"><value>GSS Principals</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="OAuth2StoresGroup" entityPK="-2398801500277620740" parentPK="0">
-	<fval name="name"><value>OAuth2 Stores</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthzCodeStoreGroup" entityPK="5974796416658660321" parentPK="-2398801500277620740">
-	<fval name="name"><value>Authorization Code Stores</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ClientAccessTokenStoreGroup" entityPK="1654701012330691914" parentPK="-2398801500277620740">
-	<fval name="name"><value>Client Access Token Stores</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AccessTokenStoreGroup" entityPK="117466549098656094" parentPK="-2398801500277620740">
-	<fval name="name"><value>Access Token Stores</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="GSSInitiators" entityPK="-3807977550315597480" parentPK="0">
-	<fval name="name"><value>GSS Initiators</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SyslogServerGroup" entityPK="4720267202725680840" parentPK="0">
-	<fval name="name"><value>Syslog Servers</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="OESSecurityRuntimeLoadableModule" entityPK="4365974714615354393" parentPK="0">
-	<fval name="enabled"><value>false</value></fval>
-	<fval name="name"><value>OES SSM Settings</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AlertManager" entityPK="-8639447820237779599" parentPK="0">
-	<fval name="name"><value>Default Alert Configuration</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SentinelServerGroup" entityPK="8118441972714262589" parentPK="0">
-	<fval name="name"><value>Sentinel Servers</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="DbConnectionGroup" entityPK="-3217201738349272057" parentPK="0">
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="DbConnectionGroup" entityPK="2354422486106885998" parentPK="0">
 	<fval name="name"><value>Database Connections</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="DbConnection" entityPK="-1793811273465800239" parentPK="-3217201738349272057">
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="DbConnection" entityPK="5326652259035993884" parentPK="2354422486106885998">
 	<fval name="initialSize"><value>0</value></fval>
 	<fval name="maxActive"><value>8</value></fval>
 	<fval name="maxIdle"><value>8</value></fval>
@@ -1575,208 +1752,31 @@
 	<fval name="url"><value>${environment.METRICS_DB_URL}</value></fval>
 	<fval name="username"><value>${environment.METRICS_DB_USERNAME}</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="PassPortClientCache" entityPK="-4973172250541678250" parentPK="0">
-	<fval name="name"><value>PassPort Client Cache</value></fval>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CassandraSettings" entityPK="-806697280572233997" parentPK="0">
+	<fval name="keySpace"><value>x${DOMAINID}_${GROUPID}</value></fval>
+	<fval name="name"><value>Cassandra Settings</value></fval>
+	<fval name="password"><value></value></fval>
+	<fval name="replication"><value>1</value></fval>
+	<fval name="replicationStrategy"><value>org.apache.cassandra.locator.SimpleStrategy</value></fval>
+	<fval name="sslProtocolOptionsMask"><value>1</value></fval>
+	<fval name="throttlingKeySpace"><value>t${DOMAINID}_${GROUPID}</value></fval>
+	<fval name="throttlingReadConsistencyLevel"><value>ONE</value></fval>
+	<fval name="throttlingReplication"><value>1</value></fval>
+	<fval name="throttlingReplicationStrategy"><value>org.apache.cassandra.locator.SimpleStrategy</value></fval>
+	<fval name="throttlingWriteConsistencyLevel"><value>ONE</value></fval>
+	<fval name="useSSL"><value>false</value></fval>
+	<fval name="username"><value></value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthProfilesGroup" entityPK="-1392948713569345939" parentPK="0">
-	<fval name="name"><value>Auth Profiles</value></fval>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="RendezvousDaemonGroup" entityPK="8460099182679811880" parentPK="0">
+	<fval name="name"><value>Rendezvous Daemon Connections</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ApiKeySignerGroup" entityPK="3818274281359304131" parentPK="-1392948713569345939">
-	<fval name="name"><value>API Key Signers</value></fval>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SentinelServerGroup" entityPK="-818295201990411761" parentPK="0">
+	<fval name="name"><value>Sentinel Servers</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="BasicAuthGroup" entityPK="-1042218882781446391" parentPK="-1392948713569345939">
-	<fval name="name"><value>HTTP Basic</value></fval>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="GSSAcceptors" entityPK="-8675308042321817597" parentPK="0">
+	<fval name="name"><value>GSS Acceptors</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="KerberosGroup" entityPK="-5109708754551679350" parentPK="-1392948713569345939">
-	<fval name="name"><value>Kerberos</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="OAuthGroup" entityPK="5902014662763196949" parentPK="-1392948713569345939">
-	<fval name="name"><value>OAuth2</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SAMLGroup" entityPK="-3608724400481484820" parentPK="-1392948713569345939">
-	<fval name="name"><value>SAML</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ApiKeyGroup" entityPK="3359796426394799356" parentPK="-1392948713569345939">
-	<fval name="name"><value>API Keys</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryGroup" entityPK="-8314815751434613942" parentPK="0">
-	<fval name="name"><value>Authentication Repositories</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryTivoliGroup" entityPK="-3642175559814328347" parentPK="-8314815751434613942">
-	<fval name="allowedFilter">
-		<value>HttpBasicFilter</value>
-		<value>HttpDigestFilter</value>
-		<value>WsBasicFilter</value>
-		<value>WsDigestFilter</value>
-		<value>WsUsernameFilter</value>
-		<value>AttributeAuthnFilter</value>
-		<value>FormAuthnFilter</value>
-	</fval>
-	<fval name="name"><value>Tivoli Repositories</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryAdminUserGroup" entityPK="322050189002241119" parentPK="-8314815751434613942">
-	<fval name="allowedFilter">
-		<value>HttpBasicFilter</value>
-		<value>FormAuthnFilter</value>
-	</fval>
-	<fval name="name"><value>Admin User Repositories</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryAdminUser" entityPK="-2547783303910589124" parentPK="322050189002241119">
-	<fval name="name"><value>Admin User Store Authentication Bridge</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryLdapGroup" entityPK="462016701864143808" parentPK="-8314815751434613942">
-	<fval name="allowedFilter">
-		<value>HttpBasicFilter</value>
-		<value>WsBasicFilter</value>
-		<value>WsUsernameFilter</value>
-		<value>AttributeAuthnFilter</value>
-		<value>FormAuthnFilter</value>
-	</fval>
-	<fval name="name"><value>LDAP Repositories</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryLdap" entityPK="442356419714055802" parentPK="462016701864143808">
-	<fval name="allowBlankPasswords"><value>0</value></fval>
-	<fval name="authZAttribFormat"><value>X509DName</value></fval>
-	<fval name="authzAttribute"><value>distinguishedName</value></fval>
-	<fval name="ldapDir"><value contentType="reference">
-<key type='LdapDirectoryGroup'><id field='name' value='LDAP Directories'/><key type='LdapDirectory'><id field='name' value='Sample Active Directory Connection'/></key></key>	</value></fval>
-	<fval name="loginAttrib"><value>distinguishedName</value></fval>
-	<fval name="name"><value>Sample Active Directory Repository</value></fval>
-	<fval name="searchAttrib"><value>cn</value></fval>
-	<fval name="searchBase"><value>CN=Users,DC=sample,DC=com</value></fval>
-	<fval name="searchClass"><value>User</value></fval>
-	<fval name="useSearchAttrInBase"><value>0</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryClearTrustGroup" entityPK="1335414311550733241" parentPK="-8314815751434613942">
-	<fval name="allowedFilter">
-		<value>HttpBasicFilter</value>
-		<value>WsBasicFilter</value>
-		<value>AttributeAuthnFilter</value>
-		<value>FormAuthnFilter</value>
-	</fval>
-	<fval name="name"><value>RSA Access Manager Repositories</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositorySiteMinderGroup" entityPK="3234626987379534758" parentPK="-8314815751434613942">
-	<fval name="allowedFilter">
-		<value>HttpBasicFilter</value>
-		<value>WsBasicFilter</value>
-		<value>AttributeAuthnFilter</value>
-		<value>FormAuthnFilter</value>
-	</fval>
-	<fval name="name"><value>SiteMinder Repositories</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryPassPortGroup" entityPK="-1805482988748703791" parentPK="-8314815751434613942">
-	<fval name="allowedFilter">
-		<value>HttpBasicFilter</value>
-		<value>WsBasicFilter</value>
-		<value>WsUsernameFilter</value>
-		<value>AttributeAuthnFilter</value>
-		<value>FormAuthnFilter</value>
-	</fval>
-	<fval name="name"><value>Axway PassPort Repositories</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryOracleEntitlementsServerGroup" entityPK="3219561523526263218" parentPK="-8314815751434613942">
-	<fval name="allowedFilter">
-		<value>HttpBasicFilter</value>
-		<value>WsBasicFilter</value>
-		<value>AttributeAuthnFilter</value>
-		<value>FormAuthnFilter</value>
-	</fval>
-	<fval name="name"><value>Oracle Entitlements Server 10g Repositories</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryKPSGroup" entityPK="-6643936689112552548" parentPK="-8314815751434613942">
-	<fval name="allowedFilter">
-		<value>HttpBasicFilter</value>
-		<value>WsBasicFilter</value>
-		<value>WsUsernameFilter</value>
-		<value>AttributeAuthnFilter</value>
-		<value>FormAuthnFilter</value>
-	</fval>
-	<fval name="name"><value>KPS Repositories</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositorySunAccessManagerGroup" entityPK="3673165686450564761" parentPK="-8314815751434613942">
-	<fval name="allowedFilter">
-		<value>HttpBasicFilter</value>
-		<value>WsBasicFilter</value>
-		<value>AttributeAuthnFilter</value>
-		<value>FormAuthnFilter</value>
-	</fval>
-	<fval name="name"><value>Sun Access Manager Repositories</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryGetAccessGroup" entityPK="1397033113384926682" parentPK="-8314815751434613942">
-	<fval name="allowedFilter">
-		<value>HttpBasicFilter</value>
-		<value>WsBasicFilter</value>
-		<value>AttributeAuthnFilter</value>
-		<value>FormAuthnFilter</value>
-	</fval>
-	<fval name="name"><value>Entrust GetAccess Repositories</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryDbGroup" entityPK="2217748848548183959" parentPK="-8314815751434613942">
-	<fval name="allowedFilter">
-		<value>HttpBasicFilter</value>
-		<value>HttpDigestFilter</value>
-		<value>WsBasicFilter</value>
-		<value>WsDigestFilter</value>
-		<value>WsUsernameFilter</value>
-		<value>AttributeAuthnFilter</value>
-		<value>FormAuthnFilter</value>
-	</fval>
-	<fval name="name"><value>Database Repositories</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryLocalGroup" entityPK="719172895818933854" parentPK="-8314815751434613942">
-	<fval name="allowedFilter">
-		<value>HttpBasicFilter</value>
-		<value>HttpDigestFilter</value>
-		<value>WsBasicFilter</value>
-		<value>WsDigestFilter</value>
-		<value>WsUsernameFilter</value>
-		<value>AttributeAuthnFilter</value>
-		<value>FormAuthnFilter</value>
-	</fval>
-	<fval name="name"><value>Local Repositories</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryLocal" entityPK="-5113283000251417891" parentPK="719172895818933854">
-	<fval name="authZAttribFormat"><value>Username</value></fval>
-	<fval name="name"><value>Local User Store</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryOracleAccessManagerGroup" entityPK="884250805715086470" parentPK="-8314815751434613942">
-	<fval name="allowedFilter">
-		<value>HttpBasicFilter</value>
-		<value>WsBasicFilter</value>
-		<value>AttributeAuthnFilter</value>
-		<value>FormAuthnFilter</value>
-	</fval>
-	<fval name="name"><value>Oracle Access Manager Repositories</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthnRepositoryRadiusGroup" entityPK="5266460831236505815" parentPK="-8314815751434613942">
-	<fval name="allowedFilter">
-		<value>HttpBasicFilter</value>
-		<value>HttpDigestFilter</value>
-		<value>WsBasicFilter</value>
-		<value>WsDigestFilter</value>
-		<value>WsUsernameFilter</value>
-		<value>AttributeAuthnFilter</value>
-		<value>FormAuthnFilter</value>
-	</fval>
-	<fval name="name"><value>RADIUS Client</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="UrlSetGroup" entityPK="-7344616204635839107" parentPK="0">
-	<fval name="name"><value>URL Sets</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="UrlSetXkmsGroup" entityPK="1784455679086415969" parentPK="-7344616204635839107">
-	<fval name="name"><value>XKMS URL Sets</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="UrlSetSamlPdpGroup" entityPK="3637858662865716376" parentPK="-7344616204635839107">
-	<fval name="name"><value>SAML PDP URL Sets</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="UrlSetOcspGroup" entityPK="-5028784686475630968" parentPK="-7344616204635839107">
-	<fval name="name"><value>OCSP URL Sets</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="UrlSetGetAccessGroup" entityPK="-5221602921374088926" parentPK="-7344616204635839107">
-	<fval name="name"><value>Entrust GetAccess URL Sets</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SiteMinderConnectionSet" entityPK="-4769597873185960059" parentPK="0">
-	<fval name="name"><value>SiteMinder Connections</value></fval>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="XkmsConfigGroup" entityPK="-8009672491620887518" parentPK="0">
+	<fval name="name"><value>XKMS Servers</value></fval>
 </entity>
 </entityStoreData>
