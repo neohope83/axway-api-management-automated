@@ -4,7 +4,9 @@
   "state": "published",
   "version": "1.1",
   "organization": "Axway",
-  "apiDefinition": "../atm-locator-app/endpoints/atmLocations.json",
+  "apiSpecification": {
+    "resource": "../atm-locator-app/endpoints/atmLocations.json"
+  },
   "image": "atm-locator-icon.png",
   "backendBasepath" : "http://atm-locator-app:8080/api/banking/v2",
   "summary": "List of ATM locations for Yoisho Banking Corporation",
