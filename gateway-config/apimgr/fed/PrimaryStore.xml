@@ -22735,14 +22735,25 @@
 	<fval name="attributeName"><value>xForwardedFor</value></fval>
 	<fval name="base64Decode"><value>0</value></fval>
 	<fval name="category"><value contentType="reference">7957520624358230341</value></fval>
+	<fval name="failureNode"><value contentType="reference">-8949466300098296802</value></fval>
 	<fval name="headerName"><value>X-Forwarded-For</value></fval>
 	<fval name="logFailure"><value>Failed to extract attribute HTTP header</value></fval>
 	<fval name="logFatal"><value>Error occurred while extracting attributes from HTTP header. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Extracted attribute from HTTP header</value></fval>
+	<fval name="logMask"><value>4</value></fval>
+	<fval name="logMaskType"><value>FILTER</value></fval>
+	<fval name="logSuccess"><value>Found X-Forwarded-For: ${xForwardedFor}</value></fval>
 	<fval name="name"><value>Retrieve X-Forwarded-For header</value></fval>
 	<fval name="useQueryParameter"><value>0</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="TrueFilter" entityPK="-8949466300098296802" parentPK="-7289025166258239071">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-8279756953471016795</value></fval>
+	<fval name="logFailure"><value></value></fval>
+	<fval name="logFatal"><value>True filter error. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>True filter passed</value></fval>
+	<fval name="name"><value>True Filter</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="OpenTrafficEventLog" entityPK="-6511369800606007010" parentPK="0">
 	<fval name="dirSizeMb"><value>1024</value></fval>
