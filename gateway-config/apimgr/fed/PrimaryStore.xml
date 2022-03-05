@@ -22700,7 +22700,7 @@
 	<fval name="logSuccess"><value>Success in adding the HTTP header to the message</value></fval>
 	<fval name="name"><value>Add X-TransactionID HTTP Header</value></fval>
 	<fval name="overwriteExistingHeader"><value>1</value></fval>
-	<fval name="successNode"><value contentType="reference">3592083677250858313</value></fval>
+	<fval name="successNode"><value contentType="reference">5259800323017821678</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CreateMessageKeyFilter" entityPK="-4337861315467901166" parentPK="-7289025166258239071">
 	<fval name="abortProcessingOnLogError"><value>0</value></fval>
@@ -22754,6 +22754,21 @@
 	<fval name="logMaskType"><value>SERVICE</value></fval>
 	<fval name="logSuccess"><value>True filter passed</value></fval>
 	<fval name="name"><value>True Filter</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="JavaScriptFilter" entityPK="5259800323017821678" parentPK="-7289025166258239071">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-8279756953471016795</value></fval>
+	<fval name="consumedProperties"></fval>
+	<fval name="engineName"><value>nashorn</value></fval>
+	<fval name="generatedProperties"></fval>
+	<fval name="logFailure"><value>Failed script filter</value></fval>
+	<fval name="logFatal"><value>Error while attempt to run script filter. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>6</value></fval>
+	<fval name="logMaskType"><value>FILTER</value></fval>
+	<fval name="logSuccess"><value>Random IP: ${xForwardedFor}</value></fval>
+	<fval name="name"><value>Create random IP</value></fval>
+	<fval name="requiredProperties"></fval>
+	<fval name="script"><value>function invoke(msg) {&#xD;&#xA;    var ips = [&#xD;&#xA;      &quot;95.115.84.128&quot;, &quot;79.205.61.4&quot;, &quot;13.37.9.68&quot;, &quot;154.83.33.176&quot;, &#xD;&#xA;      &quot;95.164.227.84&quot;, &quot;35.245.138.171&quot;, &quot;100.37.32.35&quot;, &quot;80.92.32.0&quot;, &#xD;&#xA;      &quot;1.208.104.217&quot;, &quot;121.115.252.131&quot;&#xD;&#xA;    ];&#xD;&#xA;&#xD;&#xA;    var randomNo = Math.floor(Math.random() * ips.length);&#xD;&#xA;    var randomIp = ips[randomNo];&#xD;&#xA;&#xD;&#xA;    msg.put(&quot;xForwardedFor&quot;, randomIp);&#xD;&#xA;    return true;&#xD;&#xA;}</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="OpenTrafficEventLog" entityPK="-6511369800606007010" parentPK="0">
 	<fval name="dirSizeMb"><value>1024</value></fval>
