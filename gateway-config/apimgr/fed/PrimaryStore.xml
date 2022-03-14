@@ -19542,13 +19542,9 @@
 	<fval name="name"><value>Event Log Configuration</value></fval>
 	<fval name="writeSystemEventFreqSecs"><value>60</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CustomMessageAttribute" entityPK="-1661766904793757840" parentPK="-7147963669657078781">
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CustomMessageAttribute" entityPK="-3811287395819413872" parentPK="-7147963669657078781">
 	<fval name="enabled"><value>1</value></fval>
-	<fval name="name"><value>transactionId</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CustomMessageAttribute" entityPK="-8965115410927662843" parentPK="-7147963669657078781">
-	<fval name="enabled"><value>1</value></fval>
-	<fval name="name"><value>xForwardedFor</value></fval>
+	<fval name="name"><value>user-agent</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ElementSpecifiers" entityPK="1301977881604410350" parentPK="0">
 	<fval name="name"><value>Element Specifiers</value></fval>
@@ -22702,16 +22698,6 @@
 	<fval name="overwriteExistingHeader"><value>1</value></fval>
 	<fval name="successNode"><value contentType="reference">5259800323017821678</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="TrueFilter" entityPK="-8949466300098296802" parentPK="-7289025166258239071">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">-8279756953471016795</value></fval>
-	<fval name="logFailure"><value></value></fval>
-	<fval name="logFatal"><value>True filter error. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>True filter passed</value></fval>
-	<fval name="name"><value>True Filter</value></fval>
-</entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CreateMessageKeyFilter" entityPK="-4337861315467901166" parentPK="-7289025166258239071">
 	<fval name="abortProcessingOnLogError"><value>0</value></fval>
 	<fval name="category"><value contentType="reference">-8279756953471016795</value></fval>
@@ -22737,21 +22723,6 @@
 	<fval name="messageAttribute"><value>user-agent</value></fval>
 	<fval name="name"><value>Set User-Agent Unknown</value></fval>
 	<fval name="successNode"><value contentType="reference">6314576985502636483</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AttributeExtractHTTPHeaderFilter" entityPK="3592083677250858313" parentPK="-7289025166258239071">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="attributeName"><value>xForwardedFor</value></fval>
-	<fval name="base64Decode"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">7957520624358230341</value></fval>
-	<fval name="failureNode"><value contentType="reference">-8949466300098296802</value></fval>
-	<fval name="headerName"><value>X-Forwarded-For</value></fval>
-	<fval name="logFailure"><value>Failed to extract attribute HTTP header</value></fval>
-	<fval name="logFatal"><value>Error occurred while extracting attributes from HTTP header. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>4</value></fval>
-	<fval name="logMaskType"><value>FILTER</value></fval>
-	<fval name="logSuccess"><value>Found X-Forwarded-For: ${xForwardedFor}</value></fval>
-	<fval name="name"><value>Retrieve X-Forwarded-For header</value></fval>
-	<fval name="useQueryParameter"><value>0</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AttributeExtractHTTPHeaderFilter" entityPK="2816223372727872434" parentPK="-7289025166258239071">
 	<fval name="abortProcessingOnLogError"><value>0</value></fval>
