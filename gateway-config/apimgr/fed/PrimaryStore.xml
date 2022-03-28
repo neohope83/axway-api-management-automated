@@ -12725,7 +12725,7 @@
 	<fval name="category"><value contentType="reference">-8279756953471016795</value></fval>
 	<fval name="consumedProperties"></fval>
 	<fval name="engineName"><value>groovy</value></fval>
-	<fval name="failureNode"><value contentType="reference">-4718800448924754982</value></fval>
+	<fval name="failureNode"><value contentType="reference">-8612315422038905865</value></fval>
 	<fval name="generatedProperties"></fval>
 	<fval name="logFailure"><value>Schema validation of request failed</value></fval>
 	<fval name="logFatal"><value>Error while attempt to run script filter. Error: ${circuit.exception}</value></fval>
@@ -12763,7 +12763,7 @@
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CompareAttributeFilter" entityPK="-463645942726051438" parentPK="6560061149619594202">
 	<fval name="abortProcessingOnLogError"><value>0</value></fval>
 	<fval name="category"><value contentType="reference">-8279756953471016795</value></fval>
-	<fval name="failureNode"><value contentType="reference">-4627804508233226205</value></fval>
+	<fval name="failureNode"><value contentType="reference">-1</value></fval>
 	<fval name="logFailure"><value>API not configured for Payload validation.</value></fval>
 	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
 	<fval name="logMask"><value>2</value></fval>
@@ -12788,6 +12788,19 @@
 	<fval name="logMaskType"><value>SERVICE</value></fval>
 	<fval name="logSuccess"><value></value></fval>
 	<fval name="name"><value>False Filter</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ChangeMessageFilter" entityPK="-8612315422038905865" parentPK="6560061149619594202">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="body"><value>{&quot;message&quot;: &quot;${validationErrors}&quot; }</value></fval>
+	<fval name="category"><value contentType="reference">-8279756953471016795</value></fval>
+	<fval name="logFailure"><value>Failed in setting the message</value></fval>
+	<fval name="logFatal"><value>Error in setting the message. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Success in setting the message</value></fval>
+	<fval name="name"><value>Set response message</value></fval>
+	<fval name="outputContentType"><value>application/json</value></fval>
+	<fval name="successNode"><value contentType="reference">-4718800448924754982</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FilterCircuit" entityPK="-2553253534836053826" parentPK="-6108543813301322176">
 	<fval name="category"><value contentType="reference">-8821047087691357060</value></fval>
