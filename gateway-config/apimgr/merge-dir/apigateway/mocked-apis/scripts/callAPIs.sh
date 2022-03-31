@@ -19,7 +19,7 @@ apis[1]=GET#/petstore/v2/pet/%RANDOM%#KeyId:6cd55c27-675a-444a-9bc7-ae9a7869184d
 apis[2]=GET#/petstore/v2/pet/findByStatus?status=sold#KeyId:6cd55c27-675a-444a-9bc7-ae9a7869184d
 apis[3]=GET#/petstore/v2/store/inventory#KeyId:6cd55c27-675a-444a-9bc7-ae9a7869184d
 apis[4]=GET#/petstore/v2/user/Chris#KeyId:6cd55c27-675a-444a-9bc7-ae9a7869184d
-apis[5]=GET#/petstore/v2/pet/58914657#KeyId:6cd55c27-675a-444a-9bc7-ae9a7869184d
+apis[5]=GET#/petstore/v2/pet/%RANDOM%#KeyId:6cd55c27-675a-444a-9bc7-ae9a7869184d
 apis[6]=GET#/petstore/v2/user/login?username=chris&password=changeme#KeyId:6cd55c27-675a-444a-9bc7-ae9a7869184d
 apis[7]=GET#/api/emr/diagnostic#Dummy:Header
 apis[8]=GET#/careplan/CarePlan#KeyId:93ff2c6d-a257-4c73-93ea-ab1be8e55b43
