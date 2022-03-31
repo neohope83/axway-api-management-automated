@@ -15,7 +15,7 @@ fi
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${APIGATEWAY_HOME}/Linux.x86_64/lib
 
 apis[0]=GET#/petstore/v2/pet/findByStatus?status=pending#KeyId:6cd55c27-675a-444a-9bc7-ae9a7869184d
-apis[1]=GET#/petstore/v2/pet/$RANDOM#KeyId:6cd55c27-675a-444a-9bc7-ae9a7869184d
+apis[1]=GET#/petstore/v2/pet/%RANDOM%#KeyId:6cd55c27-675a-444a-9bc7-ae9a7869184d
 apis[2]=GET#/petstore/v2/pet/findByStatus?status=sold#KeyId:6cd55c27-675a-444a-9bc7-ae9a7869184d
 apis[3]=GET#/petstore/v2/store/inventory#KeyId:6cd55c27-675a-444a-9bc7-ae9a7869184d
 apis[4]=GET#/petstore/v2/user/Chris#KeyId:6cd55c27-675a-444a-9bc7-ae9a7869184d
@@ -43,6 +43,7 @@ do
 	verb=$(echo ${apis[${apiNo}]} | cut -f1 -d#)
 	uri=$(echo ${apis[${apiNo}]} | cut -f2 -d#)
 	header=$(echo ${apis[${apiNo}]} | cut -f3 -d#)
+    uri=`echo $uri | sed "s/%RANDOM%/$RANDOM/g"`
 	echo "Calling API: $uri"
 	echo "Header: $header"
 	echo "Verb: $verb"
