@@ -15918,6 +15918,8 @@
 <key type='CircuitContainer'><id field='name' value='RBI-Demo'/><key type='FilterCircuit'><id field='name' value='Response Policy 1'/></key></key>	</value>
 		<value contentType="reference">
 <key type='CircuitContainer'><id field='name' value='OAuth 2.0'/><key type='CircuitContainer'><id field='name' value='Access Token Service'/><key type='FilterCircuit'><id field='name' value='Refresh'/></key></key></key>	</value>
+		<value contentType="reference">
+<key type='CircuitContainer'><id field='name' value='OAuth 2.0'/><key type='CircuitContainer'><id field='name' value='Access Token Service'/><key type='FilterCircuit'><id field='name' value='Access Token Service'/></key></key></key>	</value>
 	</fval>
 	<fval name="apiregRoutingPolicies">
 		<value contentType="reference">
