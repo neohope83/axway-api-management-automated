@@ -40,13 +40,14 @@ jobs:
           registry: ${{ env.dockerRegistry }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Pull base image
-        run: docker pull ${{ env.dockerRegistry }}/${{ env.dockerRepository }}/${{ env.baseImage }}
+      # - name: Pull base image
+      #   run: docker pull ${{ env.dockerRegistry }}/${{ env.dockerRepository }}/${{ env.baseImage }}
       - name: Create image tag
         run: echo "IMAGE_TAG=$(echo $GITHUB_SHA | head -c7)" >> $GITHUB_ENV
       - name: Create FED-File
         run: |
           sed -i 's/^Id:\s.*$/Id: fed/' apimgr/fed/meta-inf/manifest.mf
+          mkdir -p releases
           jar cvfm releases/apimanager-${{ env.IMAGE_TAG }}.fed apimgr/fed/meta-inf/manifest.mf -C apimgr fed
           jar tvf releases/apimanager-${{ env.IMAGE_TAG }}.fed
       - name: Push created FED-File
