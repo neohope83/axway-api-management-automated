@@ -47,9 +47,9 @@ jobs:
       - name: Create FED-File
         run: |
           sed -i 's/^Id:\s.*$/Id: fed/' apimgr/fed/meta-inf/manifest.mf
-          mkdir -p releases
-          jar cvfm releases/apimanager-${{ env.IMAGE_TAG }}.fed apimgr/fed/meta-inf/manifest.mf -C apimgr fed
-          jar tvf releases/apimanager-${{ env.IMAGE_TAG }}.fed
+          mkdir -p apimgr/merge-dir/fed
+          jar cvfm apimgr/merge-dir/fed/apimanager-${{ env.IMAGE_TAG }}.fed apimgr/fed/meta-inf/manifest.mf -C apimgr fed
+          jar tvf apimgr/merge-dir/fed/apimanager-${{ env.IMAGE_TAG }}.fed
       - name: Push created FED-File
         uses: EndBug/add-and-commit@v9
         with:
