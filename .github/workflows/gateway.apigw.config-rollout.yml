@@ -1,11 +1,5 @@
 name: Rollout API-Gateway config
 
-env:
-  dockerRegistry: ghcr.io
-  dockerRepository: cwiechmann/axway-api-management-automated
-  baseImage: "base:77-20220228-1"
-  outImage: "manager:77-20220228-v1"
-
 on:
   push:
     branches:
@@ -36,7 +30,7 @@ jobs:
       - name: Create FED-File
         run: |
           sed -i 's/^Id:\s.*$/Id: fed/' apigateway/config/META-INF/manifest.mf
-          mkdir -p apigateway/fed/fed
+          mkdir -p apigateway/fed
           jar cvfm apigateway/fed/apigateway.fed apigateway/config/META-INF/manifest.mf -C apigateway config
           jar tvf apigateway/fed/apigateway.fed
       - name: Push created FED-File
