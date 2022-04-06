@@ -1,4 +1,4 @@
-name: Deploy Admin-Node-Manager
+name: Deploy Admin-Node-Manager (M)
 
 env:
   dockerRegistry: ghcr.io
