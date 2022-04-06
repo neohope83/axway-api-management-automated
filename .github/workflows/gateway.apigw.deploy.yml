@@ -43,7 +43,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Set image version
-        run: >-
+        run: |
           printenv
           exit 9
       - name: Pull base image
