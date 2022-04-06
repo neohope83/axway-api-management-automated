@@ -35,22 +35,22 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
-      - name: Log in to GitHub Docker Registry
-        uses: docker/login-action@v1
-        with:
-          registry: ${{ env.dockerRegistry }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Pull base image
-        run: docker pull ${{ env.dockerRegistry }}/${{ env.dockerRepository }}/${{ env.baseImage }}
-      - name: Build API-Gateway image
-        run: |
-          tar xvfz apigw-emt-scripts-2.4.0-20220222.150412-10.tar.gz
-          echo "${{ secrets.APIGATEWAY_LICENSE }}" | base64 -d > license.lic
-          ./apigw-emt-scripts-2.4.0-SNAPSHOT/build_gw_image.py --license=license.lic --merge-dir apigateway/merge-dir/apigateway --default-cert --fed=apigateway/fed/apigateway.fed --parent-image=${{ env.dockerRegistry }}/${{ env.dockerRepository }}/${{ env.baseImage }} --out-image=${{ env.dockerRegistry }}/${{ env.dockerRepository }}/${{ env.outImage }}-${{ github.event.inputs.version }}
-      - name: Push image
-        run: |
-          docker push ${{ env.dockerRegistry }}/${{ env.dockerRepository }}/${{ env.outImage }}-${{ github.event.inputs.version }}
+      # - name: Log in to GitHub Docker Registry
+      #   uses: docker/login-action@v1
+      #   with:
+      #     registry: ${{ env.dockerRegistry }}
+      #     username: ${{ github.actor }}
+      #     password: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Pull base image
+      #   run: docker pull ${{ env.dockerRegistry }}/${{ env.dockerRepository }}/${{ env.baseImage }}
+      # - name: Build API-Gateway image
+      #   run: |
+      #     tar xvfz apigw-emt-scripts-2.4.0-20220222.150412-10.tar.gz
+      #     echo "${{ secrets.APIGATEWAY_LICENSE }}" | base64 -d > license.lic
+      #     ./apigw-emt-scripts-2.4.0-SNAPSHOT/build_gw_image.py --license=license.lic --merge-dir apigateway/merge-dir/apigateway --default-cert --fed=apigateway/fed/apigateway.fed --parent-image=${{ env.dockerRegistry }}/${{ env.dockerRepository }}/${{ env.baseImage }} --out-image=${{ env.dockerRegistry }}/${{ env.dockerRepository }}/${{ env.outImage }}-${{ github.event.inputs.version }}
+      # - name: Push image
+      #   run: |
+      #     docker push ${{ env.dockerRegistry }}/${{ env.dockerRepository }}/${{ env.outImage }}-${{ github.event.inputs.version }}
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -59,5 +59,5 @@ jobs:
           aws-region: eu-west-1
       - name: Helm upgrade
         run: |
-          helm upgrade axway-apim -n apim --set traffic.imageTag=${{ env.outImage }}-${{ github.event.inputs.version }} --set apigateway.imageTag=${{ env.outImage }}-${{ github.event.inputs.version }} ../helm/aws-eks/axway-apim-on-aws-eks-values.yaml https://github.com/Axway/Cloud-Automation/releases/download/apim-helm-v2.7.0/helm-chart-axway-apim-2.7.0.tgz
+          helm upgrade axway-apim -n apim --set traffic.imageTag=${{ github.event.inputs.version }} --set apigateway.imageTag=${{ github.event.inputs.version }} -f ../helm/aws-eks/axway-apim-on-aws-eks-values.yaml https://github.com/Axway/Cloud-Automation/releases/download/apim-helm-v2.7.0/helm-chart-axway-apim-2.7.0.tgz
 
