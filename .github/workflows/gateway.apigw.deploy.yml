@@ -45,11 +45,12 @@ jobs:
       - name: Set image version
         run: |
           if [ "${{ github.event.inputs.version }}" ]; then
-            echo "Using given version as image tag: ${{ github.event.inputs.version }}"
+            echo "Using given version: ${{ github.event.inputs.version }} as image tag"
             echo "IMAGE_TAG=${{ github.event.inputs.version }}" >> $GITHUB_ENV
           else 
-            echo "No version given, using current date"
-            echo "IMAGE_TAG=$(echo $(date '+%Y-%m-%d-%H-%M'))" >> $GITHUB_ENV
+            date=`echo $(date '+%Y-%m-%d-%H-%M')`
+            echo "No version given, using current date: ${date}"
+            echo "IMAGE_TAG=$(echo ${date})" >> $GITHUB_ENV
           fi
           exit 9
       - name: Pull base image
