@@ -35,10 +35,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Create FED-File
         run: |
-          sed -i 's/^Id:\s.*$/Id: fed/' apimgr/fed/meta-inf/manifest.mf
-          mkdir -p apimgr/merge-dir/fed
-          jar cvfm apimgr/merge-dir/fed/apigateway.fed apimgr/fed/meta-inf/manifest.mf -C apimgr fed
-          jar tvf apimgr/merge-dir/fed/apigateway.fed
+          sed -i 's/^Id:\s.*$/Id: fed/' apigateway/config/meta-inf/manifest.mf
+          mkdir -p apigateway/fed/fed
+          jar cvfm apigateway/fed/apigateway.fed apigateway/fed/meta-inf/manifest.mf -C apimgr fed
+          jar tvf apigateway/fed/apigateway.fed
       - name: Push created FED-File
         uses: EndBug/add-and-commit@v9
         with:
