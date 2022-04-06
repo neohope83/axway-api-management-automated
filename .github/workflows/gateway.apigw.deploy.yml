@@ -44,10 +44,12 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Set image version
         run: |
-          if [ "${{ inputs.version }}" ]; then
-            echo "outImageVersion: ${{ inputs.version }}"
+          if [ "${{ github.event.inputs.version }}" ]; then
+            echo "Using given version as image tag: ${{ github.event.inputs.version }}"
+            echo "IMAGE_TAG=${{ github.event.inputs.version }}" >> $GITHUB_ENV
           else 
-            echo "No version"
+            echo "No version given, using current date"
+            echo "IMAGE_TAG=$(echo $(date '+%Y-%m-%d-%H-%M'))" >> $GITHUB_ENV
           fi
           exit 9
       - name: Pull base image
