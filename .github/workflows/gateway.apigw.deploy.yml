@@ -44,7 +44,11 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Set image version
         run: |
-          printenv
+          if [ ${outImageVersion} ]; then
+            echo "outImageVersion: ${outImageVersion}"
+          else 
+            echo "No version"
+          fi
           exit 9
       - name: Pull base image
         run: docker pull ${{ env.dockerRegistry }}/${{ env.dockerRepository }}/${{ env.baseImage }}
