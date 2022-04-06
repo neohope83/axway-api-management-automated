@@ -11,8 +11,8 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Version or Date is attached to the created image'
-        required: true
+        description: 'Version or Date is attached to the created image. If not given, the current date is used.'
+        required: false
         type: string 
       deploy_apimgr:
         description: 'Deploy API-Manager'
