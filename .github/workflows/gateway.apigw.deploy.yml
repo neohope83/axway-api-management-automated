@@ -7,19 +7,22 @@ env:
   outImage: "manager:77-20220228-v1"
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - gateway-config/apimgr/**
-  pull_request:
-    branches:
-      - main
-    paths:
-      - gateway-config/apimgr/**
-  release:
-    types:
-      - published
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version or Date is attached to the created image'
+        required: true
+        type: string 
+      deploy_apimgr:
+        description: 'Deploy API-Manager'
+        required: false
+        default: true
+        type: boolean 
+      deploy_apigw:
+        description: 'Deploy API-Gateways'
+        required: false
+        default: true
+        type: boolean 
 
 defaults:
   run:
@@ -27,7 +30,6 @@ defaults:
 
 jobs:
   create-apigw-docker-image:
-    if: "!contains(github.event.head_commit.message, 'skip ci') && contains(github.event.head_commit.message, 'create image')"
     name: Create API-Gateway image
     runs-on: ubuntu-latest
     steps:
@@ -39,16 +41,14 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Pull base image
         run: docker pull ${{ env.dockerRegistry }}/${{ env.dockerRepository }}/${{ env.baseImage }}
-      - name: Create image tag
-        run: echo "IMAGE_TAG=$(echo $GITHUB_SHA | head -c7)" >> $GITHUB_ENV
       - name: Build API-Gateway image
         run: |
           tar xvfz apigw-emt-scripts-2.4.0-20220222.150412-10.tar.gz
           echo "${{ secrets.APIGATEWAY_LICENSE }}" | base64 -d > license.lic
-          ./apigw-emt-scripts-2.4.0-SNAPSHOT/build_gw_image.py --license=license.lic --merge-dir apimgr/merge-dir/apigateway --default-cert --fed=apimanager.fed --parent-image=${{ env.dockerRegistry }}/${{ env.dockerRepository }}/${{ env.baseImage }} --out-image=${{ env.dockerRegistry }}/${{ env.dockerRepository }}/${{ env.outImage }}-${{ env.IMAGE_TAG }}
+          ./apigw-emt-scripts-2.4.0-SNAPSHOT/build_gw_image.py --license=license.lic --merge-dir apimgr/merge-dir/apigateway --default-cert --fed=apimanager.fed --parent-image=${{ env.dockerRegistry }}/${{ env.dockerRepository }}/${{ env.baseImage }} --out-image=${{ env.dockerRegistry }}/${{ env.dockerRepository }}/${{ env.outImage }}-${{ github.event.inputs.version }}
       - name: Push image
         run: |
-          docker push ${{ env.dockerRegistry }}/${{ env.dockerRepository }}/${{ env.outImage }}-${{ env.IMAGE_TAG }}
+          docker push ${{ env.dockerRegistry }}/${{ env.dockerRepository }}/${{ env.outImage }}-${{ github.event.inputs.version }}
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -57,5 +57,5 @@ jobs:
           aws-region: eu-west-1
       - name: Helm upgrade
         run: |
-          helm upgrade axway-apim -n apim --set traffic.imageTag=${{ env.outImage }}-${{ env.IMAGE_TAG }} --set apimgr.imageTag=${{ env.outImage }}-${{ env.IMAGE_TAG }} ../helm/aws-eks/axway-apim-on-aws-eks-values.yaml https://github.com/Axway/Cloud-Automation/releases/download/apim-helm-v2.7.0/helm-chart-axway-apim-2.7.0.tgz
+          helm upgrade axway-apim -n apim --set traffic.imageTag=${{ env.outImage }}-${{ github.event.inputs.version }} --set apimgr.imageTag=${{ env.outImage }}-${{ github.event.inputs.version }} ../helm/aws-eks/axway-apim-on-aws-eks-values.yaml https://github.com/Axway/Cloud-Automation/releases/download/apim-helm-v2.7.0/helm-chart-axway-apim-2.7.0.tgz
 
