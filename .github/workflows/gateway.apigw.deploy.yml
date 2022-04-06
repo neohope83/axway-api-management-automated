@@ -44,8 +44,8 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Set image version
         run: |
-          if [ ${outImageVersion} ]; then
-            echo "outImageVersion: ${outImageVersion}"
+          if [ "${{ github.event.inputs.tags }}" ]; then
+            echo "outImageVersion: ${{ github.event.inputs.tags }}"
           else 
             echo "No version"
           fi
