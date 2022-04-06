@@ -29,7 +29,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Create FED-File
         run: |
-          sed -i 's/^Id:\s.*$/Id: fed/' apigateway/config/META-INF/manifest.mf
+          sed -i 's/^Id:\s.*$/Id: config/' apigateway/config/META-INF/manifest.mf
           mkdir -p apigateway/fed
           jar cvfm apigateway/fed/apigateway.fed apigateway/config/META-INF/manifest.mf -C apigateway config
           jar tvf apigateway/fed/apigateway.fed
