@@ -20,9 +20,9 @@ defaults:
     working-directory: gateway-config
 
 jobs:
-  rollout-config-change:
+  rollout-anm-config:
     if: "!contains(github.event.head_commit.message, 'skip ci')"
-    name: Rollout config
+    name: Rollout ANM config
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
