@@ -1140,13 +1140,13 @@
 	<fval name="name"><value>Expires</value></fval>
 	<fval name="value"><value>0</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Property" entityPK="3710689655583807596" parentPK="-1845545945150657723">
-	<fval name="name"><value>Content-Security-Policy</value></fval>
-	<fval name="value"><value>${env.MANAGEMENT.CONTENTSECURITYPOLICY}</value></fval>
-</entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Property" entityPK="-7527087926054529715" parentPK="-1845545945150657723">
 	<fval name="name"><value>X-Frame-Options</value></fval>
 	<fval name="value"><value>DENY</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Property" entityPK="3710689655583807596" parentPK="-1845545945150657723">
+	<fval name="name"><value>Content-Security-Policy</value></fval>
+	<fval name="value"><value>${env.MANAGEMENT.CONTENTSECURITYPOLICY}</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Property" entityPK="-1475403951481869282" parentPK="-1845545945150657723">
 	<fval name="name"><value>X-XSS-Protection</value></fval>
@@ -1239,6 +1239,45 @@
 	<fval name="name"><value>Content-Security-Policy</value></fval>
 	<fval name="value"><value>${env.MANAGEMENT.CONTENTSECURITYPOLICY}</value></fval>
 </entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SSLInterface" entityPK="4968793349778095039" parentPK="-2582178136129281426">
+	<fval name="activetimeout"><value>60000</value></fval>
+	<fval name="address"><value>*</value></fval>
+	<fval name="auditConn"><value>true</value></fval>
+	<fval name="backlog"><value>64</value></fval>
+	<fval name="caCert"><value contentType="reference">
+<key type='Certificates'><id field='name' value='Certificate Store'/><key type='Certificate'><id field='dname' value='CN=DefaultDomain'/></key></key>	</value></fval>
+	<fval name="ciphers"><value>FIPS:!SSLv3:!aNULL:!TLSv1:!kRSA</value></fval>
+	<fval name="clientAuth"><value>optional</value></fval>
+	<fval name="depth"><value>1</value></fval>
+	<fval name="dhParams"><value>MIICCAKCAgEAha5LZtsH67sVXYuDz05Oo1HdTeGmgGnf3M69pZUVbjQ9ge5zDkfLg3ajlHDnSPP8nL26WbZ+0+D0NKpdtuJA6/cmSaNnSs7T0FCiWhifOghojcYhdVs4R2M0Qzj+x91BPSt1lAzJyaKeLclkh9VXVTmfsVNXZWS/4GOV1bSpElN8g4BYfzHoKp5fOZIrf0qGsHEgq20zT/BavHL8ZwdN20qHEeVBuZdYXGA6kbFrEl46JscRzOS5vfbN/grF0y5r8Guo8astMdb/2M2slzpwuWKnJ78Y8og9e1lZcpdmrvlmQRvxRH+oJu+ckkErxxC9nV0k3vIJ8UpmNFXd6Qe/IWVsr8RBrwx6QyZFNM5kgWJU2twgTPJM6VCmurAZtecdoHt2gr++CnLXqlTeb+9gGjeekuv0tHVDAfTBM+tcep0mKu+VxhOjlvbzok4wvpDyhXd+kLFWbzMm4bfIRNai5Z0M5Rj1xg560Txt2ozp3o6aYMvRUz8CQkSyFOcckAkwMPq5Ae86e9jOHdnP3LyX7HXQ1HsFPPS65nxxq/n4eV0rBTcDo20AhlNdTixsFV7kgpDvt7IFdAAgNrFCmPIAVg2Bs566WUFPWfwhVKULjiN+xXCQEWo+lZG7vm3Sc29/zSDLEd2FXaPSzGd6jPwAEf8OhaIIFAYeHoXBboWp3usCAQI=</value></fval>
+	<fval name="enabled"><value>1</value></fval>
+	<fval name="exportCorrelationId"><value>true</value></fval>
+	<fval name="idletimeout"><value>60000</value></fval>
+	<fval name="inputEncodings"><value>.inherit</value></fval>
+	<fval name="maxRequestMemory"><value>27262976</value></fval>
+	<fval name="name"><value>Management HTTPS Interface</value></fval>
+	<fval name="opsSettingsUsage"><value>PORT</value></fval>
+	<fval name="outputEncodings"><value>.inherit</value></fval>
+	<fval name="port"><value>${env.PORT.MANAGEMENT}</value></fval>
+	<fval name="protocol"><value>ipv4</value></fval>
+	<fval name="recordCircuitPath"><value>0</value></fval>
+	<fval name="recordInboundTxns"><value>0</value></fval>
+	<fval name="recordOutboundTxns"><value>0</value></fval>
+	<fval name="recordReceived"><value>true</value></fval>
+	<fval name="recordSent"><value>true</value></fval>
+	<fval name="recordTrace"><value>0</value></fval>
+	<fval name="resolveSubjectCNtoNetAddr"><value>0</value></fval>
+	<fval name="reuseAddress"><value>false</value></fval>
+	<fval name="serverCert"><value contentType="reference">
+<key type='Certificates'><id field='name' value='Certificate Store'/><key type='Certificate'><id field='dname' value='topology-cert'/></key></key>	</value></fval>
+	<fval name="sessionCacheSize"><value>32</value></fval>
+	<fval name="ssloptions">
+		<value>nosslv3</value>
+		<value>nosslv2</value>
+	</fval>
+	<fval name="tracelevel"><value>INHERIT</value></fval>
+	<fval name="transparentProxy"><value>0</value></fval>
+</entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="XMLFirewall" entityPK="-8103465723329194193" parentPK="-2582178136129281426">
 	<fval name="corsProfile"><value contentType="reference">-1</value></fval>
 	<fval name="corsUsage"><value>HTTP</value></fval>
@@ -1295,45 +1334,6 @@
 	<fval name="evaluate"><value>true</value></fval>
 	<fval name="name"><value>CUSTOM_POLICY_RSP</value></fval>
 	<fval name="priority"><value>3</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SSLInterface" entityPK="4968793349778095039" parentPK="-2582178136129281426">
-	<fval name="activetimeout"><value>60000</value></fval>
-	<fval name="address"><value>*</value></fval>
-	<fval name="auditConn"><value>true</value></fval>
-	<fval name="backlog"><value>64</value></fval>
-	<fval name="caCert"><value contentType="reference">
-<key type='Certificates'><id field='name' value='Certificate Store'/><key type='Certificate'><id field='dname' value='CN=DefaultDomain'/></key></key>	</value></fval>
-	<fval name="ciphers"><value>FIPS:!SSLv3:!aNULL:!TLSv1:!kRSA</value></fval>
-	<fval name="clientAuth"><value>optional</value></fval>
-	<fval name="depth"><value>1</value></fval>
-	<fval name="dhParams"><value>MIICCAKCAgEAha5LZtsH67sVXYuDz05Oo1HdTeGmgGnf3M69pZUVbjQ9ge5zDkfLg3ajlHDnSPP8nL26WbZ+0+D0NKpdtuJA6/cmSaNnSs7T0FCiWhifOghojcYhdVs4R2M0Qzj+x91BPSt1lAzJyaKeLclkh9VXVTmfsVNXZWS/4GOV1bSpElN8g4BYfzHoKp5fOZIrf0qGsHEgq20zT/BavHL8ZwdN20qHEeVBuZdYXGA6kbFrEl46JscRzOS5vfbN/grF0y5r8Guo8astMdb/2M2slzpwuWKnJ78Y8og9e1lZcpdmrvlmQRvxRH+oJu+ckkErxxC9nV0k3vIJ8UpmNFXd6Qe/IWVsr8RBrwx6QyZFNM5kgWJU2twgTPJM6VCmurAZtecdoHt2gr++CnLXqlTeb+9gGjeekuv0tHVDAfTBM+tcep0mKu+VxhOjlvbzok4wvpDyhXd+kLFWbzMm4bfIRNai5Z0M5Rj1xg560Txt2ozp3o6aYMvRUz8CQkSyFOcckAkwMPq5Ae86e9jOHdnP3LyX7HXQ1HsFPPS65nxxq/n4eV0rBTcDo20AhlNdTixsFV7kgpDvt7IFdAAgNrFCmPIAVg2Bs566WUFPWfwhVKULjiN+xXCQEWo+lZG7vm3Sc29/zSDLEd2FXaPSzGd6jPwAEf8OhaIIFAYeHoXBboWp3usCAQI=</value></fval>
-	<fval name="enabled"><value>1</value></fval>
-	<fval name="exportCorrelationId"><value>true</value></fval>
-	<fval name="idletimeout"><value>60000</value></fval>
-	<fval name="inputEncodings"><value>.inherit</value></fval>
-	<fval name="maxRequestMemory"><value>27262976</value></fval>
-	<fval name="name"><value>Management HTTPS Interface</value></fval>
-	<fval name="opsSettingsUsage"><value>PORT</value></fval>
-	<fval name="outputEncodings"><value>.inherit</value></fval>
-	<fval name="port"><value>${env.PORT.MANAGEMENT}</value></fval>
-	<fval name="protocol"><value>ipv4</value></fval>
-	<fval name="recordCircuitPath"><value>0</value></fval>
-	<fval name="recordInboundTxns"><value>0</value></fval>
-	<fval name="recordOutboundTxns"><value>0</value></fval>
-	<fval name="recordReceived"><value>true</value></fval>
-	<fval name="recordSent"><value>true</value></fval>
-	<fval name="recordTrace"><value>0</value></fval>
-	<fval name="resolveSubjectCNtoNetAddr"><value>0</value></fval>
-	<fval name="reuseAddress"><value>false</value></fval>
-	<fval name="serverCert"><value contentType="reference">
-<key type='Certificates'><id field='name' value='Certificate Store'/><key type='Certificate'><id field='dname' value='topology-cert'/></key></key>	</value></fval>
-	<fval name="sessionCacheSize"><value>32</value></fval>
-	<fval name="ssloptions">
-		<value>nosslv3</value>
-		<value>nosslv2</value>
-	</fval>
-	<fval name="tracelevel"><value>INHERIT</value></fval>
-	<fval name="transparentProxy"><value>0</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="APISecurityProfileGroup" entityPK="277622775050992234" parentPK="0">
 	<fval name="name"><value>REST API Security Profiles</value></fval>
