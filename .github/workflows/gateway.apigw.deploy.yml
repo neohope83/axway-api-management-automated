@@ -36,6 +36,9 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
+      - name: Set image tag to helm values
+        run: |
+          yq --help
       - name: Log in to GitHub Docker Registry
         uses: docker/login-action@v1
         with:
@@ -50,7 +53,7 @@ jobs:
           else 
             date=`echo $(date '+%Y-%m-%d-%H-%M')`
             echo "No version given, using current date: ${date}"
-            echo "IMAGE_TAG=${{ env.outImageVersion }}-$(echo ${date})" >> $GITHUB_ENV
+            echo "IMAGE_TAG=${{ env.outImageVersion }}_$(echo ${date})" >> $GITHUB_ENV
           fi
       - name: Pull base image
         run: docker pull ${{ env.dockerRegistry }}/${{ env.dockerRepository }}/${{ env.baseImage }}
