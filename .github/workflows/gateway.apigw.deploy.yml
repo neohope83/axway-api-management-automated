@@ -67,8 +67,6 @@ jobs:
         run: |
           yq -i '.apimgr.imageTag="${{ env.IMAGE_TAG }}"' ../helm/aws-eks/axway-apim-on-aws-eks-values.yaml
           yq -i '.apitraffic.imageTag="${{ env.IMAGE_TAG }}"' ../helm/aws-eks/axway-apim-on-aws-eks-values.yaml
-      - name: 'Git status'
-        run: git status
       - name: 'Commit Helm-Values'
         uses: EndBug/add-and-commit@v9
         with:
