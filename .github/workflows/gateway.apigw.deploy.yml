@@ -1,4 +1,4 @@
-name: "1. Deploy API-Gateways (M)"
+name: "1.(M) Deploy API-Gateways"
 
 env:
   dockerRegistry: ghcr.io
@@ -72,5 +72,5 @@ jobs:
         run: |
           mkdir  $HOME/.kube
           echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 -d > $HOME/.kube/config
-          helm upgrade axway-apim -n apim --set traffic.imageTag=${{ env.IMAGE_TAG }} --set apigateway.imageTag=${{ env.IMAGE_TAG }} -f ../helm/aws-eks/axway-apim-on-aws-eks-values.yaml https://github.com/Axway/Cloud-Automation/releases/download/apim-helm-v2.8.0-RC1/helm-chart-axway-apim-2.8.0-RC.tgz
+          helm upgrade axway-apim -n apim --set apitraffic.imageTag=${{ env.IMAGE_TAG }} --set apimgr.imageTag=${{ env.IMAGE_TAG }} -f ../helm/aws-eks/axway-apim-on-aws-eks-values.yaml https://github.com/Axway/Cloud-Automation/releases/download/apim-helm-v2.8.0-RC1/helm-chart-axway-apim-2.8.0-RC.tgz
 
