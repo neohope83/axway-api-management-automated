@@ -63,6 +63,13 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-1
+      - name: Update Helm-Value file
+        run: |
+          yq -i '.anm.imageTag=${{ env.IMAGE_TAG }}' ../helm/aws-eks/axway-apim-on-aws-eks-values.yaml
+      - name: 'Commit Helm-Values'
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: 'anm image tag set to ${{ env.IMAGE_TAG }}'
       - name: Helm upgrade
         run: |
           mkdir  $HOME/.kube
