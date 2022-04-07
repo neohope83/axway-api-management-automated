@@ -30,6 +30,7 @@ anm:
     limits:
       cpu: "800m"
       memory: "700Mi"
+  # Pull the required configuration and store it in the merge folder to be picked up, when the ANM starts
   extraInitContainers:
     - name: init-fed
       image: busybox:1.33
@@ -67,6 +68,7 @@ apimgr:
       alb.ingress.kubernetes.io/backend-protocol: "HTTPS"
       # 302 is also accepted, as Kibana is performing a redirect
       alb.ingress.kubernetes.io/success-codes: 200,302
+  # Pull the required configuration and store it in the merge folder to be picked up, when the API-Manager starts
   extraInitContainers:
     - name: init-fed
       image: busybox:1.33
@@ -110,6 +112,7 @@ apitraffic:
     limits:
       cpu: "1000m"
       memory: "2Gi"
+  # Pull the required configuration and store it in the merge folder to be picked up, when the API-Gateway starts
   extraInitContainers:
     - name: init-fed
       image: busybox:1.33
