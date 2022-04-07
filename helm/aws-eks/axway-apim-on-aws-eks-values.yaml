@@ -10,7 +10,7 @@ global:
 ##################################################################################################################################
 anm:
   enabled: true
-  imageTag: 77-20220228-1-bba2da0
+  imageTag: 77-20220228-1-2022-04-07-12-55
   ingress:
     enabled: true
     annotations:
@@ -44,10 +44,10 @@ anm:
 #           #!/bin/sh
 #           echo "Download API-Gateway config from: https://raw.githubusercontent.com/cwiechmann/axway-api-management-automated/main/gateway-config/anm/fed/anm.fed"
 #           wget -O /merge/fed https://raw.githubusercontent.com/cwiechmann/axway-api-management-automated/main/gateway-config/anm/fed/anm.fed
-          
-        # - name: extras
-        #   mountPath: /usr/share/extras
-        #   readOnly: true
+# - name: extras
+#   mountPath: /usr/share/extras
+#   readOnly: true
+
 ##################################################################################################################################
 #   API MANAGER
 ##################################################################################################################################
