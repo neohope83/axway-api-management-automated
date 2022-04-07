@@ -55,5 +55,5 @@ jobs:
           aws-region: eu-west-1
       - name: Helm upgrade
         run: |
-          helm upgrade axway-apim -n apim --set traffic.imageTag=${{ env.outImage }}-${{ github.event.inputs.version }} --set apigateway.imageTag=${{ env.outImage }}-${{ github.event.inputs.version }} ../helm/aws-eks/axway-apim-on-aws-eks-values.yaml https://github.com/Axway/Cloud-Automation/releases/download/apim-helm-v2.7.0/helm-chart-axway-apim-2.7.0.tgz
+          helm upgrade axway-apim -n apim --set traffic.imageTag=${{ env.outImage }}-${{ github.event.inputs.version }} --set apigateway.imageTag=${{ env.outImage }}-${{ github.event.inputs.version }} ../helm/aws-eks/axway-apim-on-aws-eks-values.yaml https://github.com/Axway/Cloud-Automation/releases/download/apim-helm-v2.8.0-RC1/helm-chart-axway-apim-2.8.0-RC.tgz
 
