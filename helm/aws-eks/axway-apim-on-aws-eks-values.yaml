@@ -30,20 +30,21 @@ anm:
     limits:
       cpu: "800m"
       memory: "700Mi"
-  extraInitContainers:
-    - name: init-fed
-      image: busybox:1.33
-      volumeMounts:
-        - name: merge-dir
-          mountPath: /merge
-      # command: [ "sh", "-c", "tail -f /dev/null" ]
-      command:
-        - sh
-        - -c
-        - |
-          #!/bin/sh
-          echo "Download API-Gateway config from: https://raw.githubusercontent.com/cwiechmann/axway-api-management-automated/main/gateway-config/anm/fed/anm.fed"
-          wget -O /merge/fed https://raw.githubusercontent.com/cwiechmann/axway-api-management-automated/main/gateway-config/anm/fed/anm.fed
+#   extraInitContainers:
+#     - name: init-fed
+#       image: busybox:1.33
+#       volumeMounts:
+#         - name: merge-dir
+#           mountPath: /merge
+#       # command: [ "sh", "-c", "tail -f /dev/null" ]
+#       command:
+#         - sh
+#         - -c
+#         - |
+#           #!/bin/sh
+#           echo "Download API-Gateway config from: https://raw.githubusercontent.com/cwiechmann/axway-api-management-automated/main/gateway-config/anm/fed/anm.fed"
+#           wget -O /merge/fed https://raw.githubusercontent.com/cwiechmann/axway-api-management-automated/main/gateway-config/anm/fed/anm.fed
+          
         # - name: extras
         #   mountPath: /usr/share/extras
         #   readOnly: true
