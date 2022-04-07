@@ -14,13 +14,8 @@ on:
         description: 'Version or Date is attached to the created image. If not given, the current date is used.'
         required: false
         type: string 
-      deploy_apimgr:
-        description: 'Deploy API-Manager'
-        required: false
-        default: true
-        type: boolean 
-      deploy_apigw:
-        description: 'Deploy API-Gateways'
+      deploy:
+        description: 'Deploy API-Manager and API-Gateways'
         required: false
         default: true
         type: boolean 
@@ -70,13 +65,14 @@ jobs:
           aws-region: eu-west-1
       - name: Update Helm-Value file
         run: |
-          yq -i '.apimgr.imageTag=${{ env.IMAGE_TAG }}' ../helm/aws-eks/axway-apim-on-aws-eks-values.yaml
-          yq -i '.apitraffic.imageTag=${{ env.IMAGE_TAG }}' ../helm/aws-eks/axway-apim-on-aws-eks-values.yaml
+          yq -i '.apimgr.imageTag="${{ env.IMAGE_TAG }}"' ../helm/aws-eks/axway-apim-on-aws-eks-values.yaml
+          yq -i '.apitraffic.imageTag="${{ env.IMAGE_TAG }}"' ../helm/aws-eks/axway-apim-on-aws-eks-values.yaml
       - name: 'Commit Helm-Values'
         uses: EndBug/add-and-commit@v9
         with:
           message: 'apimgr and apitraffic image tag set to ${{ env.IMAGE_TAG }}'
       - name: Helm upgrade
+        if: ${{ github.event.inputs.deploy }}
         run: |
           mkdir  $HOME/.kube
           echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 -d > $HOME/.kube/config
