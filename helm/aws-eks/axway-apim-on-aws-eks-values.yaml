@@ -45,7 +45,6 @@ anm:
           #!/bin/sh
           echo "Download API-Gateway config from: https://raw.githubusercontent.com/cwiechmann/axway-api-management-automated/main/gateway-config/anm/fed/anm.fed"
           wget -O /merge/fed https://raw.githubusercontent.com/cwiechmann/axway-api-management-automated/main/gateway-config/anm/fed/anm.fed
-
 # - name: extras
 #   mountPath: /usr/share/extras
 #   readOnly: true
@@ -55,7 +54,7 @@ anm:
 ##################################################################################################################################
 apimgr:
   enabled: true
-  imageTag: 77-20220228-1_2022-04-07-12-50
+  imageTag: 77-20220228-1_2022-04-07-15-22
   ingress:
     enabled: true
     annotations:
@@ -88,7 +87,7 @@ apimgr:
 ##################################################################################################################################
 apitraffic:
   enabled: true
-  imageTag: 77-20220228-1_2022-04-07-12-50
+  imageTag: 77-20220228-1_2022-04-07-15-22
   ingress:
     enabled: true
     name: traffic
