@@ -101,7 +101,7 @@ kibana:
     password: "mF8k95bC2gpBqb9eBKMB"
 
 logstash:
-  replicas: 2
+  replicas: 1
   # imageTag: "7.16.2"
   logstashJavaOpts: "-Xmx6g -Xms6g"
   validateElasticsearchCertificate: "none"
