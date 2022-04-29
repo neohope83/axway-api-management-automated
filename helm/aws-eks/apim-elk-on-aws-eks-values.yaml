@@ -32,6 +32,8 @@ apibuilder4elastic:
 elasticsearch:
   enabled: true
   # imageTag: "7.16.2"
+  anonymous: 
+    enabled: false
   replicas: 3
   extraInitContainers: [] # To be removed on release after 3.2.0
   volumeClaimTemplate:
@@ -57,9 +59,6 @@ elasticsearch:
   ingress: 
     enabled: false
 
-  anonymous: 
-    enabled: false
-
   elasticsearchSecrets:
     elasticUsername: "elastic"
     elasticPassword: "QiDaF7F3EhWWEYe35Saf"
@@ -68,6 +67,8 @@ elasticsearch:
 kibana:
   enabled: true
   # imageTag: "7.16.2"
+  replicas: 1
+
   validateElasticsearchCertificate: "none"
   ingress:
     className: ""
