@@ -133,7 +133,7 @@ apitraffic:
           wget -O /merge/fed https://raw.githubusercontent.com/cwiechmann/axway-api-management-automated/main/gateway-config/apigateway/fed/apigateway.fed
   extraContainers:
     - name: filebeat
-      image: docker.elastic.co/beats/filebeat:7.16.3
+      image: docker.elastic.co/beats/filebeat:7.17.1
       envFrom:
         - configMapRef:
             name: axway-elk-apim4elastic-filebeat-env-config
