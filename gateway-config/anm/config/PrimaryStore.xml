@@ -10562,8 +10562,8 @@
 	<fval name="failureNode"><value contentType="reference">3644732420903486908</value></fval>
 	<fval name="logFailure"><value>Filter failed</value></fval>
 	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logMask"><value>0</value></fval>
+	<fval name="logMaskType"><value>FILTER</value></fval>
 	<fval name="logSuccess"><value>Filter passed</value></fval>
 	<fval name="matchingRule"><value>MATCH_ALL</value></fval>
 	<fval name="name"><value>Skip Elasticsearch?</value></fval>
