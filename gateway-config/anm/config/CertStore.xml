@@ -127,35 +127,8 @@
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="PGPKeyPairs" entityPK="-2043121025609420108" parentPK="0">
 	<fval name="name"><value>PGP Key Pairs</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ESConfiguration" entityPK="6770479120327671610" parentPK="0">
-	<fval name="name"><value>Entity Store Configuration</value></fval>
-	<fval name="passphraseTest"><value>aHR0cDsvL3d3dy52b3JkZWwuY29t</value></fval>
-	<fval name="productKey"><value>VordelNodeManager</value></fval>
-	<fval name="typerepoVersion"><value>1.38.15</value></fval>
-	<fval name="version"><value>7.7.0</value></fval>
-</entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Certificates" entityPK="-926135593354340596" parentPK="0">
 	<fval name="name"><value>Certificate Store</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Certificate" entityPK="-5888104471099545536" parentPK="-926135593354340596">
-	<fval name="certificateRealm"><value></value></fval>
-	<fval name="content"><value>MIIDhDCCAmygAwIBAgIRANwL1qNTJlGGDEKMOhaOqnkwDQYJKoZIhvcNAQELBQAwGjEYMBYGA1UE&#xD;&#xA;AxMPZWxhc3RpYy1hcGltLWNhMB4XDTIxMDYwNDEwMDQ0NVoXDTIyMDYwNDEwMDQ0NVowFzEVMBMG&#xD;&#xA;A1UEAxMMYXBpbTRlbGFzdGljMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnqp1NkbY&#xD;&#xA;MrwQcvrET1bwhk/MtTyG2X/Jv+MOz/EgE6hhVTqd6DDLAmlxNVng2DwszYpJTGnddObF8/1Lbrlz&#xD;&#xA;GufoErKyH5Z5yA1g4k2jRKG0jTv4sjPooZIanjgr5DybBCzm47GROmQh2DbS+9tS0AyWwTM2YIMv&#xD;&#xA;0Jt1HsoRGx+zqsotuWbtWBbztC8UpQYIUmpFTPTNwkGW8MxyJ8bQJNd3QT335q7EzU6xNCHzxO4x&#xD;&#xA;u/K3HOo0FtJ2tBF9XDZjlCqDmopq8r2UtQklyFG5JRDwl5jOPFFt/QCrNGbCNETp/ML6t43qpDZ9&#xD;&#xA;3apjivNSYDNx16eszcGysHft9QpcRQIDAQABo4HHMIHEMA4GA1UdDwEB/wQEAwIFoDAdBgNVHSUE&#xD;&#xA;FjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwDAYDVR0TAQH/BAIwADCBhAYDVR0RBH0we4IJbG9jYWxo&#xD;&#xA;b3N0giRheHdheS1lbGstYXBpbTRlbGFzdGljLWVsYXN0aWNzZWFyY2iCKWF4d2F5LWVsay1hcGlt&#xD;&#xA;NGVsYXN0aWMtYXBpYnVpbGRlcjRlbGFzdGljgh1heHdheS1lbGstYXBpbTRlbGFzdGljLWtpYmFu&#xD;&#xA;YTANBgkqhkiG9w0BAQsFAAOCAQEAVybFtirQZmdOrz/CwW5718m9A2lH8fPJllQqQzkvQusSvtnE&#xD;&#xA;02zEDPQ6yXXpSA7v+ecmEsCChyNdYgJpwuylXzSMFcfTqXw+DUcnezUKFcqtakNmbi9BKosEgJlS&#xD;&#xA;il2Tsrxpqr4gh5A8kSbEEeJn7C/N5yxlQMGkhcHSvFMRvEkTpY+S22jsJy+r9FoQVEcc97G0Ew0P&#xD;&#xA;augizxiBMkm/HTTkmvOsLFZ7AKHLusb1USi2AbKGRatWoGXfCbKoBQQcpRagVYP6obM+gSy0CL1g&#xD;&#xA;S0HLtEhCjA2d0iatSRHE27OWPNox1l9tI1/asTzMbOSO3G1MvnNjgely84phS1dO4Q==</value></fval>
-	<fval name="conversation"><value></value></fval>
-	<fval name="dname"><value>CN=apim4elastic</value></fval>
-	<fval name="engine"><value></value></fval>
-	<fval name="issuer"><value contentType="reference">-1</value></fval>
-	<fval name="keyId"><value></value></fval>
-	<fval name="storeType"><value>LOCAL</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Certificate" entityPK="7953801861053233957" parentPK="-926135593354340596">
-	<fval name="certificateRealm"><value></value></fval>
-	<fval name="content"><value>MIIDIDCCAgigAwIBAgIRAK/BiQTDrMjxLB0q3XO1280wDQYJKoZIhvcNAQELBQAwGjEYMBYGA1UE&#xD;&#xA;AxMPZWxhc3RpYy1hcGltLWNhMB4XDTIyMDMwNTA5MjUxNloXDTIzMDMwNTA5MjUxNlowGjEYMBYG&#xD;&#xA;A1UEAxMPZWxhc3RpYy1hcGltLWNhMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyCLt&#xD;&#xA;hQOhAYhc1Z2XHxRYgwXO2R7wPdb1hmdBeLW16l6Noigw9MbE+HubsGCUopROwgyt540mFBkdvUG4&#xD;&#xA;5V31A2lSHJPa2TdrlVej7tvImUnQ/TIuH1FyAQq/1HvHOLxCZN0ewJ3FFyVEtlojL8TvLWjES90X&#xD;&#xA;f9i90weJLL4QvJCCPEsCp32OoIQy4IAUTmzK1Qzmq3g1jCEaotbEkV+9o4Y5ir1AQa3ui0/3cNUS&#xD;&#xA;F941jNOY5FB7sDNJYDIyahgAX69NjtV0+VmR0zbpLeqa+RBfO92Sr6mgweYk7qVs4WG+ZvaK1D3z&#xD;&#xA;rQfLMQ50+258YF132TPRROiTPP+3tAImjQIDAQABo2EwXzAOBgNVHQ8BAf8EBAMCAqQwHQYDVR0l&#xD;&#xA;BBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMA8GA1UdEwEB/wQFMAMBAf8wHQYDVR0OBBYEFIiLSdYN&#xD;&#xA;DuhVumR6WRgAJ17HCySdMA0GCSqGSIb3DQEBCwUAA4IBAQAS2iKuXMmfMGTSXXNRbu050/MYJO3G&#xD;&#xA;oCdD7HT/Plf5yPD9iU4iZOWDBusXQlSJOUf/F+hqjiTlxk+08QLQN1jtCpkKGmHCA2vZtnTpE6Xg&#xD;&#xA;va8Q2xo7WiokkSMzv2Vv+OtvNBK58QcrjCliOecjiBGeqeIyNKcU7adBshaPPG6Gj9xbHHhNckX8&#xD;&#xA;Bt2Ge2EGfHLbhpxbcVIfrmFac4s48X+pH63WFNGXHVoXNmlIxE8LEuyEEtOfpVJ/wzBipZq72i6K&#xD;&#xA;M0EagpsmEMu7Ssj4dd1iNXkxks7/NZrLxZcKssTwXGxA50cah2Ig3Vd47ZEMqTt449AvHpW863N0&#xD;&#xA;uxIdN6aW</value></fval>
-	<fval name="conversation"><value></value></fval>
-	<fval name="dname"><value>CN=elastic-apim-ca-new</value></fval>
-	<fval name="engine"><value></value></fval>
-	<fval name="issuer"><value contentType="reference">-1</value></fval>
-	<fval name="keyId"><value></value></fval>
-	<fval name="storeType"><value>LOCAL</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Certificate" entityPK="5449252098717618634" parentPK="-926135593354340596">
 	<fval name="content"><value>MIIC0jCCAbqgAwIBAgIGAXnR3+wDMA0GCSqGSIb3DQEBCwUAMBgxFjAUBgNVBAMMDURlZmF1bHRE&#xD;&#xA;b21haW4wIBcNMjEwNTI3MTIzNjIzWhgPMjEyMTA1MTAxMjM2MjNaMBgxFjAUBgNVBAMMDURlZmF1&#xD;&#xA;bHREb21haW4wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDRiLrOIbHa9Q3XJEe9yqmG&#xD;&#xA;PnXnlOtTl4aMvCilnDtvpqL1W99RVJm9bgoP35OB+hRPj6n6GDx3quV0TNTpjvm1TyAQ2JGu+md0&#xD;&#xA;fw5V+/62vGkSN+GhSmow6+78aj5PEemq9g5Rw+vWiKFlSjRx9vB5qKM7CWZYYwXSZQQGNN/ELuDU&#xD;&#xA;pQESwV+HATuwml+vup2gH7dWsKM+x5FVDZZtKnZPrevjcBBx2aoxclFurNCbTuopNR5C7+efMiC4&#xD;&#xA;/nshsu7v05E6KX7EQP4kY7gstUaQH7tmXk7wp8PGK3Z0xk54Hk8Iijdu+vhNeGU3feb1j0QebrzP&#xD;&#xA;PvtO9qoKvlg2e7+tAgMBAAGjIDAeMA8GA1UdEwQIMAYBAf8CAQAwCwYDVR0PBAQDAgK8MA0GCSqG&#xD;&#xA;SIb3DQEBCwUAA4IBAQBV0oEEsdqGg1JZyuNgFfy4ByLEIntLbe4eYz8V3Ky+Mo5D7rJteeh9GM+b&#xD;&#xA;UVkVv8aScLaJYH5+kWYljBluV9G2Csxsbdxa5uaZu6XRAxXqV+hsSfv9aFOQ9mHLcMRwiToqT7uv&#xD;&#xA;5GrlR20X/zu/Dyws5HciU1h+i3pGFzKCTyvnQkQjLiu2yB2oK2ORWpGpltybW43Qlg77JTQ13TuF&#xD;&#xA;SWh90eHDdWXAnE+ROQZA+2R49FwkM4p+qcZnO8JLDed4D7xUJ0q1UE9W+nztH1536D5eZH6aSZ8D&#xD;&#xA;ioRAbO6rBsUYDWx7lKcbEktzlKHKKcxnbADC0DoybH7xmIPNHJsQyyxJ</value></fval>
@@ -169,5 +142,32 @@
 <key type='Certificates'><id field='name' value='Certificate Store'/><key type='Certificate'><id field='dname' value='CN=DefaultDomain'/></key></key>	</value></fval>
 	<fval name="key"><value>MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCre3G6LT60sNVTWYoq/jNdgRvT&#xA;fCw8Kbrc5vp4mpeOkQgx9V3H9wdfnZIvT2MtcAI/YdqjRqt0osZAZvjfq4dU0D+f+Re/FQ5T1mRq&#xA;jx5/7ep3jUmPhR5Cq5Ruq7Okr95FtZdcS8udk/ZCOoQkCY2m5IlADpjBXfhMGj691BSnWjUux+OX&#xA;Eqa4g1pI2DTR6lfLkA8xGrOPrS8EuW1kJdlPMIkZ711+A5gcbHuZtDH+YnEkHkF9AyOjteWm93ya&#xA;9ZIMSQYN4PDKak6+73KazvTBA0v43WJtgBkgBgu6XxK3TijabYKBvQyF8lzOChmSeAYqPRrJ+dSv&#xA;6tpDlAfzHsQxAgMBAAECggEARxRC/rXUYRdPRV4+/DUj22UxwIae2008zGXdenIx0gFh0TtwZPuL&#xA;DeIFfyC77lCYTedktfsMBKuX24gTLrstvEUZqliYtDapGq0qMFUkgkh+wJFK5Xd7JI10WC9JpkDT&#xA;tDdiBvrP6oAzOh6BOWLQWVYvYeLrBHPMANd8HDk1WmxHHiRtrg0je/TTO7va7aeQz/EVPumjAoex&#xA;6YPkUnOM58eA+J9s7v9EVNCcem5fTYZLmNXHrG2scMPIse2AogXB8q9SmXBYblv3E+4BELUq5Kjo&#xA;itsnfkUfILPupS6BjoWbTmFGSvZrhBpaZbMzCmjSFFRee0kr1H/dZdB4BRnhsQKBgQDS0uh3PBMy&#xA;E+Cdy261373Wpz4bvjo1ETGoMZ4aKjmhYiC0U4Em2WL+AAhLyxanFeexwDpk9Fx3+AAICBDVMpGp&#xA;OyQX0KV79c6sZtPfuEbJfzDxYMoAPXJOjTIhpfTGKxiop9EEMIzEVl0738M8Qveg23MRUfv/hs7G&#xA;fypO69/hLQKBgQDQOmJvlVVeQq5MMIWQO+lATPw17MasYwiUTH9q889oAOxtjdYY4OG/Ctg4aSPu&#xA;B5Kblm1GndeU8hOU++wfuiEhzI/LfHK/YFKkWjoxKW9g494MCejluO4avB0AtwETBiSnCJ9VRhvb&#xA;G9wMUfnYcSymgqA0w+xQA3bPuGh/zRKplQKBgFCaEgaEEVK0BsxNWqZuREYs6rHwqJBhYnrLfYbD&#xA;XgU1XwuSYW5Y7l/t4z4XBzIaTdrHg4vVYQT87AYmD0lza/0nf0UboCkkcT+4kIiYC3g+CJhASPqO&#xA;g4VEtkXnDQ42q9bPUjon1am62yppAlunvsThIb0dexrWj3eUZriFtbKBAoGBAI+Twm4YNS3yooZM&#xA;arwiY1n/+2QfaHpTKwY+nRkdFiUrhdqgk0DCR0ZYbvCupqSpOhDoL18i1RSRuqje8FiMGe5ZQ8lW&#xA;fTSycSl8QWXGoVLYrDH2300PL7blgMYOacI5WSqHin3dArYZRqiEGdeBaf1CUr8vXRFq4hCmof+F&#xA;YtnlAoGBAJyALHW90za6aJ0wHkx785iHxfbG2Xhim5YKcVCeWs9nB7ira7uClbDkXey3b4ANn0dr&#xA;96EoP0jGE4P40pK/FfjEp69ZL268IMZauKnUk5qqMfwGgntJwZYftyk01NH6yVgXvDm1KE2tq7T6&#xA;rSxfKTLW3GazmY3vmgei69CB2es8</value></fval>
 	<fval name="storeType"><value>LOCAL</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Certificate" entityPK="-5888104471099545536" parentPK="-926135593354340596">
+	<fval name="certificateRealm"><value></value></fval>
+	<fval name="content"><value>MIIDhDCCAmygAwIBAgIRANwL1qNTJlGGDEKMOhaOqnkwDQYJKoZIhvcNAQELBQAwGjEYMBYGA1UE&#xD;&#xA;AxMPZWxhc3RpYy1hcGltLWNhMB4XDTIxMDYwNDEwMDQ0NVoXDTIyMDYwNDEwMDQ0NVowFzEVMBMG&#xD;&#xA;A1UEAxMMYXBpbTRlbGFzdGljMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnqp1NkbY&#xD;&#xA;MrwQcvrET1bwhk/MtTyG2X/Jv+MOz/EgE6hhVTqd6DDLAmlxNVng2DwszYpJTGnddObF8/1Lbrlz&#xD;&#xA;GufoErKyH5Z5yA1g4k2jRKG0jTv4sjPooZIanjgr5DybBCzm47GROmQh2DbS+9tS0AyWwTM2YIMv&#xD;&#xA;0Jt1HsoRGx+zqsotuWbtWBbztC8UpQYIUmpFTPTNwkGW8MxyJ8bQJNd3QT335q7EzU6xNCHzxO4x&#xD;&#xA;u/K3HOo0FtJ2tBF9XDZjlCqDmopq8r2UtQklyFG5JRDwl5jOPFFt/QCrNGbCNETp/ML6t43qpDZ9&#xD;&#xA;3apjivNSYDNx16eszcGysHft9QpcRQIDAQABo4HHMIHEMA4GA1UdDwEB/wQEAwIFoDAdBgNVHSUE&#xD;&#xA;FjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwDAYDVR0TAQH/BAIwADCBhAYDVR0RBH0we4IJbG9jYWxo&#xD;&#xA;b3N0giRheHdheS1lbGstYXBpbTRlbGFzdGljLWVsYXN0aWNzZWFyY2iCKWF4d2F5LWVsay1hcGlt&#xD;&#xA;NGVsYXN0aWMtYXBpYnVpbGRlcjRlbGFzdGljgh1heHdheS1lbGstYXBpbTRlbGFzdGljLWtpYmFu&#xD;&#xA;YTANBgkqhkiG9w0BAQsFAAOCAQEAVybFtirQZmdOrz/CwW5718m9A2lH8fPJllQqQzkvQusSvtnE&#xD;&#xA;02zEDPQ6yXXpSA7v+ecmEsCChyNdYgJpwuylXzSMFcfTqXw+DUcnezUKFcqtakNmbi9BKosEgJlS&#xD;&#xA;il2Tsrxpqr4gh5A8kSbEEeJn7C/N5yxlQMGkhcHSvFMRvEkTpY+S22jsJy+r9FoQVEcc97G0Ew0P&#xD;&#xA;augizxiBMkm/HTTkmvOsLFZ7AKHLusb1USi2AbKGRatWoGXfCbKoBQQcpRagVYP6obM+gSy0CL1g&#xD;&#xA;S0HLtEhCjA2d0iatSRHE27OWPNox1l9tI1/asTzMbOSO3G1MvnNjgely84phS1dO4Q==</value></fval>
+	<fval name="conversation"><value></value></fval>
+	<fval name="dname"><value>CN=apim4elastic</value></fval>
+	<fval name="engine"><value></value></fval>
+	<fval name="issuer"><value contentType="reference">-1</value></fval>
+	<fval name="keyId"><value></value></fval>
+	<fval name="storeType"><value>LOCAL</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Certificate" entityPK="2576913939788083154" parentPK="-926135593354340596">
+	<fval name="certificateRealm"><value></value></fval>
+	<fval name="content"><value>MIIDIDCCAgigAwIBAgIRAJGOlGhSSVDuuKLVFcdIoo0wDQYJKoZIhvcNAQELBQAwGjEYMBYGA1UE&#xD;&#xA;AxMPZWxhc3RpYy1hcGltLWNhMB4XDTIyMDQyOTA4MjUwNVoXDTIzMDQyOTA4MjUwNVowGjEYMBYG&#xD;&#xA;A1UEAxMPZWxhc3RpYy1hcGltLWNhMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtOA5&#xD;&#xA;ENd+INEQfSMT4QxRHrCj7h7xeK1vuiimKfUdYaoq+322TQKBXStECEr/25ZjqexRaLML7lrJRyNH&#xD;&#xA;XO2dip3y1/pR//o29DXAnXEFlt/sLvbwDw5NG/krfJfNDKOevJ3SlNjcxGg8OqKgwIf9rDGx6srO&#xD;&#xA;TJXhIEtVmD6s7ossA4dfn1R0ZrcvgpISMFqnzs1uz9Jv4ka8jnPAGnzD6EDosWiDkjPT8byFMgom&#xD;&#xA;/9pu4oKySb0H+NyQ1jVwcmRceBMiHyl/JpGVJ5yJXeeZV33H+RK8rMoLMDBeISHWKcSJ5lYsvNKi&#xD;&#xA;r/pENOPZEBIiGPErexiOhttPhlDYvA79pwIDAQABo2EwXzAOBgNVHQ8BAf8EBAMCAqQwHQYDVR0l&#xD;&#xA;BBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMA8GA1UdEwEB/wQFMAMBAf8wHQYDVR0OBBYEFNgZgqUR&#xD;&#xA;zqzqvw29juBvLvwCRhNPMA0GCSqGSIb3DQEBCwUAA4IBAQCrsmxy0kRKYFFUeOTAwHHXEsVoPuOU&#xD;&#xA;lqYvpzJxprqPlTBjz0eLJPNqiEz6FNohvJfQZepEKFz28dSauOXvxwX3PzkezpBMWV4uFoFPE2he&#xD;&#xA;c9evqfPwUtoGrFbqOCS6AqqXjqQiRZoFRLWHtxlJtOxxTDgPRrdKKNK5HpUDUjuMc/67PzA15YQ5&#xD;&#xA;QgRYXqgD+ov4Zz2ke82j0QZu3Ujzzwj3i/r+qmxIZgUFthLKCMjlfb2Mve+f7ttzvx+eWH1iUdax&#xD;&#xA;hnFHzPA3Qeud5dkyYQjwaQctSJTgqF2LMmeofayTta41sIO35Y8tD7sYhkoIfDU+agD9pHY5TF0r&#xD;&#xA;VC1WihZG</value></fval>
+	<fval name="conversation"><value></value></fval>
+	<fval name="dname"><value>CN=elastic-apim-ca</value></fval>
+	<fval name="engine"><value></value></fval>
+	<fval name="issuer"><value contentType="reference">-1</value></fval>
+	<fval name="keyId"><value></value></fval>
+	<fval name="storeType"><value>LOCAL</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ESConfiguration" entityPK="6770479120327671610" parentPK="0">
+	<fval name="name"><value>Entity Store Configuration</value></fval>
+	<fval name="passphraseTest"><value>aHR0cDsvL3d3dy52b3JkZWwuY29t</value></fval>
+	<fval name="productKey"><value>VordelNodeManager</value></fval>
+	<fval name="typerepoVersion"><value>1.38.15</value></fval>
+	<fval name="version"><value>7.7.0</value></fval>
 </entity>
 </entityStoreData>
