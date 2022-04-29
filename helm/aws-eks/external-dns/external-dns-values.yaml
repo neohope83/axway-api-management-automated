@@ -1,0 +1,7 @@
+provider: aws
+
+domainFilters: 
+  - axway-apim-on-eks.de
+
+aws:
+  zoneType: public

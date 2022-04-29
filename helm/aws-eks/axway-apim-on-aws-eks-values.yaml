@@ -11,6 +11,7 @@ global:
 anm:
   enabled: true
   imageTag: 77-20220228-1-2022-04-07-12-55
+  replicas: 1
   ingress:
     enabled: true
     annotations:
@@ -55,6 +56,7 @@ anm:
 apimgr:
   enabled: true
   imageTag: 77-20220228-1_2022-04-08-06-58
+  replicas: 1
   ingress:
     enabled: true
     annotations:
@@ -67,6 +69,9 @@ apimgr:
       alb.ingress.kubernetes.io/backend-protocol: "HTTPS"
       # 302 is also accepted, as Kibana is performing a redirect
       alb.ingress.kubernetes.io/success-codes: 200,302
+      # Even, if not recommended, but when using 2 or more API-Manager, configure AWS Target-Group session stickiness to make sure, 
+      # requests hit the same API-Manager instance
+      # alb.ingress.kubernetes.io/target-group-attributes: stickiness.enabled=true,stickiness.type=lb_cookie,stickiness.lb_cookie.duration_seconds=43200
   # Pull the required configuration and store it in the merge folder to be picked up, when the API-Manager starts
   extraInitContainers:
     - name: init-fed
