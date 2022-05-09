@@ -15,7 +15,7 @@ apibuilder4elastic:
 
   apmserver:
     verifyServerCert: "false"
-  logLevel: debug
+  logLevel: info
   eventlogCustomAttributes: "user-agent"
   retentionPeriodConfig: "./config/my-retention-period.json"
 
@@ -31,14 +31,14 @@ apibuilder4elastic:
 # Enable, if you would like to deploy a new Elasticsearch cluster for the solution
 elasticsearch:
   enabled: true
-  # imageTag: "7.16.2"
+  imageTag: "7.17.3"
   anonymous: 
     enabled: false
   replicas: 3
   extraInitContainers: [] # To be removed on release after 3.2.0
   volumeClaimTemplate:
     accessModes: [ "ReadWriteOnce" ]
-    storageClassName: gp2
+    storageClassName: gp3
     resources:
       requests:
         storage: 120Gi
@@ -66,7 +66,7 @@ elasticsearch:
 # Enable, if you would like to deploy Kibana for the solution
 kibana:
   enabled: true
-  # imageTag: "7.16.2"
+  imageTag: "7.17.3"
   replicas: 1
 
   validateElasticsearchCertificate: "none"
@@ -102,8 +102,8 @@ kibana:
     password: "mF8k95bC2gpBqb9eBKMB"
 
 logstash:
-  replicas: 1
-  # imageTag: "7.16.2"
+  replicas: 2
+  imageTag: "7.17.3"
   logstashJavaOpts: "-Xmx6g -Xms6g"
   validateElasticsearchCertificate: "none"
   resources:
@@ -127,7 +127,7 @@ logstash:
 filebeat: 
   # Only create the ConfigMaps which are used by Filebeat running along the API-Gateways as a side-car
   createFilebeatConfig: true
-  # imageTag: "7.16.2"
+  imageTag: "7.17.1"
 
   elasticsearchClusterUUID: Vg0PRj28SY2mLuOEkzMMng
 
@@ -145,6 +145,13 @@ apm-server:
   elasticsearchClusterUUID: Vg0PRj28SY2mLuOEkzMMng
 
   validateElasticsearchCertificate: "none"
+
+  apmserverSecrets: 
+    # username: "apm_system"
+    # password: "DhTNBhTzz8vZL7vCQGbj"
+    username: "elastic"
+    password: "QiDaF7F3EhWWEYe35Saf"
+
 
   resources:
     requests:
