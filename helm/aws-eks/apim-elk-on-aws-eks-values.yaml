@@ -9,7 +9,7 @@ apibuilder4elastic:
     apimgrUsername: "apiadmin"
     apimgrPassword: "axway123"
     elasticsearchUsername: "elastic"
-    elasticsearchPassword: "QiDaF7F3EhWWEYe35Saf"
+    elasticsearchPassword: "gHt4bEawyQBuBTWM10Mk"
 
   validateElasticsearchCertificate: "false"
 
@@ -61,7 +61,7 @@ elasticsearch:
 
   elasticsearchSecrets:
     elasticUsername: "elastic"
-    elasticPassword: "QiDaF7F3EhWWEYe35Saf"
+    elasticPassword: "gHt4bEawyQBuBTWM10Mk"
 
 # Enable, if you would like to deploy Kibana for the solution
 kibana:
@@ -99,10 +99,10 @@ kibana:
 
   kibanaSecrets:
     username: "kibana_system"
-    password: "mF8k95bC2gpBqb9eBKMB"
+    password: "D71QFz5yoCnV6PJEVcZF"
 
 logstash:
-  replicas: 2
+  replicas: 1
   imageTag: "7.17.3"
   logstashJavaOpts: "-Xmx6g -Xms6g"
   validateElasticsearchCertificate: "none"
@@ -120,29 +120,29 @@ logstash:
 
   logstashSecrets:
     logstashSystemUsername: "logstash_system"
-    logstashSystemPassword: "i1KXVnsnG9ylfpC5rymU"
+    logstashSystemPassword: "WZDXngRmAYF6nz9bwNQz"
     logstashUsername: "elastic"
-    logstashPassword: "QiDaF7F3EhWWEYe35Saf"
+    logstashPassword: "gHt4bEawyQBuBTWM10Mk"
 
 filebeat: 
   # Only create the ConfigMaps which are used by Filebeat running along the API-Gateways as a side-car
   createFilebeatConfig: true
   imageTag: "7.17.1"
 
-  elasticsearchClusterUUID: Vg0PRj28SY2mLuOEkzMMng
+  elasticsearchClusterUUID: 7QjWFGhHSHGzFcZF62db1w
 
   validateElasticsearchCertificate: "none"
 
   filebeatSecrets: 
     beatsSystemUsername: "beats_system"
-    beatsSystemPassword: "ZDjNvTEhv2Ih4FW2EBkm"
+    beatsSystemPassword: "DOvvwqdhGJ1PG6XN1Xq9"
 
   compressionLevel: 9
 
 apm-server:
   enabled: true
 
-  elasticsearchClusterUUID: Vg0PRj28SY2mLuOEkzMMng
+  elasticsearchClusterUUID: 7QjWFGhHSHGzFcZF62db1w
 
   validateElasticsearchCertificate: "none"
 
@@ -150,7 +150,7 @@ apm-server:
     # username: "apm_system"
     # password: "DhTNBhTzz8vZL7vCQGbj"
     username: "elastic"
-    password: "QiDaF7F3EhWWEYe35Saf"
+    password: "gHt4bEawyQBuBTWM10Mk"
 
 
   resources:
