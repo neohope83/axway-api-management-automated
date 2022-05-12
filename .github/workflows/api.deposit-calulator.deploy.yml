@@ -60,8 +60,6 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
-      - name: List current directory
-        run: ls -l
       - name: Setup Kubectl
         uses: azure/setup-kubectl@v2.0
         with:
@@ -77,6 +75,7 @@ jobs:
       - name: Deploy to Kubernetes
         if: "!contains(github.event.head_commit.message, 'skip builder')"
         run: |
+          kubectl version
           mkdir  $HOME/.kube
           echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 -d > $HOME/.kube/config
           kubectl apply -n apim -f config/api-deployment.yaml
