@@ -3,9 +3,9 @@ name: "1.(M) Deploy API-Gateways"
 env:
   dockerRegistry: ghcr.io
   dockerRepository: cwiechmann/axway-api-management-automated
-  baseImage: "base:77-20220530-1"
+  baseImage: "base:77-20220228-1"
   outImage: "manager"
-  outImageVersion: "77-20220530-1"
+  outImageVersion: "77-20220228-1"
 
 on:
   workflow_dispatch:
