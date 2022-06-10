@@ -27,6 +27,18 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-west-1
+      - name: Setup kubectl
+        run: |
+          mkdir  $HOME/.kube
+          echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 -d > $HOME/.kube/config
+          aws eks --region eu-west-1 update-kubeconfig --name eks-amplify
+          kubectl version
       - name: Create FED-File
         run: |
           sed -i 's/^Id:\s.*$/Id: config/' anm/config/META-INF/manifest.mf
@@ -37,16 +49,8 @@ jobs:
         uses: EndBug/add-and-commit@v9
         with:
           message: 'FED-File released'
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: eu-west-1
       - name: Rollout configuration
         run: |
-          mkdir  $HOME/.kube
-          echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 -d > $HOME/.kube/config
           kubectl -n apim rollout restart deployment axway-apim-anm
       - name: Verify ANM deployment
         run: kubectl -n apim rollout status deployment/axway-apim-anm
