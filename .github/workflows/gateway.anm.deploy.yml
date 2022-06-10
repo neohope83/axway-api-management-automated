@@ -63,9 +63,9 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-1
-      - name: Fix Kube-Config
-        run: |
-          aws eks --region region update-kubeconfig --name cluster_name
+      # - name: Fix Kube-Config
+      #  run: |
+      #    aws eks --region region update-kubeconfig --name cluster_name
       - name: Update Helm-Value file
         run: |
           yq -i '.anm.imageTag="${{ env.IMAGE_TAG }}"' ../helm/aws-eks/axway-apim-on-aws-eks-values.yaml
