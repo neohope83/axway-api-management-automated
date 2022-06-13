@@ -121,12 +121,6 @@
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Root" entityPK="0">
 	<fval name="name"><value>System Components</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="KeyPairs" entityPK="-1322013011411487796" parentPK="0">
-	<fval name="name"><value>Key Pairs</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="PGPKeyPairs" entityPK="-2043121025609420108" parentPK="0">
-	<fval name="name"><value>PGP Key Pairs</value></fval>
-</entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Certificates" entityPK="-926135593354340596" parentPK="0">
 	<fval name="name"><value>Certificate Store</value></fval>
 </entity>
@@ -153,11 +147,11 @@
 	<fval name="keyId"><value></value></fval>
 	<fval name="storeType"><value>LOCAL</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Certificate" entityPK="2576913939788083154" parentPK="-926135593354340596">
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Certificate" entityPK="-7546694533835358695" parentPK="-926135593354340596">
 	<fval name="certificateRealm"><value></value></fval>
-	<fval name="content"><value>MIIDIDCCAgigAwIBAgIRAJGOlGhSSVDuuKLVFcdIoo0wDQYJKoZIhvcNAQELBQAwGjEYMBYGA1UE&#xD;&#xA;AxMPZWxhc3RpYy1hcGltLWNhMB4XDTIyMDQyOTA4MjUwNVoXDTIzMDQyOTA4MjUwNVowGjEYMBYG&#xD;&#xA;A1UEAxMPZWxhc3RpYy1hcGltLWNhMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtOA5&#xD;&#xA;ENd+INEQfSMT4QxRHrCj7h7xeK1vuiimKfUdYaoq+322TQKBXStECEr/25ZjqexRaLML7lrJRyNH&#xD;&#xA;XO2dip3y1/pR//o29DXAnXEFlt/sLvbwDw5NG/krfJfNDKOevJ3SlNjcxGg8OqKgwIf9rDGx6srO&#xD;&#xA;TJXhIEtVmD6s7ossA4dfn1R0ZrcvgpISMFqnzs1uz9Jv4ka8jnPAGnzD6EDosWiDkjPT8byFMgom&#xD;&#xA;/9pu4oKySb0H+NyQ1jVwcmRceBMiHyl/JpGVJ5yJXeeZV33H+RK8rMoLMDBeISHWKcSJ5lYsvNKi&#xD;&#xA;r/pENOPZEBIiGPErexiOhttPhlDYvA79pwIDAQABo2EwXzAOBgNVHQ8BAf8EBAMCAqQwHQYDVR0l&#xD;&#xA;BBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMA8GA1UdEwEB/wQFMAMBAf8wHQYDVR0OBBYEFNgZgqUR&#xD;&#xA;zqzqvw29juBvLvwCRhNPMA0GCSqGSIb3DQEBCwUAA4IBAQCrsmxy0kRKYFFUeOTAwHHXEsVoPuOU&#xD;&#xA;lqYvpzJxprqPlTBjz0eLJPNqiEz6FNohvJfQZepEKFz28dSauOXvxwX3PzkezpBMWV4uFoFPE2he&#xD;&#xA;c9evqfPwUtoGrFbqOCS6AqqXjqQiRZoFRLWHtxlJtOxxTDgPRrdKKNK5HpUDUjuMc/67PzA15YQ5&#xD;&#xA;QgRYXqgD+ov4Zz2ke82j0QZu3Ujzzwj3i/r+qmxIZgUFthLKCMjlfb2Mve+f7ttzvx+eWH1iUdax&#xD;&#xA;hnFHzPA3Qeud5dkyYQjwaQctSJTgqF2LMmeofayTta41sIO35Y8tD7sYhkoIfDU+agD9pHY5TF0r&#xD;&#xA;VC1WihZG</value></fval>
+	<fval name="content"><value>MIIDHzCCAgegAwIBAgIQOYe8rdYUC2yM/GB++Tj9FzANBgkqhkiG9w0BAQsFADAaMRgwFgYDVQQD&#xD;&#xA;Ew9lbGFzdGljLWFwaW0tY2EwHhcNMjIwNTA5MTE1NzI0WhcNMjMwNTA5MTE1NzI0WjAaMRgwFgYD&#xD;&#xA;VQQDEw9lbGFzdGljLWFwaW0tY2EwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCXqL40&#xD;&#xA;TMtGNl7oQ9vQUYsaYgxwnak8K8fRjaXh1+mmsL5IiLOhmEGWODNd4eIEsuI9nxwsK59ybKCxPoC6&#xD;&#xA;znKgOTAU3cw+tcmtOmo7ltwVcXFEZzJ4OmbDqMsEWvq9feUyICZIFtHiRD0aRsOz2aD2tr5RjWzJ&#xD;&#xA;YBWr4nszQMrDxMgN53VAceUrFWNdXbs4ZSMGArEbQnptnDBCYASf6GPLfzxtv6vEVjhiApPqVTsd&#xD;&#xA;3HCALtcMytHX/8qKH6V1ExRdVX3HKMyQPBZe+56W7RXPBXAbw4zgeKOyEh04notRac/JWI1LAbUU&#xD;&#xA;/SGTQTOQB35+P8XLoMsN6Avl8/cbCKZVAgMBAAGjYTBfMA4GA1UdDwEB/wQEAwICpDAdBgNVHSUE&#xD;&#xA;FjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQU+NJW6Jd0&#xD;&#xA;pVqlM/vWu6jzHsh4iBowDQYJKoZIhvcNAQELBQADggEBAIULGafzpGG7xyZtf64n6Z6UOLjak2oD&#xD;&#xA;7c1854a97LiSLM0Z0mHNd08OnLDu4dvlIKulouzsLdU2NfPhQKTBMu3FJljl0CPf/5R75krIDGlh&#xD;&#xA;+uqqvvzGJftnBN+EElolN4Nl08XPXqrx18D9l7SrZkbCmIlymFCk12Jbqsjq+Exfv4z2mZW2YD5a&#xD;&#xA;CQOdoB2aiOUDiilUrFnNztygeHmD7aoiqLGG6+1nCgtLOyc+1dqnwMhbi2XM4uiFYQSWj2w4W/02&#xD;&#xA;/4yvohC75WwCXR6cSi3SI9DNV+0vwqHuwZCMF2Uf3D+o2HBvV5usa9EhmVu+h7atuYjcJIlmslIr&#xD;&#xA;Xwx4B2k=</value></fval>
 	<fval name="conversation"><value></value></fval>
-	<fval name="dname"><value>CN=elastic-apim-ca</value></fval>
+	<fval name="dname"><value>CN=elastic-apim-ca-new</value></fval>
 	<fval name="engine"><value></value></fval>
 	<fval name="issuer"><value contentType="reference">-1</value></fval>
 	<fval name="keyId"><value></value></fval>
@@ -169,5 +163,11 @@
 	<fval name="productKey"><value>VordelNodeManager</value></fval>
 	<fval name="typerepoVersion"><value>1.38.15</value></fval>
 	<fval name="version"><value>7.7.0</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="PGPKeyPairs" entityPK="-2043121025609420108" parentPK="0">
+	<fval name="name"><value>PGP Key Pairs</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="KeyPairs" entityPK="-1322013011411487796" parentPK="0">
+	<fval name="name"><value>Key Pairs</value></fval>
 </entity>
 </entityStoreData>
