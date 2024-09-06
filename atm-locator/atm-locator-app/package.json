@@ -17,7 +17,7 @@
 	"repository": {},
 	"private": true,
 	"dependencies": {
-		"@axway/api-builder-runtime": "^4.74.8",
+		"@axway/api-builder-runtime": "^5.0.0",
 		"@axway/api-builder-plugin-invoke-flow": "^1.1.2",
 		"@axway/api-builder-plugin-fn-base64": "^4.0.3",
 		"@axway/api-builder-plugin-fn-javascript": "^3.0.3",
@@ -26,7 +26,7 @@
 		"@axway/api-builder-plugin-fn-mustache": "^1.0.11",
 		"@axway/api-builder-plugin-fn-restclient": "^2.0.26",
 		"@axway/api-builder-plugin-fn-swagger": "^3.0.8",
-		"elastic-apm-node": "^3.27.0"
+		"elastic-apm-node": "^3.49.0"
 	},
 	"devDependencies": {
 		"@axway/api-builder-admin": "^1.48.3",
